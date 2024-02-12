@@ -34,6 +34,17 @@
     <input id="searchengine" value="" type="hidden"/>
     <input class="search" id="search" placeholder='Search...' type='text'/>
 </form>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('search');
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchQuery = urlParams.get('search');
+
+    if (searchQuery) {
+        searchInput.value = searchQuery;
+    }
+});
+</script>
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
     .black{
