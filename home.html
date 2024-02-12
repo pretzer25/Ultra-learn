@@ -1,0 +1,27 @@
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    #ifra {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+            #but1 {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+</style>
+<iframe id="ifra" src="/./h.html"></iframe>
+<button id="but1" onclick="document.getElementById('ifra').src = '/./h.html';">Home</button>
