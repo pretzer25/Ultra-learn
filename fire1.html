@@ -34,6 +34,31 @@
     <input id="searchengine" value="" type="hidden"/>
     <input class="search" id="search" placeholder='Search...' type='text'/>
 </form>
+
+  <style>
+    iframe {
+      border: none;
+      width: 100vw;
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+  </style>
+
+  <script>
+    if (localStorage.getItem('safe')) {
+      var iframe = document.createElement('iframe');
+      iframe.src = 'https://bing.com';
+      document.body.appendChild(iframe);
+    }
+     else {
+//      var iframe = document.createElement('iframe');
+//      iframe.src = '';
+//      document.body.appendChild(iframe);
+    }
+  </script>
+
 <script>
     document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('search');
