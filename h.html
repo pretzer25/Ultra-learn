@@ -147,32 +147,6 @@
     transform: translateX(26px);
   }
 </style>
-<center><label for="switch" class="switch">
-  <input type="checkbox" id="switch" />
-  <span class="slider round"></span>
-  <p>T-char</p>
-</label>
-    </center>
-<script>
-  const switchElement = document.querySelector('#switch');
-
-  window.addEventListener("visibilitychange", () => {
-    if (document.visibilityState === "hidden" && switchElement.checked) {
-      const iframe = document.createElement("iframe");
-      iframe.src = "https://bing.com";
-      iframe.style.position = "fixed";
-      iframe.style.top = "0";
-      iframe.style.left = "0";
-      iframe.style.border = "none";
-      iframe.style.zIndex = "99999999999999999999999999";
-      iframe.style.height = "100%";
-      iframe.style.width = "100%";
-      iframe.allowFullscreen = "";
-      iframe.id = "hider";
-      document.body.appendChild(iframe);
-    }
-  });
-</script>
             <center> <img src="./logo.svg" height="200px" width="200px"></img>
                 <h1>MIT Licensed.</h1>
     <button id="redir" onclick="gg('/./learning.html')"> G0Guardian H@cks </button><br><br> <button id="redir" onclick="chaos()">...</button><br><br> <button id="redir" onclick="gg('/./fire1.html')"> Pr0ksie</button></center>
