@@ -101,6 +101,78 @@
     <center><h1>PRETZER NETWORK.</h1>
         <br>
         <p>The site where dreams come true.</p></center><br>
+            <style>
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  input:checked + .slider {
+    background-color: #2196f3;
+  }
+
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196f3;
+  }
+
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+</style>
+<center><label for="switch" class="switch">
+  <input type="checkbox" id="switch" />
+  <span class="slider round"></span>
+  <p>T-char</p>
+</label>
+    </center>
+<script>
+  const switchElement = document.querySelector('#switch');
+
+  window.addEventListener("visibilitychange", () => {
+    if (document.visibilityState === "hidden" && switchElement.checked) {
+      const iframe = document.createElement("iframe");
+      iframe.src = "https://bing.com";
+      iframe.style.position = "fixed";
+      iframe.style.top = "0";
+      iframe.style.left = "0";
+      iframe.style.border = "none";
+      iframe.style.zIndex = "99999999999999999999999999";
+      iframe.style.height = "100%";
+      iframe.style.width = "100%";
+      iframe.allowFullscreen = "";
+      iframe.id = "hider";
+      document.body.appendChild(iframe);
+    }
+  });
+</script>
             <center><h1>MIT Licensed.</h1>
     <button id="redir" onclick="gg('/./learning.html')"> G0Guardian H@cks </button><br><br> <button id="redir" onclick="chaos()">...</button><br><br> <button id="redir" onclick="gg('/./fire1.html')"> Pr0ksie</button></center>
 <hr>
