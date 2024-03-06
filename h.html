@@ -101,36 +101,21 @@
     <center><h1>PRETZER NETWORK.</h1>
         <br>
         <p>The site where dreams come true.</p>
-        <div id="ipAddresses"></div>
-
-    <script>
-        async function getIPAddresses() {
-            const interfaces = await navigator.network.getNetworkInterfaces();
-            const ipAddresses = [];
-
-            for (const interface of interfaces) {
-                for (const address of interface.addresses) {
-                    ipAddresses.push(`Interface: ${interface.name}, IP Address: ${address.ip}`);
-                }
-            }
-
-            return ipAddresses;
-        }
-
-        async function displayIPAddresses() {
-            const ipAddresses = await getIPAddresses();
-            const ipAddressesElement = document.getElementById('ipAddresses');
-
-            for (const ipAddress of ipAddresses) {
-                const pElement = document.createElement('p');
-                pElement.textContent = ipAddress;
-                ipAddressesElement.appendChild(pElement);
-            }
-        }
-
-        displayIPAddresses();
-    </script>
-    </center><br>
+    </center>
+            <center>
+                <p id="ipAddress"></p>
+                <script>
+                    fetch('https://api.ipify.org?format=json')
+  .then(response => response.json())
+  .then(data => {
+    const ipAddressElement = document.getElementById('ipAddress');
+    ipAddressElement.innerHTML = `<p>IP ${data.ip}</p>`;
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+                </script>
+            </center><br>
             <style>
   .switch {
     position: relative;
