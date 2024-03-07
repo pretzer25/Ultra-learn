@@ -11,6 +11,9 @@
         window.open("about:blank", "_blank").document.write(`
        <title>GOGUARDIAN ERROR 404</title>
         <link rel="icon" href="../logo.svg" type="image/x-icon">
+        <body onload="window.addEventListener('beforeunload', (event) => {
+    event.returnValue = 'This part is useless but I still added it...';
+});">
     <style>
     #ifra {
         position: fixed;
@@ -22,6 +25,8 @@
     }
 </style>
 <iframe id="ifra" src="/./home.html"></iframe>
+</body>
+
 `);
         function gio() {
   location.replace("https://google.com")
