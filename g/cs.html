@@ -15,6 +15,13 @@
 <script src="/scripts/index.js"></script>
 <script>
             window.navigator.serviceWorker.register('../sw.js');
+            event.preventDefault();
+  try {
+    await registerSW();
+  } catch (err) {
+    alert(err.toString());
+    throw err;
+  }
 </script>
 
 
