@@ -1,14 +1,58 @@
-<script>
-//blur
-  javascript: (function () { document.body.style.filter = 'blur(5px)'; })();
-//lag
-  javascript:alert("made by dragonmaster73101");alert("use at your own risk");alert("ready? IF NO RELOAD NOW.");setTimeout(() => {while (true) {while(1)location.reload(1)}}, 1000);
-//tab
-  javascript: alert("made by dragonmaster73101. Use at your own risk."); while (true){window.open("https://i.insider.com/602ee9ced3ad27001837f2ac?width=700")}
-//autoclick
-  javascript:var DELAY = 0;var autoClickerStyleElement = document.createElement("style");autoClickerStyleElement.innerHTML="*{cursor: crosshair !important;}";document.body.appendChild(autoClickerStyleElement);function addClicker(e) {if(!e.isTrusted) {return;}if(e.target.classList.contains("auto-clicker-target")) {e.target.classList.remove("auto-clicker-target");} else {e.target.classList.add("auto-clicker-target");}document.body.removeChild(autoClickerStyleElement);document.body.removeEventListener("click", addClicker);e.preventDefault();autoClick(e.target);}function autoClick(element) {if(element.classList.contains("auto-clicker-target")) {element.click();setTimeout(function(){ autoClick(element); }, DELAY);}}document.body.addEventListener("click", addClicker, 0);
-//AMOGUS
-  javascript:function a(e){var n=e.childNodes;for(var i in n){a(n[i]);if(n[i].style) n[i].style.backgroundImage="url(https://play-lh.googleusercontent.com/8ddL1kuoNUB5vUvgDVjYY3_6HwQcrg1K2fd_R8soD-e2QYj8fT9cfhfh3G0hnSruLKec)";}};a(document);(function () {window.g = function () {function G(element) {if (element.childNodes.length > 0)for (var i = 0; i < element.childNodes.length; i++) {if (element.childNodes[i].nodeName.toLowerCase() !== 'style' && element.childNodes[i].nodeName.toLowerCase() !== 'script') {G(element.childNodes[i]);}}if (element.nodeType === Node.TEXT_NODE && element.nodeValue !== '') {var thechars =[' among us ',' sus ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us ',' sus ',' among us '];element.textContent = element.textContent.replace('a', thechars[0]).replace('b', thechars[1]).replace('c', thechars[2]).replace('d', thechars[3]).replace('e', thechars[4]).replace('f', thechars[5]).replace('g', thechars[6]).replace('h', thechars[7]).replace('i', thechars[8]).replace('j', thechars[9]).replace('k', thechars[10]).replace('l', thechars[11]).replace('m', thechars[12]).replace('n', thechars[13]).replace('o', thechars[14]).replace('p', thechars[15]).replace('q', thechars[16]).replace('r', thechars[17]).replace('s', thechars[18]).replace('t', thechars[19]).replace('u', thechars[20]).replace('v', thechars[21]).replace('w', thechars[22]).replace('x', thechars[23]).replace('y', thechars[24]).replace('z', thechars[25]).replace('A', thechars[26]).replace('B', thechars[27]).replace('C', thechars[28]).replace('D', thechars[29]).replace('E', thechars[30]).replace('F', thechars[31]).replace('G', thechars[32]).replace('H', thechars[33]).replace('I', thechars[34]).replace('J', thechars[35]).replace('K', thechars[36]).replace('L', thechars[37]).replace('M', thechars[38]).replace('N', thechars[39]).replace('O', thechars[40]).replace('P', thechars[41]).replace('Q', thechars[42]).replace('R', thechars[43]).replace('S', thechars[44]).replace('T', thechars[45]).replace('U', thechars[46]).replace('V', thechars[47]).replace('W', thechars[48]).replace('X', thechars[49]).replace('Y', thechars[50]).replace('Z', thechars[51]).replace('fax', '℻').replace('1', thechars[52]).replace('2', thechars[53]).replace('3', thechars[54]).replace('4', thechars[55]).replace('5', thechars[56]).replace('6', thechars[57]).replace('7', thechars[58]).replace('8', thechars[59]).replace('9', thechars[60]).replace('0', thechars[61]);}}var html = document.getElementsByTagName('html')[0];G(html);};setInterval(g, 1);})();
-//rockpapersircoss
-  javascript:var choices=['rock','paper','scissors'];var x=0;alert("by AnantMishra01 on GitHub\nGitHub Profile: https://github.com/AnantMishra01");alert("--ROCK PAPER SCISSORS-- rules: choose rock, paper, or scissors.");function getRandomChoice(){return choices[Math.floor(Math.random()*choices.length)];};for(var i=1;i<=5;i++){var playerChoice=prompt("Round "+i+"/5: Please choose rock, paper, or scissors");var computerChoice=getRandomChoice();if(playerChoice===null){break;}else if(!choices.includes(playerChoice)){alert("Invalid selection. Please choose rock, paper, or scissors.");}else{if(playerChoice===computerChoice){alert("It's a tie!");}else if((playerChoice==='rock'&&computerChoice==='scissors')||(playerChoice==='paper'&&computerChoice==='rock')||(playerChoice==='scissors'&&computerChoice==='paper')){x+=1;alert("You win!");}else{x+=1;alert("Computer wins!");}console.log("Player: "+playerChoice);console.log("Computer: "+computerChoice);console.log("-----------------");}}alert("Game over! You played "+x+" rounds.");
-</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Slideshow</title>
+    <style>
+        #slideshow-example .slide {
+            display: none;
+        }
+
+        #slideshow-example .slide.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div id="slideshow-example" data-component="slideshow">
+        <div role="list">
+            <div class="slide active">
+                <a href="https://example.com/page1">
+                    <img src="../assets/img/hl.png" alt="Slide 1">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="https://example.com/page2">
+                    <img src="../assets/img/ng.png" alt="Slide 2">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="https://example.com/page3">
+                    <img src="../assets/img/sk.png" alt="Slide 3">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var slideshows = document.querySelectorAll('[data-component="slideshow"]');
+        slideshows.forEach(initSlideShow);
+
+        function initSlideShow(slideshow) {
+            var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
+            var index = 0, time = 5000;
+
+            slides[index].classList.add('active');
+
+            setInterval( () => {
+                slides[index].classList.remove('active');
+
+                index++;
+                if (index === slides.length) index = 0;
+
+                slides[index].classList.add('active');
+            }, time);
+        }
+    </script>
+</body>
+</html>
