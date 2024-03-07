@@ -1,73 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Slideshow</title>
-  <style>
-    #slideshow-example .slide {
-      display: none;
-    }
+    <meta charset="UTF-8">
+    <title>Slideshow</title>
+    <style>
+        #slideshow-example .slide {
+            display: none;
+        }
 
-    #slideshow-example .slide.active {
-      display: block;
-      width: 100%;
-      height: 200px;
-      overflow: hidden;
-      position: relative;
-    }
-
-    #slideshow-example .slide.active #har {
-      object-fit: contain;
-      height: 100%;
-      width: auto;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-  </style>
+        #slideshow-example .slide.active {
+            display: block;
+            height: 400px;
+            width: auto;
+        }
+    </style>
 </head>
 <body>
-  <div id="slideshow-example" data-component="slideshow">
-    <div role="list">
-      <div class="slide active">
-        <a href="https://example.com/page1">
-          <img id="har" src="../assets/img/hl.png" alt="Slide 1">
-        </a>
-      </div>
-      <div class="slide">
-        <a href="https://example.com/page2">
-          <img id="har" src="../assets/img/ng.png" alt="Slide 2">
-        </a>
-      </div>
-      <div class="slide">
-        <a href="https://example.com/page3">
-          <img id="har" src="../assets/img/sk.png" alt="Slide 3">
-        </a>
-      </div>
+  <middle>
+    <div id="slideshow-example" data-component="slideshow">
+        <div role="list">
+            <div class="slide active">
+                <a href="https://example.com/page1">
+                    <img src="../assets/img/dc.png" alt="Slide 1">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="https://example.com/page2">
+                    <img src="../assets/img/cs.png" alt="Slide 2">
+                </a>
+            </div>
+            <div class="slide">
+                <a href="https://example.com/page3">
+                    <img src="../assets/img/hl.png" alt="Slide 3">
+                </a>
+            </div>
+        </div>
     </div>
-  </div>
+</middle>
+  
+    <script>
+        var slideshows = document.querySelectorAll('[data-component="slideshow"]');
+        slideshows.forEach(initSlideShow);
 
-  <script>
-    var slideshows = document.querySelectorAll('[data-component="slideshow"]');
-    slideshows.forEach(initSlideShow);
+        function initSlideShow(slideshow) {
+            var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
+            var index = 0, time = 5000;
 
-    function initSlideShow(slideshow) {
-      var slides = document.querySelectorAll(`#${slideshow.id} [role="list"] .slide`);
-      var index = 0, time = 5000;
+            slides[index].classList.add('active');
 
-      slides[index].classList.add('active');
+            setInterval( () => {
+                slides[index].classList.remove('active');
 
-      setInterval(() => {
-        currentImageIndex = (currentImageIndex + 1) % slides.length;
-        slides.forEach((slide, index) => {
-          slide.classList.remove('active');
-          if (index === currentImageIndex) {
-            slide.classList.add('active');
-          }
-        });
-      }, 3000);
-    }
-  </script>
+                index++;
+                if (index === slides.length) index = 0;
+
+                slides[index].classList.add('active');
+            }, time);
+        }
+    </script>
 </body>
 </html>
