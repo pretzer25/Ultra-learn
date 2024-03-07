@@ -165,8 +165,77 @@
             <center> <img src="./logo.svg" height="200px" width="200px"></img>
                 <p>Motto of the year: "why did it get so quiet?</p>
                 <h1>MIT Licensed.</h1>
-    <button id="redir" onclick="gg('/./learning.html')"> G0Guardian H@cks </button><br><br> <button id="redir" onclick="chaos()">...</button><br><br> <button id="redir" onclick="gg('/./fire1.html')"> Pr0ksie</button></center>
-<hr>
+    <button id="redir" onclick="gg('/./learning.html')"> G0Guardian H@cks </button><br><br> <button id="redir" onclick="chaos()">...</button><br><br> <!-- <button id="redir" onclick="gg('/./fire1.html')"> Pr0ksie</button> --></center>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <style>
+    html,
+    body {
+      position: relative;
+      height: 100%;
+    }
+
+    body {
+      background: #eee;
+      font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+      font-size: 14px;
+      color: #000;
+      margin: 0;
+      padding: 0;
+    }
+
+    .swiper {
+      width: 50%;
+      height: 50%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .swiper-slide #picture {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  </style>
+
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img id="picture" src="../assets/img/el.png"></div>
+      <div class="swiper-slide"><img id="picture" src="../assets/img/hl.png"></div>
+      <div class="swiper-slide"><img id="picture" src="../assets/img/dc.png"></div>
+      <div class="swiper-slide"><img id="picture" src="../assets/img/ge.png"></div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      pagination: {
+        el: ".swiper-pagination",
+      },
+      autoplay: {
+        delay: 3000, // Change every 3 seconds
+      },
+    });
+  </script>
+
+            
+            <hr>
         <h1> Trending:</h1>
         <button id="exampleButton" onclick="gg('/./lag.html')">
     <img id="exampleImage" src="https://media2.giphy.com/media/5h9S8l6mVbqQLFKnNu/200w.gif?cid=6c09b9525cdf3cv5ao3xzvhpret0jfbtscjeb5vxolgc4mdx&ep=v1_gifs_search&rid=200w.gif&ct=g">
