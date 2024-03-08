@@ -446,7 +446,7 @@ function gg(url) {
 <img src="../costume3.png" width="100%">
 
 <style>
-  .container {
+  .ad {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -454,11 +454,14 @@ function gg(url) {
   }
 </style>
 
-<div class="container">
+<div class="ad">
   <h1>DAILY FACT:</h1>
-    <p id="dateDisplay"></p>
+</div>
+<div class="ad">
+    <p id="dateDisplay">ERROR</p>
     <script>
       const data = {
+        "2024-03-08": "The electric chair was invented by a dentist named Alfred P. Southwick in the late 19th century. He got the idea after witnessing an accidental death by electrocution at a state fair and believed it could be a more humane form of execution than hanging.",
         "2024-03-09": "Did you know that there are more stars in the universe than grains of sand on all the beaches of Earth combined?",
         "2024-03-10": "The shortest war in history lasted only 38 minutes! It was between Britain and Zanzibar in 1896.",
         "2024-03-11": "The Great Pyramid of Giza was originally covered in highly polished Tura limestone, making it shine like a jewel under the sun."
@@ -483,8 +486,13 @@ function gg(url) {
         document.getElementById("dateDisplay").appendChild(messageElement);
 
     </script>
+    </div>
+    <div class="ad">
   <h1>IMPORTANT CHANGE LOG:</h1>
+        </div>
+        <div class="ad">
   <p>Uhh...we don't have a lot to report at the moment.</p>
+            </div>
 </div>
 
 </body></html>
