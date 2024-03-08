@@ -1,0 +1,22 @@
+<h1>Click or type something to activate.</h1>
+<audio id="myAudio" src="../annoy.mp3" loop muted></audio>
+<script>
+  const audioElement = document.getElementById('myAudio');
+
+function playAudio() {
+  audioElement.play();
+  let volume = 0;
+  const intervalId = setInterval(() => {
+    if (volume < 1) {
+      volume += 0.1;
+      audioElement.volume = volume;
+    } else {
+      clearInterval(intervalId);
+    }
+  }, 100);
+}
+
+document.addEventListener('mousemove', playAudio);
+document.addEventListener('keydown', playAudio);
+window.addEventListener('scroll', playAudio);
+</script>
