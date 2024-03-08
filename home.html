@@ -42,3 +42,8 @@
 <iframe id="ifra" src="/./h.html"></iframe>
 </div>
 <button id="but1" onclick="document.getElementById('ifra').src = '/./h.html';">Home</button>
+<script>
+  window.addEventListener('beforeunload', (event) => {
+    event.returnValue = 'This part is useless but I still added it...';
+});
+</script>
