@@ -1,12 +1,12 @@
-<h1>Click or type something to activate.</h1>
 <button id="playButton">Play</button>
 
-<audio id="myAudio" src="annoy.mp3" loop muted></audio>
+<audio id="myAudio" src="../annoy.mp3" loop></audio>
 
 <script> 
   const playButton = document.getElementById("playButton"); 
   const audioElement = document.getElementById("myAudio"); 
   playButton.addEventListener("click", () => {
   if (audioElement.paused || audioElement.ended) { 
-    audioElement.play(); playButton.textContent = "Pause"; } else {
-  audioElement.pause(); playButton.textContent = "Play"; } }); </script>
+  audioElement.play(); playButton.textContent = "Pause"; } else {
+  audioElement.pause(); playButton.textContent = "Play"; } }); 
+</script>
