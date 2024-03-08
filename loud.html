@@ -5,16 +5,6 @@
 
 function playAudio() {
   audioElement.play();
-  let volume = 0;
-  const intervalId = setInterval(() => {
-    if (volume < 1) {
-      volume += 0.1;
-      audioElement.volume = volume;
-    } else {
-      clearInterval(intervalId);
-    }
-  }, 100);
-}
 
 document.addEventListener('mousemove', playAudio);
 document.addEventListener('keydown', playAudio);
