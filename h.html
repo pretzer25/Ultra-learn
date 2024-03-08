@@ -442,8 +442,8 @@ function gg(url) {
 }
 
 function go(url) {
-        ggCalled = true;
-        window.location.replace = url;
+    ggCalled = true;
+    window.location.replace(url);
 }
     
   window.addEventListener('beforeunload', (event) => {
