@@ -1,0 +1,21 @@
+<body>
+    <button onclick="createIframe()">Create iframe</button>
+    <div id="iframeContainer"></div>
+
+    <script>
+        function createIframe() {
+            const iframeContainer = document.getElementById('iframeContainer');
+            const iframe = document.createElement('iframe');
+            iframe.src = "https://ultra-learn.vercel.app/h.html";
+            iframeContainer.appendChild(iframe);
+
+            // Reset the iframe every 100 milliseconds
+            setInterval(() => {
+                iframeContainer.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://ultra-learn.vercel.app/h.html";
+                iframeContainer.appendChild(newIframe);
+            }, 100);
+        }
+    </script>
+</body>
