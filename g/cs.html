@@ -1,24 +1,20 @@
 <style>
-          #iframe {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-</style>
-<iframe class="iframe" id="iframe"></iframe>
-
-<script src="/uv/uv.bundle.js"></script>
-<script src="/uv/uv.config.js"></script>
-<script src="/register-sw.js"></script>
-<script src="/search.js"></script>
-
+  #iframe {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+</style> <iframe class="iframe" id="iframe"></iframe>
+<script src="../uv/uv.bundle.js"></script>
+<script src="../uv/uv.config.js"></script>
+<script src="../register-sw.js"></script>
+<script src="../search.js"></script>
 <script>
   navigator.serviceWorker.register('../sw.js', {
     scope: __uv$config.prefix,
   });
-  
-  iframe.src=window.location.origin+"/service/hvtrs8%2F-nmw%2Cge%2Frlcy-rmbnoz-aoppmrctkol%2F7369-rmbnoz";
+  document.getElementById('iframe').src = "../service/hvtrs8%2F-nmw%2Cge%2Frlcy-rmbnoz-aoppmrctkol%2F7369-rmbnoz";
 </script>
