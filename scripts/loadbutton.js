@@ -1,6 +1,6 @@
 async function loadthething(){
-  document.getElementById("rb").disabled="true";
-  document.getElementById("rb").style.opacity="0.5";
+//  document.getElementById("rb").disabled="true";
+//  document.getElementById("rb").style.opacity="0.5";
   try {
     await registerSW();
   } catch (err) {
@@ -28,4 +28,4 @@ async function loadthething(){
   setTimeout(wait,100);
 }
 
-document.getElementById("rb").addEventListener("click",loadsw);
+//document.getElementById("rb").addEventListener("click",loadsw);
