@@ -23,7 +23,7 @@ async function loadsw(){
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
   function wait(){
-    window.location.reload(1);
+    window.location.reload(100);
   }
   setTimeout(wait,1);
 }
