@@ -62,7 +62,7 @@ form.addEventListener("submit", async (event) => {
             
 
     
-    
+    /*
             var x = document.createElement('img');
             x.style.cursor="pointer";
             x.style.position = "absolute";
@@ -95,7 +95,6 @@ form.addEventListener("submit", async (event) => {
             };
 
             document.body.appendChild(open);
-
 
             var inpcont=document.createElement('div');
             inpcont.style.maxWidth="80%";
@@ -138,7 +137,7 @@ form.addEventListener("submit", async (event) => {
 
             document.body.appendChild(inpcont);
             inpcont.appendChild(inp);
-  
+  */
             var dev = document.createElement('img');
             dev.style.cursor="pointer";
             dev.style.position = "absolute";
