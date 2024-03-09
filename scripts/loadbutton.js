@@ -1,4 +1,4 @@
-async function loadsw(){
+async function loadthething(){
   document.getElementById("rb").disabled="true";
   document.getElementById("rb").style.opacity="0.5";
   try {
