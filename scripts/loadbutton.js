@@ -23,9 +23,9 @@ async function loadsw(){
             iframe.src = __uv$config.prefix + __uv$config.encodeUrl(url);
             document.body.appendChild(iframe);
   function wait(){
-    window.location.reload(100);
+    window.location.reload(1);
   }
-  setTimeout(wait,1);
+  setTimeout(wait,100);
 }
 
 document.getElementById("rb").addEventListener("click",loadsw);
