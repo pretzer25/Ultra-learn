@@ -41,8 +41,9 @@ const queryParam = urlParams.get('query');
 
 if (queryParam) {
   // If the 'query' parameter exists, fill the input field and submit the form
-  document.getElementById('searchengine').value = queryParam;
+  document.getElementById('search').value = queryParam;
 }
+});  // Added missing closing brace here
 </script>
     
 </form>
