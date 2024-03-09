@@ -1,12 +1,19 @@
-<script src="/uv/uv.bundle.js" defer></script>
+script src="/uv/uv.bundle.js" defer></script>
 <script src="/uv/uv.config.js" defer></script>
 <script src="/register-sw.js" defer></script>
 <script src="/search.js" defer></script>
 <script src="/scripts/index.js" defer></script>
 <script src="/error.js" defer></script>
 
+<div id="black" class="black"></div>
+<img src="/img/loading.gif" id="loadimg" class="loadimg"/>
+
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<div id="particlebox"></div>
 <script src="/scripts/bg.js"></script>
+
+
 
 <script>
     var link=document.querySelector("link[rel*='icon']") || document.createElement('link');
@@ -22,67 +29,14 @@
       (function () {var url = document.URL; var urlObj = new window.URL(window.location.href); win = window.open(); win.document.body.style.margin = "0"; win.document.body.style.height = "100vh"; var iframe = win.document.createElement("iframe"); iframe.style.border = "none"; iframe.style.width = "100%"; iframe.style.height = "100%"; iframe.style.margin = "0"; iframe.referrerpolicy = "no-referrer"; iframe.allow = "fullscreen"; iframe.src = url.toString(); win.document.body.appendChild(iframe);window.location.href="https://google.com";})();
     }
 </script>
-
+<div class="title">
+    <h1 id="title1">DM Unblocker</h1>
+</div>
 
 <form class="searchbox" id="searchbox">
     <input id="searchengine" value="" type="hidden"/>
-    <input class="search" id="search" placeholder='Search...' type='text'/>
+    <input class="search" id="search" placeholder='Search the web freely' type='text'/>
 </form>
-
-  <style>
-    iframe {
-      border: none;
-      width: 100vw;
-      height: 100vh;
-      position: fixed;
-      top: 0;
-      left: 0;
-    }
-  </style>
-
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-    const searchInput = document.getElementById('search');
-    const urlParams = new URLSearchParams(window.location.search);
-    const searchQuery = urlParams.get('search');
-
-    if (searchQuery) {
-        searchInput.value = searchQuery;
-    }
-});
-</script>
-
-    <style type="text/css">
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-        
-    }
-    div {
-        width: 90%;
-        margin: 5em auto;
-        padding: 2em;
-        background-color: #fdfdff;
-        border-radius: 0.5em;
-        box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
-    }
-    a:link, a:visited {
-        color: #38488f;
-        text-decoration: none;
-    }
-    @media (max-width: 700px) {
-        div {
-            margin: 0 auto;
-            width: auto;
-        }
-    }
-    </style>  
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"> </script>
-
-
-</div>
-
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
     .black{
@@ -466,4 +420,16 @@ function isUrl(val = '') {
   searchInput.value = searchEngine || "https://www.google.com/search?q=%s";
 });
 
+    function fade(){
+        document.getElementById("loadimg").style.animation="linear 1.5s 1 running fadeout";
+        document.getElementById("loadimg").addEventListener("animationend", () => {
+            document.getElementById("black").style.animation="linear 1.5s 1 running fadeout";
+            document.getElementById("black").addEventListener("animationend", () => {
+                document.getElementById("black").remove();
+            });
+            document.getElementById("loadimg").remove();
+        });
+
+    }
+    setTimeout(fade,1200);
 </script>
