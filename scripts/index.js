@@ -32,7 +32,7 @@ form.addEventListener("submit", async (event) => {
             white.style.top = "0px";
             document.body.appendChild(white);
 
-            var loading = document.createElement('img');
+ /*           var loading = document.createElement('img');
             loading.style.cursor="pointer";
             loading.style.width = "125px";
             loading.style.height = "125px";
@@ -43,7 +43,7 @@ form.addEventListener("submit", async (event) => {
             loading.style.left="50%";
             loading.style.transform="translate(-50%, -50%)";
             document.body.appendChild(loading);
-
+*/
             var iframe = document.createElement('iframe');
 
             iframe.style.position = "absolute";
