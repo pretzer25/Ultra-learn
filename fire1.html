@@ -4,14 +4,13 @@
 <script src="/search.js" defer></script>
 <script src="/scripts/index.js" defer></script>
 <script src="/error.js" defer></script>
-<script src="/scripts/loadbutton.js" defer></script>
 
 <div id="black" class="black"></div>
 <!-- <img src="/img/loading.gif" id="loadimg" class="loadimg"/> -->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-<!-- <script src="/scripts/bg.js"></script> -->
+<script src="/scripts/bg.js"></script>
 
 
 
@@ -36,18 +35,15 @@
     
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // Check if there's a URL parameter named 'query'
-  const urlParams = new URLSearchParams(window.location.search);
-  const queryParam = urlParams.get('query');
+// Check if there's a URL parameter named 'query'
+const urlParams = new URLSearchParams(window.location.search);
+const queryParam = urlParams.get('query');
 
-  if (queryParam) {
-    // If the 'query' parameter exists, fill the input field and submit the form
-    document.getElementById('search').value = queryParam;
-    setTimeout(() => {
-      loadthething();
-    }, 5000);
-  }
-});
+if (queryParam) {
+  // If the 'query' parameter exists, fill the input field and submit the form
+  document.getElementById('search').value = queryParam;
+}
+});  // Added missing closing brace here
 </script>
     
 </form>
