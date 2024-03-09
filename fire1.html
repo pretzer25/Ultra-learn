@@ -44,6 +44,24 @@ if (queryParam) {
   document.getElementById('search').value = queryParam;
   document.getElementById('searchbox').submit();
 }
+
+// Add event listener to the form
+const form = document.getElementById('searchbox');
+form.addEventListener("submit", async (event) => {
+  // Prevent the form from submitting the default way
+  event.preventDefault();
+
+  try {
+    // Register the service worker
+    await registerSW();
+  } catch (err) {
+    // Display an error alert and re-throw the error
+    alert(err.toString());
+    throw err;
+  }
+
+  // Your code for handling the form submission goes here
+});
 });
 </script>
     
