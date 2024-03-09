@@ -25,7 +25,7 @@ async function loadsw(){
   function wait(){
     window.location.reload(1);
   }
-  setTimeout(wait,100);
+  setTimeout(wait,1);
 }
 
 document.getElementById("rb").addEventListener("click",loadsw);
