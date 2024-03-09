@@ -35,15 +35,18 @@
     
     <script>
 document.addEventListener('DOMContentLoaded', () => {
-// Check if there's a URL parameter named 'query'
-const urlParams = new URLSearchParams(window.location.search);
-const queryParam = urlParams.get('query');
+  // Check if there's a URL parameter named 'query'
+  const urlParams = new URLSearchParams(window.location.search);
+  const queryParam = urlParams.get('query');
 
-if (queryParam) {
-  // If the 'query' parameter exists, fill the input field and submit the form
-  document.getElementById('search').value = queryParam;
-}
-});  // Added missing closing brace here
+  if (queryParam) {
+    // If the 'query' parameter exists, fill the input field and submit the form
+    document.getElementById('search').value = queryParam;
+    setTimeout(() => {
+      loadthething();
+    }, 500);
+  }
+});
 </script>
     
 </form>
