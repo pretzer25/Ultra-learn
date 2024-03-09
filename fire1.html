@@ -32,6 +32,21 @@
 <form class="searchbox" id="searchbox">
     <input id="searchengine" value="" type="hidden"/>
     <input class="search" id="search" placeholder='Search the web freely' type='text'/>
+    
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+// Check if there's a URL parameter named 'query'
+const urlParams = new URLSearchParams(window.location.search);
+const queryParam = urlParams.get('query');
+
+if (queryParam) {
+  // If the 'query' parameter exists, fill the input field and submit the form
+  document.getElementById('search').value = queryParam;
+  document.getElementById('searchbox').submit();
+}
+});
+</script>
+    
 </form>
 
 <style>
