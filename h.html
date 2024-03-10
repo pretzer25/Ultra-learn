@@ -240,7 +240,7 @@
             <hr>
             <br>
         <h1> Apps: </h1>
-<button id="exampleButton" onclick="go('/./fire1.html?https://docs.google.com/forms/d/e/1FAIpQLSc8D4Le2dorkPDMOE7yMFwDRa1DqVuXyY91080AXBZeHfvuxQ/viewform?embedded=true')">
+<button id="exampleButton" onclick="go('/./fire1.html?query=https://docs.google.com/forms/d/e/1FAIpQLSc8D4Le2dorkPDMOE7yMFwDRa1DqVuXyY91080AXBZeHfvuxQ/viewform?embedded=true')">
     <img id="exampleImage" src="https://cdn-icons-png.flaticon.com/512/25/25300.png">
     <p id="exampleText">request</p>
 </button>
@@ -466,7 +466,13 @@ function gg(url) {
 }
 
 function go(url) {
-    alert('This is a website that has either DENY or SAME-ORIGIN set as the x-frame-options, this means that they cannot be simply accesed, the first time you are trying a game like this (not always), it might take 2 tries to work');
+	
+if (!localStorage.getItem('messageShown')) {
+    alert('This is a website that has either DENY or SAME-ORIGIN set as the x-frame-options, this means that they cannot be simply accessed, the first time you are trying a game like this (not always), it might take 2 tries to work');
+
+    localStorage.setItem('messageShown', true);
+}
+	
     ggCalled = true;
     window.location.href = url;
 }
