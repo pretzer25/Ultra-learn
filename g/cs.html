@@ -35,10 +35,11 @@
             scope: __uv$config.prefix,
         });
 
-        const frame = document.createElement('iframe');
-        document.body.appendChild(frame);
-
-        frame.src = url
+document.addEventListener('DOMContentLoaded', () => {
+  const frame = document.createElement('iframe');
+  document.body.appendChild(frame);
+  frame.src = url;
+});
     </script>
 </body>
 </html>
