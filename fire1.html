@@ -43,7 +43,12 @@ const queryParam = urlParams.get('query');
 
 if (queryParam) {
   // If the 'query' parameter exists, fill the input field and submit the form
-  document.getElementById('search').value = queryParam;
+function decodeBase64(base64) {
+  return decodeURIComponent(escape(window.atob(base64)));
+}
+    var decodedString = decodeBase64(queryParam);
+
+  document.getElementById('search').value = decodedString;
 }
 });  // Added missing closing brace here
 </script>
