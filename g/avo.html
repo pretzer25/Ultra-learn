@@ -1,0 +1,44 @@
+<script>
+function checkAndSetCookie() {
+  // Check if the isitsaved cookie is set to true
+  if (!getCookie('isitsaved')) {
+    // Open a new tab to example.com
+    var win = window.open('http://example.com', '_blank');
+
+    // Wait for 2 seconds
+    setTimeout(function() {
+      // Close the new tab
+      win.close();
+
+      // Set the isitsaved cookie to true
+      setCookie('isitsaved', 'true', { expires: 1 });
+    }, 2000);
+  }
+}
+
+// Function to get cookie value by name
+function getCookie(name) {
+  var matches = document.cookie.match(new RegExp(
+    "(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"
+  ));
+  return matches ? decodeURIComponent(matches[1]) : undefined;
+}
+
+// Function to set cookie value by name, value, and attributes
+function setCookie(name, value, attributes) {
+  var cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value);
+
+  for (var attributeKey in attributes) {
+    cookie += "; " + attributeKey;
+    var attributeValue = attributes[attributeKey];
+    if (attributeValue !== true) {
+      cookie += "=" + attributeValue;
+    }
+  }
+
+  document.cookie = cookie;
+}
+
+// Call the checkAndSetCookie function
+checkAndSetCookie();
+</script>
