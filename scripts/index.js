@@ -149,7 +149,7 @@ form.addEventListener("submit", async (event) => {
             dev.style.left = "1%";
             dev.style.top = "1%";
             dev.onclick = function() {
-               window.location = "/./fire1.html";
+               window.location.reload(true);
             };
 
             document.body.appendChild(dev);
