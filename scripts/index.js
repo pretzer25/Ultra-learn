@@ -148,26 +148,8 @@ form.addEventListener("submit", async (event) => {
             dev.style.zIndex = "1001";
             dev.style.left = "1%";
             dev.style.top = "1%";
-            dev.onclick = async function() {
-              if (document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI")==null){
-                var firebug=document.getElementById("iframe").contentWindow.document.createElement("script");
-                firebug.setAttribute('src','https://luphoria.com/fbl/fbl/firebug-lite-debug.js');
-                firebug.setAttribute('id','firebugscriptidkeeee');
-                document.getElementById("iframe").contentWindow.document.body.appendChild(firebug);
-                (function(){
-                  if (window.firebug.version){
-                    firebug.init();
-                  }else{
-                    setTimeout(arguments.callee);
-                  }
-                })();
-              } else {
-                if (document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").style.display!="none"){
-                  document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").style.display="none";
-                }else{
-                  document.getElementById("iframe").contentWindow.document.getElementById("FirebugUI").style.display="inline-block";
-                }
-              }
+            dev.onclick = function() {
+               window.location = "/./fire1.html";
             };
 
             document.body.appendChild(dev);
