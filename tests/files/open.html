@@ -41,7 +41,7 @@
   const urlButton = document.getElementById("urlButton");
   urlButton.addEventListener("click", function () {
     if (currentLink < links.length) {
-      const encodedString = btoa("https://" + links[currentLink]);
+      const encodedString = btoa(links[currentLink]);
       window.open("url.html?" + encodedString, "_blank");
       alert("done");
       currentLink++;
