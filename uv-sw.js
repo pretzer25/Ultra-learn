@@ -1,4 +1,4 @@
-importScripts("/uv/uv.sw.js");
+importScripts("https://ultra-learn.vercel.app/uv/uv.sw.js");
 
 const sw = new UVServiceWorker();
 
