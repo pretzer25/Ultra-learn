@@ -43,6 +43,7 @@
     }
     </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
 <script>
   $(document).ready(function() {
     // Execute the animation when the page loads
@@ -55,15 +56,20 @@
       $('html, body').animate({
         scrollTop: 75 // Change this value to the desired number of pixels
       }, 'slow');
+
+      // Add the CSS to hide the scrollbar after scrolling
+      if ($(window).scrollTop() > 74) {
+        $('head').append('<style>html, body { overflow: hidden; }</style>');
+      } else {
+        $('style[data-added="true"]').remove();
+      }
     });
+
+    // Add a data-added attribute to the style element to prevent it from being added multiple times
+    $('head style').attr('data-added', 'true');
   });
 </script>
 
-<style>
-  html, body {
-    overflow: hidden;
-  }
-</style>
 <div>
 <iframe id="ifra" src="/./h.html"></iframe>
 </div>
