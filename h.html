@@ -489,11 +489,6 @@ var decodedString = decodeBase64(encodedString);
 	window.location.href = "/./fire1.html?query=" + encodedString;
 }
     
-  window.addEventListener('beforeunload', (event) => {
-  if (!ggCalled) {
-    event.returnValue = 'This part is useless but I still added it...';
-  }
-});
 </script>
 
 
