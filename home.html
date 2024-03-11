@@ -50,17 +50,13 @@
     $('html, body').animate({
       scrollTop: 75 // Change this value to the desired number of pixels
     }, 'slow');
-
-let scrollTimeout;
-
-$(window).scroll(function() {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(function() {
-    $('html, body').animate({
-      scrollTop: 75 // Change this value to the desired number of pixels
-    }, 'slow');
-  }, 1500); // 1500 milliseconds = 1.5 seconds
-});
+      
+setInterval(function() {
+  $('html, body').animate({
+    scrollTop: 75 // Change this value to the desired number of pixels
+  }, 'slow');
+}, 4000);
+  });
 </script>
 
 <div>
