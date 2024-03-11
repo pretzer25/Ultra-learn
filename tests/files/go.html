@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>URL Iframe</title>
+	<style>
+		body {
+			margin: 0;
+		padding: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			height: 100vh;
+			font-family: Arial, sans-serif;
+		}
+		#header {
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			background-color: #333;
+			color: #fff;
+			display: flex;
+			justify-content: space-between;
+			padding: 10px 20px;
+		}
+		#url {
+			position: fixed;
+			top: 0;
+			right: 0;
+			background-color: #333;
+			color: #fff;
+			padding: 10px 20px;
+			margin: 10px;
+		}
+		#iframe-container {
+			width: 100%;
+			height: calc(100vh - 60px);
+		}
+		#iframe {
+			width: 100%;
+			height: 100%;
+			border: none;
+		}
+		#buttons {
+			position: fixed;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			background-color: #333;
+			color: #fff;
+			display: flex;
+			justify-content: space-around;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<div id="header">
+		<span id="current-url-number">1</span>
+		<span id="current-url"></span>
+	</div>
+        <div id="url">
+		<span id="current-url-text"></span>
+	</div>
+	<div id="iframe-container">
+		<iframe id="iframe" src=""></iframe>
+	</div>
+	<div id="buttons">
+		<button id="prev-button" disabled>Previous</button>
+		<button id="next-button">Next</button>
+		<button id="open-button">Open in new tab</button>
+	</div>
+
+	<script>
+		const urls = [
+"play.1v1battle.com",
+"247freeper.com",
+"3kh0.bitbucket.io",
+"6xgames.com",
+"accounts.snapchat.com",
+"Addictinggames.com",
+"afterplay.io",
+"Agar.io",
+"ageofwargame.io",
+"aidungeon.com",
+"alpz.adistra.com",
+"amongud.com",
+"amongus-online.net",
+"an1.com",
+"apes.io",
+"apkpure.com",
+"apponfly.com",
+"arcadespot.com",
+"archive.com",
+"arealme.com",
+"armorgames.com",
+"arras.io",
+"Asmallworldcup.com",
+"asmallworldcup.io",
+"aternos.org",
+"attackmove.io",
+"backflipmaniac.com",
+"baldisbasics.io",
+"bandlab.com",
+"bard.google.com",
+"baseball9.io",
+"basketball-gm.com",
+"battledudes.io",
+"beamng.com",
+"beatsaber.com",
+"bereal.com",
+"bigbadtoystore.com",
+"bigbluebubble.com",
+"bigboris.com",
+"bitlife.com",
+"bitlifeonline.io",
+"bitplanes.com",
+"blackboisss.com",
+"blocktanks.net",
+"bloet.com",
+"bloody_basturd.com",
+"bloody.bastards.com",
+"bloxd.io",
+"bloxd.io",
+"bloxed.io",
+"bloxflip.com",
+"Bluestacks.com",
+"bobtherobber.com",
+"bonk.io",
+"boosteroid.com",
+"boxfight.io",
+"braains2.io",
+"brawlhalla.com",
+"Bruh.io",
+"btd6.com",
+"buildroyale.io",
+"bungie.net",
+"burritobison.com",
+"cajunavenger.github.io",
+"calcsimple.com",
+"callofduty.com",
+"Callofwar.com",
+"candybox2.github.io",
+"candycliker.com",
+"canva.com",
+"capcut.com",
+"car-parking-multiplayer.en.uptodown.com",
+"cartoonstrike.com",
+"Character.ai.com",
+"choppypine.itch.io",
+"classic.minecraft.net",
+"classroom6x.com",
+"coieclicker.com",
+"CombatMaster.com",
+"Comick.net",
+"comiconlinefree.org",
+"coolmathgames.com",
+"copilot.microsoft.com",
+"copter.io",
+"copteri.io",
+"counter-strike.net",
+"craftnite.io",
+"crazygames.com",
+"crazygames.com",
+"crunchyroll.com",
+"crunchyroll.com",
+"deadshot.io",
+"deeeep.io",
+"deeeep.io",
+"Deepai.com",
+"defly.io",
+"deltarune.com",
+"demo.emulatorjs.org",
+"didilcgame.com",
+"diep.io",
+"digdig.io",
+"disablesecurly.com",
+"discord.com",
+"disneyplus.com",
+"divicast.com",
+"dogeminer.com",
+"Dogeminer2.com",
+"donitz.itch.io",
+"donkeykongflash.com",
+"dragonraja.zloong.com",
+"drift-hunters.io",
+"drifted.com",
+"ds.44670.org",
+"duckduckgo.com",
+"Dune.io",
+"ea.com",
+"edgarmendoza.itch.io",
+"education.minecraft.net",
+"educationbluesky.com",
+"Educationbluesky.com",
+"eggy-car.github.io",
+"eliatopia.com",
+"elite2site.com",
+"Emulatorgames.net",
+"en.akinator.com",
+"epicgames.com",
+"episode-app.com",
+"erth.io",
+"ev.io",
+"everskies.com",
+"evowars.io",
+"evoworld.io",
+"extrememath.net",
+"facebo.com",
+"fancade.com",
+"fastconverter.net",
+"ff.garena.com",
+"findthecat.io",
+"fireworksimsplay.com",
+"fishington.io",
+"flanne.itch.io",
+"flappybird.io",
+"florr.io",
+"flyordie.io",
+"fnafgame.io",
+"fnafgames.io",
+"fnafunblocked.github.io",
+"fnafworld.com",
+"fnfgo.com",
+"fngames.io",
+"freekong.org",
+"freeriderhd.com",
+"gamecomets.com",
+"gameflare.com",
+"gamejolt.com",
+"gamesfrog.com",
+"gartic.io",
+"garticphone.com",
+"garticphone.com",
+"Geforce.com",
+"gemetrydash.io",
+"geo-fs.com",
+"geoguessr.com",
+"geometrydash.io",
+"getaway-shootout.com",
+"gettingoverit-play.com",
+"gmod.facepunch.com",
+"gmod.facepunch.com",
+"go.imvu.com",
+"godfield.net",
+"goodpizzagreatpizza.com",
+"google.com",
+"googlefued.com",
+"googlesnakeonline.github.io",
+"goosegame.io",
+"GooseGames.io",
+"grindcraft.com",
+"gsafroum.com",
+"gugoplay.com",
+"gulper.io",
+"gunblood.com",
+"gunmayhem.io",
+"hacktyper.com",
+"halfbrick.com",
+"hero-wars.com",
+"herowarsonlinerpg.com",
+"hexanaut.io",
+"Hiberworld.com",
+"higherlowergame.com",
+"hipsww.playpemon.com",
+"hitman.com",
+"Hordes.io",
+"houseofhazards.com",
+"ragdoll-archers.game-files.crazygames.com/ragdoll-archers/28/index.html",
+"icedodo.onionfist.com",
+"icivics.org",
+"Idle-pixel.com",
+"idlebreakout.io",
+"idontrememberthelink.com",
+"immaculategrid.com",
+"immaculategrid.com",
+"IMVU.com",
+"incredibox.com",
+"instagram.com",
+"interstelar420.com",
+"itch.io",
+"jamir.io",
+"janitorai.com",
+"jcw87.github.io",
+"jellymar.io",
+"jellymario.io",
+"js13kgames.com",
+"jungle.katieprallphotography.com",
+"kawaiigames.net",
+"kbhgames.com",
+"kdata1.com",
+"kick.com",
+"Kiomet.com",
+"kirka.io",
+"Kirka.io",
+"kizi.com",
+"Kogama.com",
+"krew.io",
+"krika.io",
+"krunker.io",
+"Lagged.com",
+"ldplayer.net",
+"learnsmartly.org",
+"lichess.org",
+"linerider.com",
+"linerider.com",
+"link.brawlstars.com",
+"littlealchemy.com",
+"littlealchemy2.com",
+"littlebigsnake.com",
+"livesoccertv.com",
+"lolbeans.io",
+"lolshot.io",
+"lordz2.io",
+"lostgamer.io",
+"lsdrevamped.net",
+"madalin-cars-multiplayer.com",
+"madalinstuntcars2.io",
+"Madden24.com",
+"madmaxgames.com",
+"makeitmeme.com",
+"marvelsnap.com",
+"max.com",
+"melonplaygroundgames.com",
+"millseagles.blogspot.com",
+"miniplay.com",
+"miniplay.com/game/undertale#:~:text=UNDERTALE%20free%20online%20game%20on%20Miniplay.com",
+"mirageonlineclassic.com",
+"mixfreegames.com",
+"mk48.io",
+"mlb.com",
+"monkeymart.org",
+"monkeymartgame.com",
+"monsterlegendsgame.com",
+"moomoo.io",
+"mope.io",
+"mortalkombat.com",
+"mountain658.github.io",
+"mrmine.com",
+"myfreegames.net",
+"myinstants.com",
+"nba2k24.com",
+"newgrounds.com",
+"nexonvision.itch.io",
+"nike.com",
+"ninja.io",
+"nitrotype.com",
+"notavirus.com",
+"object-lesson.org",
+"obsproject.com",
+"omegle.com",
+"onlyfans.com",
+"onlyup-game.io",
+"onlyupgame.com",
+"pandabuy.com",
+"pandora.com",
+"paper-2.io",
+"paper.io",
+"paper.io.com",
+"pazugames.com",
+"penaltyshooters2.com",
+"penis.com",
+"pixel-cave.com",
+"pixelartmaker.com",
+"play-cs.com",
+"powerline.io",
+"quillbot.com",
+"qwertyygames.com",
+"reddit.com",
+"retor-goal.com",
+"retrobowlcollege.org",
+"roblox.com",
+"sandstrike.io",
+"scalingo.io",
+"scenexe.io",
+"scottgames.com",
+"Scrible.io",
+"secure.imvu.com",
+"seterra.com",
+"shellshock.io",
+"slither.io",
+"slowroads.io",
+"snake.io",
+"Snay.io",
+"snido.com",
+"snowrider3d.com",
+"speedrun.com",
+"Starblast.io",
+"starve.io",
+"stickmanho.github.io",
+"stumbleguys.com",
+"suikagame.com",
+"superhotgame.com",
+"sz-games.github.io",
+"taming.io",
+"teamfortress.com",
+"teamwoodgames.com",
+"territorial.io",
+"thelast.io",
+"theshow.com",
+"trents.com",
+"twoplayergames.org",
+"ubg100.com",
+"wrestlebros.io",
+"zlap.io",
+"zombs.io"
+		];
+		let currentUrlIndex = 0;
+
+		const iframe = document.getElementById("iframe");
+		const currentUrlNumber = document.getElementById("current-url-number");
+		const currentUrl = document.getElementById("current-url");
+		const currentUrlText = document.getElementById("current-url-text");
+		const prevButton = document.getElementById("prev-button");
+		const nextButton = document.getElementById("next-button");
+		const openButton = document.getElementById("open-button");
+
+		currentUrlText.innerText = urls[currentUrlIndex];
+		currentUrl.innerText = urls[currentUrlIndex];
+		
+		function encodeBase64(str) {
+                    return window.btoa(unescape(encodeURIComponent(str)));
+                }
+                var encodedString = encodeBase64('https://' + urls[currentUrlIndex]);
+
+                iframe.src = 'https://ultra-learn.vercel.app/fire1.html?query=' + encodedString;
+
+		currentUrlNumber.innerText = `URL ${currentUrlIndex + 1} of ${urls.length}`;
+
+		prevButton.addEventListener("click", () => {
+			currentUrlIndex--;
+			if (currentUrlIndex < 0) {
+				currentUrlIndex = urls.length - 1;
+			}
+			updateUrl();
+		});
+
+		nextButton.addEventListener("click", () => {
+			currentUrlIndex++;
+			if (currentUrlIndex >= urls.length) {
+				currentUrlIndex = 0;
+			}
+			updateUrl();
+});
+
+		openButton.addEventListener("click", () => {
+			const url = `url.html?${encodeURIComponent(urls[currentUrlIndex])}`;
+			window.open(url, "_blank");
+		});
+
+		function updateUrl() {
+			currentUrlText.innerText = urls[currentUrlIndex];
+			currentUrl.innerText = urls[currentUrlIndex];
+                        iframe.src = 'https://ultra-learn.vercel.app/fire1.html?query=https://' + urls[currentUrlIndex];
+			currentUrlNumber.innerText = `URL ${currentUrlIndex + 1} of ${urls.length}`;
+			prevButton.disabled = currentUrlIndex === 0;
+		}
+	</script>
+</body>
+</html>
