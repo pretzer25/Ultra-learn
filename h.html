@@ -238,6 +238,36 @@
             <br>            
             <hr>
             <br>
+		<center>
+<input type="text" id="searchBar" placeholder="Search...">
+			<script>
+				// Get the search bar and all buttons
+const searchBar = document.getElementById('searchBar');
+const buttons = document.getElementsById('exampleButton');
+
+// Listen for input on the search bar
+searchBar.addEventListener('input', () => {
+  // Get the search term
+  const searchTerm = searchBar.value.toLowerCase();
+
+  // Loop through all buttons
+  for (const button of buttons) {
+    // Get the button's <p> element
+    const p = button.getElementsByTagName('p')[0];
+    const pText = p.innerText.toLowerCase();
+
+    // If the <p> element includes the search term, show the button
+    if (pText.includes(searchTerm)) {
+      button.style.display = 'block';
+    }
+    // Otherwise, hide the button
+    else {
+      button.style.display = 'none';
+    }
+  }
+});
+			</script>
+		</center>
         <h1> Apps: </h1>
 <button id="exampleButton" onclick="go('https://docs.google.com/forms/d/e/1FAIpQLSeu0MD4PRDGUeGC_pfB89JkC5I_U9j_0GzV6t-sW5xHBwMRHA/viewform')">
     <img id="exampleImage" src="https://cdn-icons-png.flaticon.com/512/25/25300.png">
