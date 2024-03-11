@@ -1,29 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Example</title>
+	<title>Button Code Generator</title>
 	<style>
 		body {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
-			height: 100vh;
 			font-family: Arial, sans-serif;
 		}
 		#form {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-		justify-content: center;
-			margin-bottom: 20px;
+			justify-content: center;
+			height: 100vh;
 		}
-		#name-input {
+		#name-input, #img-url-input {
 			padding: 5px;
-			margin-bottom: 10px;
-		}
-		#img-url-input {
-	padding: 5px;
 			margin-bottom: 10px;
 		}
 		#button-code {
@@ -38,18 +29,13 @@
 		<button id="submit-button">Submit</button>
 	</div>
 	<div id="button-code">
-		<pre><code>
-&lt;button id=&quot;exampleButton&quot; onclick=&quot;go('THE URL PARAMETER')&quot;&gt;
-	&lt;img id=&quot;exampleImage&quot; src=&quot;IMG URL&quot;&gt;
-	&lt;p id=&quot;exampleText&quot;&gt;NAME&lt;/p&gt;
-&lt;/button&gt;
-		</code></pre>
+		<pre><code id="generated-code"></code></pre>
 	</div>
 
 	<script>
 		const nameInput = document.getElementById("name-input");
 		const imgUrlInput = document.getElementById("img-url-input");
-		const buttonCode = document.getElementById("button-code");
+		const buttonCode = document.getElementById("generated-code");
 		let items = [];
 		let currentItemIndex = 0;
 
@@ -69,8 +55,8 @@
 				items = [];
 			}
 
-			const buttonCodeHtml = `
-&lt;button id=&quot;exampleButton&quot; onclick=&quot;go('${items.map(item => `https://example.com/?name=${encodeURIComponent(item.name)}&imgUrl=${encodeURIComponent(item.imgUrl)}`).join("&")}')&quot;&gt;
+			const buttonCodeHtml= `
+&lt;button id="exampleButton" onclick="go('${items.map(item => `https://example.com/?name=${encodeURIComponent(item.name)}&imgUrl=${encodeURIComponent(item.imgUrl)}`).join("&")}')"&gt;
 	${items.map((item, index) => `
 		${index === 0 ? '<img id="exampleImage" src="' : ''}
 		${item.imgUrl}
@@ -87,6 +73,10 @@
 			// Handle the URL parameter here
 			console.log(query);
 		}
+
+		// Ask the user for an additional input
+		const additionalInput = prompt("Please enter an additional input:");
+		console.log("Additional input:", additionalInput);
 	</script>
 </body>
 </html>
