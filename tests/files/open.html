@@ -41,9 +41,10 @@
   const urlButton = document.getElementById("urlButton");
   urlButton.addEventListener("click", function () {
     if (currentLink < links.length) {
-      const encodedString = btoa(links[currentLink]);
-      window.open("url.html?" + encodedString, "_blank");
-      alert("done");
+//      const encodedString = btoa(links[currentLink]);
+//      window.open("url.html?" + encodedString, "_blank");
+//      alert("done");
+      window.open("url.html?" + links[currentLink], "_blank");
       currentLink++;
     } else {
       urlButton.href = "#";
