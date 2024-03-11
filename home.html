@@ -1,15 +1,5 @@
 <style>
-.scrollable-element {
-  overflow-y: scroll;
-  /* or overflow-x: scroll if you want to allow horizontal scrolling */
-  width: 100%;
-  height: 100%;
-  /* adjust the width and height as needed */
-}
 
-.scrollable-element::-webkit-scrollbar {
-  display: none;
-}
     body {
         background-color: grey;
         margin: 0;
@@ -68,6 +58,12 @@
     });
   });
 </script>
+
+<style>
+  html, body {
+    overflow: hidden;
+  }
+</style>
 <div>
 <iframe id="ifra" src="/./h.html"></iframe>
 </div>
