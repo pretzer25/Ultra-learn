@@ -59,14 +59,10 @@
 
       // Add the CSS to hide the scrollbar after scrolling
       if ($(window).scrollTop() > 74) {
-        $('head').append('<style>html, body { overflow: hidden; }</style>');
+         $('<style>html, body { overflow: hidden; }</style>').appendTo('head');
       } else {
-        $('style[data-added="true"]').remove();
       }
     });
-
-    // Add a data-added attribute to the style element to prevent it from being added multiple times
-    $('head style').attr('data-added', 'true');
   });
 </script>
 
