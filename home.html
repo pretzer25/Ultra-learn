@@ -31,13 +31,21 @@
     }
     </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script>
-    $(document).ready(function() {
+<script>
+  $(document).ready(function() {
+    // Execute the animation when the page loads
+    $('html, body').animate({
+      scrollTop: 75 // Change this value to the desired number of pixels
+    }, 'slow');
+
+    // Execute the animation every time someone scrolls
+    $(window).scroll(function() {
       $('html, body').animate({
-        scrollTop: 70 // Change this value to the desired number of pixels
+        scrollTop: 75 // Change this value to the desired number of pixels
       }, 'slow');
     });
-  </script>
+  });
+</script>
 <div>
 <iframe id="ifra" src="/./h.html"></iframe>
 </div>
