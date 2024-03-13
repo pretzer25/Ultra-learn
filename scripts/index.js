@@ -69,7 +69,7 @@ form.addEventListener("submit", async (event) => {
             dev.style.right = "1%";
             dev.style.top = "1%";
             dev.onclick = function() {
-              Window.location.reload(true);
+window.location.reload(true);
               
             };
 
