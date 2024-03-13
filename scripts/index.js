@@ -69,7 +69,10 @@ form.addEventListener("submit", async (event) => {
             dev.style.right = "1%";
             dev.style.top = "1%";
             dev.onclick = function() {
-               window.location.reload(true);
+              
+var iframe = document.getElementsByTagName('iframe')[0];
+iframe.contentWindow.location.reload(true);
+              
             };
 
             document.body.appendChild(dev);
