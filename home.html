@@ -78,17 +78,26 @@ setInterval(function() {
 </div>
 <button id="but1" onclick="document.getElementById('ifra').src = '/./h.html';">Home</button>
 <button id="but2" onclick="document.getElementById('ifra').src = '/./fire1.html';">Search</button>
-<button id="but3" onclick="fullscreen()">Full screen</button>
+<button id="but3" onclick="fullscreen()">Full-screen</button>
 <script>
 function fullscreen() {
-    var div1 = document.getElementById("div1");
-var ifra = document.getElementById("ifra");
-var body = document.body;
+  var div1 = document.getElementById("div1");
+  var ifra = document.getElementById("ifra");
+  var body = document.body;
 
-if (div1 && ifra && body) {
-  body.insertBefore(ifra, body.firstChild);
-  div1.parentNode.removeChild(div1);
-}
+  if (document.fullscreenElement) {
+    if (div1 && ifra && body) {
+      body.insertBefore(ifra, body.firstChild);
+      div1.parentNode.removeChild(div1);
+    }
+  } else {
+    if (ifra.parentNode === body) {
+      if (div1) {
+        body.insertBefore(div1, ifra.nextSibling);
+        body.removeChild(ifra);
+      }
+    }
+  }
 }
 </script>
 <script>
