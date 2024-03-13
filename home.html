@@ -76,9 +76,13 @@ setInterval(function() {
 <div id="div1">
 <iframe id="ifra" src="/./h.html"></iframe>
 </div>
-<button id="but1" onclick="document.getElementById('ifra').src = '/./h.html';">Home</button>
-<button id="but2" onclick="document.getElementById('ifra').src = '/./fire1.html';">Search</button>
-<button id="but3" onclick="fullscreen()">Full screen</button>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<button id="but1" onclick="document.getElementById('ifra').src = '/./h.html';"><i class="fa fa-home w3-xxlarge"></i></button>
+<button id="but2" onclick="document.getElementById('ifra').src = '/./fire1.html';"><i class="fa fa-search w3-xxlarge"></i></button>
+<button id="but3" onclick="fullscreen()"><i class="material-icons" style="font-size:42px">fullscreen</i></button>
 <script>
 function fullscreen() {
     var div1 = document.getElementById("div1");
