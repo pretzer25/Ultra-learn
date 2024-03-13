@@ -32,18 +32,18 @@ form.addEventListener("submit", async (event) => {
             white.style.top = "0px";
             document.body.appendChild(white);
 
- /*           var loading = document.createElement('img');
+           var loading = document.createElement('img');
             loading.style.cursor="pointer";
-            loading.style.width = "125px";
-            loading.style.height = "125px";
+            loading.style.width = "225px";
+            loading.style.height = "225px";
             loading.style.position="absolute";
             loading.style.zIndex="101"; 
-            loading.src = "/img/loading.gif";
+            loading.src = "https://dakrolak.files.wordpress.com/2016/04/recycled-propoganda_loading-brain-gif.gif";
             loading.style.top="50%";
             loading.style.left="50%";
             loading.style.transform="translate(-50%, -50%)";
             document.body.appendChild(loading);
-*/
+
             var iframe = document.createElement('iframe');
 
             iframe.style.position = "absolute";
@@ -58,86 +58,6 @@ form.addEventListener("submit", async (event) => {
             document.body.appendChild(iframe);
 
 
-    
-            
-
-    
-    /*
-            var x = document.createElement('img');
-            x.style.cursor="pointer";
-            x.style.position = "absolute";
-            x.style.width = "50px";
-            x.style.height = "50px";
-            x.src = "/img/x.png";
-            x.style.zIndex = "1001";
-            x.style.right = "1%";
-            x.style.top = "1%";
-            x.onclick = function() {
-                window.location.reload(1);
-            };
-
-            document.body.appendChild(x);
-
-
-            var open = document.createElement('img');
-            open.style.cursor="pointer";
-            open.style.position = "absolute";
-            open.style.width = "50px";
-            open.style.height = "50px";
-            open.src = "/img/open.png";
-            open.style.zIndex = "1001";
-            open.style.right = "65px";
-            open.style.top = "1%";
-            open.onclick = function() {
-                if (document.getElementById("iframe").contentWindow.location.href!="about:blank"){
-                    window.open(document.getElementById("iframe").contentWindow.location.href);
-                }
-            };
-
-            document.body.appendChild(open);
-
-            var inpcont=document.createElement('div');
-            inpcont.style.maxWidth="80%";
-            inpcont.style.overflowX="scroll";
-            inpcont.style.overflowY="hidden";
-            inpcont.style.padding="5px";
-            inpcont.style.position="absolute";
-            inpcont.style.top="2.5%";
-            inpcont.style.left="75px";
-    
-            var inp = document.createElement('span');
-            inp.style.zIndex = '999999999999999999999999999999999999999999999999999999';
-            inp.id='inp';
-            inp.style.textWrap="nowrap";
-            inp.contentEditable="true";
-            inp.spellcheck="false";
-            inp.innerText="Run a bookmarklet..";
-            inp.style.color="black";
-            inp.style.top="2.5%";
-            inp.style.fontFamily="font-family: Arial,Helvetica Neue,Helvetica,sans-serif !important;";
-            inp.style.left="0px";
-            inp.style.outline="none";
-            inp.style.padding="3px";
-            setInterval(() => {
-              inp.style.backgroundColor="white";
-            },1);
-            inp.style.borderRadius="25px";
-            inp.style.border="2px solid black";
-            inp.style.position="relative";
-            window.addEventListener('keydown',function(e) {
-                if (e.keyIdentifier=='U+000A' || e.keyIdentifier=='Enter' || e.keyCode==13) {
-                    var code=document.getElementById("inp").innerText;
-                      var codescript=document.getElementById("iframe").contentWindow.document.createElement("script");
-                      codescript.innerHTML=code;
-                      document.getElementById("iframe").contentWindow.document.body.appendChild(codescript);
-                  document.getElementById("inp").innerText="Run a bookmarklet..";
-                    e.preventDefault();
-                }
-            });
-
-            document.body.appendChild(inpcont);
-            inpcont.appendChild(inp);
-  */
             var dev = document.createElement('img');
             dev.style.cursor="pointer";
             dev.style.position = "absolute";
