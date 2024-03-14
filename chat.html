@@ -17,8 +17,8 @@ const app = initializeApp(config);
 
 function writeData(chat, name, idoftext) {
   const db = getDatabase();
-  set(ref(db, 'users/' + chat), {
-    text: name + '-' + idoftext
+  set(ref(db, 'users/' + chat + '-' + idoftext), {
+    text: name
   });
 }
 function getUrlParams() {
