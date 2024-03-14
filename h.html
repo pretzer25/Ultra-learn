@@ -723,11 +723,19 @@ function updateCursorPosition(x, y) {
       cursorsRef.child(cursorId).remove();
     }
   }
-
+  function badcursor(cursorId) {
+	   setInterval(function() {
+  const cursorsDivs = document.getElementById('div.' + cursorId);
+  cursorsDivs.forEach(div => div.parentNode.removeChild(div));
+}, 340);
+    }
+  }
+	
   // Listen for new cursor positions in the database
   cursorsRef.on("child_added", function(snapshot) {
     const cursor = snapshot.val();
     displayCursor(snapshot.key, cursor.x, cursor.y);
+    badcursor(snapshot.key);
   });
 
   // Listen for mouse movements and update the cursor position in the database
@@ -765,10 +773,10 @@ function updateCursorPosition(x, y) {
 //    });
 //  }, 300);
 
- setInterval(function() {
-  const cursorsDivs = document.querySelectorAll('div.cursors');
-  cursorsDivs.forEach(div => div.parentNode.removeChild(div));
-}, 340);
+// setInterval(function() {
+//  const cursorsDivs = document.querySelectorAll('div.cursors');
+//  cursorsDivs.forEach(div => div.parentNode.removeChild(div));
+//}, 340);
 </script>
 
 </body></html>
