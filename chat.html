@@ -30,9 +30,15 @@ function getUrlParams() {
 
 const { text, username } = getUrlParams();
 
-writeData(username, text);
+const div = document.getElementById('chat');
 
-  const db = getDatabase();
+const paras = div.querySelectorAll('p');
+
+const idoftext = paras.length;
+
+writeData(username, text, idoftext);
+
+const db = getDatabase();
 const usersRef = ref(db, 'users');
 
 onValue(usersRef, (snapshot) => {
@@ -49,7 +55,6 @@ let newParagraph = document.createElement("p");
 // Set the text of the new paragraph element
 newParagraph.textContent = `${childKey}: ${textValue}`;
 
-// Get the div element with the id "chat"
 let chatDiv = document.getElementById("chat");
 
 // Append the new paragraph element to the chat div
