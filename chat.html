@@ -30,12 +30,12 @@ function getUrlParams() {
 
 const { text, username } = getUrlParams();
 
-const div = document.getElementById('chat');
-
-const paras = div.querySelectorAll('p');
-
-const idoftext = paras.length;
-console.log(idoftext);
+setInterval(function() {
+  const div = document.getElementById('chat');
+  const paras = div.querySelectorAll('p');
+  const idoftext = paras.length;
+  console.log(idoftext);
+}, 500);
 
 writeData(username, text, idoftext);
 
