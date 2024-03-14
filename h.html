@@ -731,9 +731,12 @@ function updateCursorPosition(x, y) {
   });
 
   // Listen for mouse movements and update the cursor position in the database
-  document.addEventListener("mousemove", function(event) {
+//  document.addEventListener("mousemove", function(event) {
+ //   updateCursorPosition(event.clientX, event.clientY);
+//  });
+ setInterval(function() {
     updateCursorPosition(event.clientX, event.clientY);
-  });
+}, 10);
 
   // Remove all cursors when the mouse leaves the page
   document.addEventListener("mouseleave", function() {
