@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Multiplayer Mouse Game</title>
-  </head>
-  <body>
-    <canvas id="canvas"></canvas>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
-    <script type="module"> import { getAuth } from 'https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js'; </script>
-    <script>
-      // Initialize Firebase
-var config = {
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+<script>
+  // Firebase configuration
+const firebaseConfig = {
+  databaseURL: "https://cursor-d3be2-default-rtdb.firebaseio.com/",
   apiKey: "AIzaSyB_hzolxZ5TRuPOPnjZ5dIUY_lsNfTOQi0",
   authDomain: "cursor-d3be2.firebaseapp.com",
   projectId: "cursor-d3be2",
@@ -18,80 +11,45 @@ var config = {
   messagingSenderId: "720790815052",
   appId: "1:720790815052:web:9846b1bf702bbca6c50fe9"
 };
-firebase.initializeApp(config);
-var database = firebase.database();
 
-// Get a reference to the canvas and set its dimensions
-var canvas = document.getElementById('canvas');
-canvas.width = window.innerWidth;
-canvas.height = window.innerHeight;
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
 
-// Get a reference to the drawing context
-var ctx = canvas.getContext('2d');
+// Get a reference to the database service
+const database = firebase.database();
 
-// Set the starting color and size of the cursor
-var cursorColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-var cursorSize = 5;
+// Get a reference to the cursors location in the database
+const cursorsRef = database.ref("cursors");
 
-// Set the interval for updating the cursor position
-var updateInterval = 400; // in milliseconds
-var lastUpdateTime = Date.now();
-
-// Set the position of the local cursor
-var cursorX = 0;
-var cursorY = 0;
-
-// Set the position of all remote cursors
-var remoteCursors = {};
-
-// Listen for changes to the cursor position data in the Firebase database
-database.ref('cursors').on('value', function(snapshot) {
-  // Get the list of all cursor positions
-  var cursors = snapshot.val();
-
-  // Clear the canvas
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-  // Draw the localcursor
-  ctx.beginPath();
-  ctx.arc(cursorX, cursorY, cursorSize, 0, 2 * Math.PI);
-  ctx.fillStyle = cursorColor;
-  ctx.fill();
-
-  // Draw all remote cursors
-  for (var id in cursors) {
-    if (cursors.hasOwnProperty(id)) {
-      var cursor = cursors[id];
-      ctx.beginPath();
-      ctx.arc(cursor.x, cursor.y, cursorSize, 0, 2 * Math.PI);
-      ctx.fillStyle = cursor.color;
-      ctx.fill();
-    }
-  }
-});
-
-// Update the local cursor position and send it to the Firebase database
-function updateCursorPosition() {
-  // Get the current mouse position
-  cursorX = event.clientX;
-  cursorY = event.clientY;
-
-  // Send the new cursor position to the Firebase database
-  database.ref('cursors/' + firebase.auth().currentUser.uid).set({
-    x: cursorX,
-    y: cursorY,
-    color: cursorColor
+// Function to update the cursor position in the database
+function updateCursorPosition(x, y) {
+  cursorsRef.push({
+    x: x,
+    y: y
   });
 }
 
-// Set up event listeners for mouse movement and updates
-canvas.addEventListener('mousemove', function(event) {
-  // Update the cursor position every 0.4 seconds
-  if (Date.now() - lastUpdateTime >= updateInterval) {
-    updateCursorPosition();
-    lastUpdateTime = Date.now();
-  }
+// Function to display the cursors on the page
+function displayCursor(x, y) {
+  const cursor = document.createElement("div");
+  cursor.style.position = "absolute";
+  cursor.style.width = "10px";
+  cursor.style.height = "10px";
+  cursor.style.borderRadius = "50%";
+  cursor.style.backgroundColor = "yellow";
+  cursor.style.left = x + "px";
+  cursor.style.top = y + "px";
+  document.body.appendChild(cursor);
+}
+
+// Listen for new cursor positions in the database
+cursorsRef.on("child_added", function(snapshot) {
+  const cursor = snapshot.val();
+  displayCursor(cursor.x, cursor.y);
 });
-    </script>
-  </body>
-</html>
+
+// Listen for mouse movements and update the cursor position in the database
+document.addEventListener("mousemove", function(event) {
+  updateCursorPosition(event.clientX, event.clientY);
+});
+</script>
