@@ -705,7 +705,7 @@ function updateCursorPosition(x, y) {
     const cursor = document.createElement("div");
     cursor.id = cursorId;
     cursor.className = "cursors";
-    cursor.style.position = "absolute";
+    cursor.style.position = "fixed";
     cursor.style.width = "10px";
     cursor.style.height = "10px";
     cursor.style.borderRadius = "50%";
@@ -756,10 +756,14 @@ function updateCursorPosition(x, y) {
   });
   document.body.appendChild(removeButton);
 
-setInterval(function() {
-  const cursorsDivs = document.querySelectorAll('div.cursors');
-  cursorsDivs.forEach(div => div.parentNode.removeChild(div));
-}, 300);
+  setInterval(function() {
+    const cursorsDivs = document.querySelectorAll('div.cursors');
+    cursorsDivs.forEach(div => {
+      const rect = div.getBoundingClientRect();
+      div.style.left = rect.left + "px";
+      div.style.top = rect.top + "px";
+    });
+  }, 300);
 </script>
 
 </body></html>
