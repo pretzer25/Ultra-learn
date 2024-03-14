@@ -2,7 +2,7 @@
 <html>
   <body>
       <script type="module">
-        import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js";
+        import { getDatabase, ref, set, onValue } from "https://www.gstatic.com/firebasejs/9.1.2/firebase-database.js";
         import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js';
 var config = {
   apiKey: "AIzaSyB_hzolxZ5TRuPOPnjZ5dIUY_lsNfTOQi0",
@@ -31,6 +31,19 @@ function getUrlParams() {
 const { text, username } = getUrlParams();
 
 writeData(username, text);
+
+  const db = getDatabase();
+const usersRef = ref(db, 'users');
+
+onValue(usersRef, (snapshot) => {
+  snapshot.forEach((childSnapshot) => {
+    const childKey = childSnapshot.key; // gets the folder name
+    const childData = childSnapshot.val(); // gets the data in the folder
+    const textValue = childData.text; // gets the value of the "text" property
+
+    console.log(`FOLDERNAME: ${childKey}, TEXT: ${textValue}`);
+  });
+});
       </script>
 <form action="./" method="get">
     <input name="text">
