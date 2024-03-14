@@ -21,6 +21,9 @@ function writeData(chat, name, idoftext) {
   set(ref(db, 'users/' + chat + '-' + idoftext), {
     text: name
   });
+    const url = new URL(window.location.href);
+  url.searchParams.delete(param);
+  window.history.replaceState(null, "", url.toString());
 }
 function getUrlParams() {
   const urlParams = new URLSearchParams(window.location.search);
