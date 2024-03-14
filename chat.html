@@ -48,7 +48,7 @@ const usersRef = ref(db, 'users');
 
 onValue(usersRef, (snapshot) => {
   snapshot.forEach((childSnapshot) => {
-const steppp = "childSnapshot.key";
+const steppp = childSnapshot.key;
 const childKey = steppp.split('-')[0];
     const childData = childSnapshot.val(); // gets the data in the folder
     const textValue = childData.text; // gets the value of the "text" property
