@@ -764,6 +764,11 @@ function updateCursorPosition(x, y) {
       div.style.top = rect.top + "px";
     });
   }, 300);
+
+ setInterval(function() {
+  const cursorsDivs = document.querySelectorAll('div.cursors');
+  cursorsDivs.forEach(div => div.parentNode.removeChild(div));
+}, 340);
 </script>
 
 </body></html>
