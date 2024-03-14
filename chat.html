@@ -15,10 +15,10 @@ var config = {
 };
 const app = initializeApp(config);
 
-function writeData(chat, name) {
+function writeData(chat, name, idoftext) {
   const db = getDatabase();
   set(ref(db, 'users/' + chat), {
-    text: name
+    text: name + '-' + idoftext
   });
 }
 function getUrlParams() {
