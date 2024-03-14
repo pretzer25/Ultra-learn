@@ -715,7 +715,6 @@ function updateCursorPosition(x, y) {
     document.body.appendChild(cursor);
   }
 
-  // Function to remove a cursor from the page and the database
   function removeCursor(cursorId) {
     const cursor = document.getElementById(cursorId);
     if (cursor) {
@@ -724,19 +723,14 @@ function updateCursorPosition(x, y) {
     }
   }
 
-  // Listen for new cursor positions in the database
   cursorsRef.on("child_added", function(snapshot) {
     const cursor = snapshot.val();
     displayCursor(snapshot.key, cursor.x, cursor.y);
   });
 
-  // Listen for mouse movements and update the cursor position in the database
-//  document.addEventListener("mousemove", function(event) {
- //   updateCursorPosition(event.clientX, event.clientY);
-//  });
- setInterval(function() {
+  document.addEventListener("mousemove", function(event) {
     updateCursorPosition(event.clientX, event.clientY);
-}, 10);
+  });
 
   // Remove all cursors when the mouse leaves the page
   document.addEventListener("mouseleave", function() {
