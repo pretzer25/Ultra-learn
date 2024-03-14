@@ -742,15 +742,15 @@ function updateCursorPosition(x, y) {
   });
 
   // Add a button to remove all cursors
-  const removeButton = document.createElement("button");
-  removeButton.textContent = "Remove All Cursors";
-  removeButton.addEventListener("click", function() {
-    cursorsRef.once("value", function(snapshot) {
-      snapshot.forEach(function(childSnapshot) {
-        removeCursor(childSnapshot.key);
-      });
-    });
-  });
+ // const removeButton = document.createElement("button");
+ // removeButton.textContent = "Remove All Cursors";
+ // removeButton.addEventListener("click", function() {
+ //   cursorsRef.once("value", function(snapshot) {
+ //     snapshot.forEach(function(childSnapshot) {
+//        removeCursor(childSnapshot.key);
+//      });
+ //   });
+ // });
   document.body.appendChild(removeButton);
 
   setInterval(function() {
