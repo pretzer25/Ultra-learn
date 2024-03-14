@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Multiplayer Mouse Game</title>
+  </head>
+  <body>
+    <canvas id="canvas"></canvas>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-database.js"></script>
+    <script>
+      // Initialize Firebase
+var config = {
+  apiKey: "AIzaSyB_hzolxZ5TRuPOPnjZ5dIUY_lsNfTOQi0",
+  authDomain: "cursor-d3be2.firebaseapp.com",
+  projectId: "cursor-d3be2",
+  storageBucket: "cursor-d3be2.appspot.com",
+  messagingSenderId: "720790815052",
+  appId: "1:720790815052:web:9846b1bf702bbca6c50fe9"
+};
+firebase.initializeApp(config);
+var database = firebase.database();
+
+// Get a reference to the canvas and set its dimensions
+var canvas = document.getElementById('canvas');
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+// Get a reference to the drawing context
+var ctx = canvas.getContext('2d');
+
+// Set the starting color and size of the cursor
+var cursorColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+var cursorSize = 5;
+
+// Set the interval for updating the cursor position
+var updateInterval = 400; // in milliseconds
+var lastUpdateTime = Date.now();
+
+// Set the position of the local cursor
+var cursorX = 0;
+var cursorY = 0;
+
+// Set the position of all remote cursors
+var remoteCursors = {};
+
+// Listen for changes to the cursor position data in the Firebase database
+database.ref('cursors').on('value', function(snapshot) {
+  // Get the list of all cursor positions
+  var cursors = snapshot.val();
+
+  // Clear the canvas
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+  // Draw the localcursor
+  ctx.beginPath();
+  ctx.arc(cursorX, cursorY, cursorSize, 0, 2 * Math.PI);
+  ctx.fillStyle = cursorColor;
+  ctx.fill();
+
+  // Draw all remote cursors
+  for (var id in cursors) {
+    if (cursors.hasOwnProperty(id)) {
+      var cursor = cursors[id];
+      ctx.beginPath();
+      ctx.arc(cursor.x, cursor.y, cursorSize, 0, 2 * Math.PI);
+      ctx.fillStyle = cursor.color;
+      ctx.fill();
+    }
+  }
+});
+
+// Update the local cursor position and send it to the Firebase database
+function updateCursorPosition() {
+  // Get the current mouse position
+  cursorX = event.clientX;
+  cursorY = event.clientY;
+
+  // Send the new cursor position to the Firebase database
+  database.ref('cursors/' + firebase.auth().currentUser.uid).set({
+    x: cursorX,
+    y: cursorY,
+    color: cursorColor
+  });
+}
+
+// Set up event listeners for mouse movement and updates
+canvas.addEventListener('mousemove', function(event) {
+  // Update the cursor position every 0.4 seconds
+  if (Date.now() - lastUpdateTime >= updateInterval) {
+    updateCursorPosition();
+    lastUpdateTime = Date.now();
+  }
+});
+    </script>
+  </body>
+</html>
