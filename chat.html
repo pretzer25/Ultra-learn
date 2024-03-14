@@ -30,12 +30,16 @@ function getUrlParams() {
 
 const { text, username } = getUrlParams();
 
-setInterval(function() {
-  const div = document.getElementById('chat');
-  const paras = div.querySelectorAll('p');
-  const idoftext = paras.length;
-  console.log(idoftext);
-}, 500);
+        function createRandomString(length) {
+  const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += chars.charAt(Math.floor(Math.random() * chars.length));
+  }
+  return result;
+}
+        
+ const idoftext = createRandomString(20)
 
 writeData(username, text, idoftext);
 
