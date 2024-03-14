@@ -21,13 +21,14 @@
   // Get a reference to the cursors location in the database
   const cursorsRef = database.ref("cursors");
 
-  // Function to update the cursor position in the database
-  function updateCursorPosition(x, y) {
-    cursorsRef.push({
-      x: x,
-      y: y
-    });
-  }
+function updateCursorPosition(x, y) {
+  const timestamp = firebase.database.ServerValue.TIMESTAMP;
+  cursorsRef.push({
+    x: x,
+    y: y,
+    timestamp: timestamp
+  });
+}
 
   // Function to display the cursors on the page
   function displayCursor(cursorId, x, y) {
