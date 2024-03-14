@@ -21,7 +21,11 @@ function writeData(chat, name, idoftext) {
   set(ref(db, 'users/' + chat + '-' + idoftext), {
     text: name
   });
-window.location.href="/./chat.html";
+if (new URLSearchParams(window.location.search).has('parameterName')) {
+  setTimeout(() => {
+    window.location.href = "/./chat.html";
+  }, 250);
+}
 }
 function getUrlParams() {
   const urlParams = new URLSearchParams(window.location.search);
