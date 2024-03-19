@@ -8,8 +8,13 @@
 </head>
 <body>
     <script>
+          var input = prompt("Please enter your input:");
+  if (input === null) {
+    return;
+  }
+        
         window.open("about:blank", "_blank").document.write(`
-       <title>New Tab</title>
+       <title>${input}</title>
         <link rel="icon" href="../logo.svg" type="image/x-icon">
         <body onload="window.addEventListener('beforeunload', (event) => {
     event.returnValue = 'This part is useless but I still added it...';
@@ -28,26 +33,7 @@
 </body>
 
 `);
-                window.open("about:blank", "_blank").document.write(`
-       <title>New Tab</title>
-        <link rel="icon" href="../logo.svg" type="image/x-icon">
-        <body onload="window.addEventListener('beforeunload', (event) => {
-    event.returnValue = 'This part is useless but I still added it...';
-});">
-    <style>
-    #ifra {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-</style>
-<iframe id="ifra" src="/./fer.html"></iframe>
-</body>
 
-`);
         function gio() {
   location.replace("https://www.google.com/")
 }
