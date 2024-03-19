@@ -9,15 +9,11 @@
 <body>
     <script>
         window.open("about:blank", "_blank").document.write(`
-        <body onload="var input = prompt("Tab title:");">
-        </body>
         <head>
        <title>${input}</title>
         <link rel="icon" href="../logo.svg" type="image/x-icon">
         </head>
-        <body onload="window.addEventListener('beforeunload', (event) => {
-    event.returnValue = 'This part is useless but I still added it...';
-});">
+        <body onload="var input = prompt("Tab title:");">
     <style>
     #ifra {
         position: fixed;
@@ -36,7 +32,7 @@
         function gio() {
   location.replace("https://www.google.com/")
 }
-gio(); // Call the gio function directly
+gio();
 </script>
 
 
