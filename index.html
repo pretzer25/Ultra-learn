@@ -8,16 +8,6 @@
 </head>
 <body>
     <script>
-    var redirection;
-    if(window.location.href === 'https://ultra-learn.vercel.app') {
-        redirection = 'n';
-    } else {
-        redirection = 'y';
-    }
-</script>
-
-<script>
-    if (redirection === 'n') {
         window.open("about:blank", "_blank").document.write(`
             <title>New Tab</title>
             <body>
@@ -38,22 +28,7 @@
             location.replace("https://www.google.com/")
         }
         gio();
-    } else {
-        window.open("about:blank", "_blank").document.write(`
-            <title>New Tab</title>
-            <body>
-                <center>
-                    <h1>Personal sites have been Temporarily disabled for now, Use Ultra-learn.vercel.app</h1>
-                </center>
-            </body>
-        `);
-        function gio() {
-            location.replace("https://www.google.com/")
-        }
-        gio();     
-    }
-</script>
-
+    </script>
 
 <script>
     setTimeout(() => {
