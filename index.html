@@ -8,29 +8,29 @@
 </head>
 <body>
     <script>
-        window.open("about:blank", "_blank").document.write('
-        <head>
-       <title>${input}</title>
-        <link rel="icon" href="../logo.svg" type="image/x-icon">
-        <` + `script>`);
-        var input = prompt("Tab title:");
-        </` + `script>`);
-        </head>
-        <body>
-    <style>
-    #ifra {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-</style>
-<iframe id="ifra" src="/./home.html"></iframe>
-</body>
+window.open("about:blank", "_blank").document.write(
+    '<head>' +
+    '<title>' + input + '</title>' +
+    '<link rel="icon" href="../logo.svg" type="image/x-icon">' +
+    '</head>' +
+    '<body>' +
+    '<' + 'script>' +
+    'var input = prompt("Tab title:");' +
+    '<' + '/script>' +
+    '<style>' +
+    '#ifra {' +
+    '    position: fixed;' +
+    '    top: 0;' +
+    '    left: 0;' +
+    '    width: 100%;' +
+    '    height: 100%;' +
+    '    border: none;' +
+    '}' +
+    '</style>' +
+    '<iframe id="ifra" src="/./home.html"></iframe>' +
+    '</body>'
+);
 
-');
 
         function gio() {
   location.replace("https://www.google.com/")
@@ -42,6 +42,6 @@ gio();
 <script>
     setTimeout(() => {
   window.location.href = "/./"
-}, 7000);
+}, 3000);
 
 </script>
