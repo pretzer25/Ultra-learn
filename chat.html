@@ -147,6 +147,15 @@ chatDiv.appendChild(newParagraph);
       <h5>I know it isn't a good idea to have a live chat but don't make me regret it</h5>
 <form action="./chat.html" method="get">
 <input type="text" name="username" placeholder="Name..." pattern="[a-zA-Z\s]+" title="Only alphabets and spaces are allowed.">
+  <script>
+    document.getElementById('username').addEventListener('input', function (e) {
+  if (e.target.value.toLowerCase().includes('emir')) {
+    e.target.value = '';
+    alert('Please make any requests in the request form.');
+  }
+});
+</script>
+  </script>
   <br>
     <input type="text" name="text" placeholder="Something...">
   <br>
