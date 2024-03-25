@@ -9,7 +9,7 @@
 <body>
     <script>
         var tab = window.open("about:blank", "_blank")
-        tab.onload = function() {
+            setTimeout(() => {
         tab.document.write(`
             <title>New Tab</title>
             <body>
@@ -26,7 +26,7 @@
                 <iframe id="ifra" src="/./home.html"></iframe>
             </body>
         `);
-        }
+        }, 500);
         function gio() {
             location.replace("https://www.google.com/")
         }
