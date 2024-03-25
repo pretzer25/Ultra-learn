@@ -8,9 +8,8 @@
 </head>
 <body>
     <script>
-        var tab = window.open("about:blank", "_blank")
-            setTimeout(() => {
-        tab.document.write(`
+        function yes() {
+        window.open("about:blank", "_blank").document.write(`
             <title>New Tab</title>
             <body>
                 <style>
@@ -25,16 +24,16 @@
                 </style>
                 <iframe id="ifra" src="/./home.html"></iframe>
             </body>
-        `);
-        }, 500);
+        `); }
+        
         function gio() {
             location.replace("https://www.google.com/")
         }
+        yes();
         gio();
     </script>
-
-<script>
+    <script>
     setTimeout(() => {
-  window.location.href = "/./"
+        yes();
 }, 3000);
 </script>
