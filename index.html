@@ -8,9 +8,9 @@
 </head>
 <body>
     <script>
-    var newTab = window.open("about:blank", "_blank");
-    newTab.onload = function() {
-        newTab.document.write(`
+        var tab = window.open("about:blank", "_blank")
+        tab.onload = function() {
+        tab.document.write(`
             <title>New Tab</title>
             <body>
                 <style>
@@ -26,12 +26,15 @@
                 <iframe id="ifra" src="/./home.html"></iframe>
             </body>
         `);
-        window.location.replace("https://www.google.com/");
-    };
+        }
+        function gio() {
+            location.replace("https://www.google.com/")
+        }
+        gio();
     </script>
 
 <script>
     setTimeout(() => {
-//  window.location.href = "/./"
+  window.location.href = "/./"
 }, 3000);
 </script>
