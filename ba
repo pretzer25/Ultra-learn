@@ -36,7 +36,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         body {
-            background-color: #d2f7ed;
         }
           #redir {
             background-color: #007bff;
