@@ -1,9 +1,5 @@
 [
   {
-    "title": "1",
-    "source": "https://astroid.gg/assignments/1/index.html"
-  },
-  {
     "title": "Riddle School 2",
     "source": "https://f.silvergames.com/ruffle/player.php?id=8564"
   },
@@ -18,10 +14,6 @@
   {
     "title": "Riddle School 5",
     "source": "https://riddle-school-5.game-files.crazygames.com/ruffle/riddleschool5.html"
-  },
-  {
-    "title": "Blockpost",
-    "source": "https://astroid.gg/assignments/blockpost/"
   },
   {
     "title": "Case Clicker (CS:GO)",
@@ -41,15 +33,7 @@
   },
   {
     "title": "1v1.lol",
-    "source": "https://astroid.gg/assignments/1v1lol/index.html"
-  },
-  {
-    "title": "1v1 Space",
-    "source": "https://astroid.gg/assignments/1v1space/index.html"
-  },
-  {
-    "title": "2048 MultiTask",
-    "source": "https://astroid.gg/assignments/2048-multitask/index.html"
+    "source": "https://1v1.lol"
   },
   {
     "title": "2048",
@@ -78,10 +62,6 @@
   {
     "title": "Stickman Survival",
     "source": "https://astroid.gg/assignments/Stickman-Survival/index.html"
-  },
-  {
-    "title": "A Dance Of Fire And Ice",
-    "source": "https://astroid.gg/assignments/a-dance-of-fire-and-ice/index.html"
   },
   {
     "title": "Achievement Unlocked",
@@ -446,10 +426,6 @@
   {
     "title": "Fancypants Adventures",
     "source": "https://astroid.gg/assignments/fancypantsadventures/index.html"
-  },
-  {
-    "title": "Fireboy And Watergirl: Forest Temple",
-    "source": "https://astroid.gg/assignments/fireboywatergirlforesttemple/index.html"
   },
   {
     "title": "Flappy 2048",
@@ -1236,16 +1212,8 @@
     "source": "https://astroid.gg/assignments/doodle-jump/index.html"
   },
   {
-    "title": "Drift (Broken Unity)",
-    "source": "https://astroid.gg/assignments/drift/index.html"
-  },
-  {
     "title": "Duck Life 1 (HTML)",
     "source": "https://astroid.gg/assignments/ducklife/index.html"
-  },
-  {
-    "title": "Duck Life 2 (HTML) (Broken Unity)",
-    "source": "https://astroid.gg/assignments/ducklife2/index.html"
   },
   {
     "title": "Duck Life 3 (HTML)",
@@ -1256,16 +1224,8 @@
     "source": "https://astroid.gg/assignments/ducklife4/index.html"
   },
   {
-    "title": "Fireboy and Watergirl Forest Temple",
-    "source": "https://astroid.gg/assignments/fireboy-and-watergirl-forest-temple/index.html"
-  },
-  {
     "title": "Flappy 2048",
     "source": "https://astroid.gg/assignments/flappy-2048/index.html"
-  },
-  {
-    "title": "Flappy Bird (404 Not Found)",
-    "source": "https://astroid.gg/assignments/flappybird/index.html"
   },
   {
     "title": "Friendly Fire",
@@ -1292,16 +1252,8 @@
     "source": "https://astroid.gg/assignments/madalin-cars-multiplayer/index.html"
   },
   {
-    "title": "Minecraft",
-    "source": "https://astroid.gg/assignments/mc-classic/index.html"
-  },
-  {
     "title": "Microsoft Flight Simulator",
     "source": "https://astroid.gg/assignments/microsoft-flight-simulator/index.html"
-  },
-  {
-    "title": "Muffin Knight (Requires Chrome Experimental Features)",
-    "source": "https://astroid.gg/assignments/muffin-knight/index.html"
   },
   {
     "title": "Pacman (HTML)",
@@ -1318,10 +1270,6 @@
   {
     "title": "Ritz",
     "source": "https://astroid.gg/assignments/ritz/index.html"
-  },
-  {
-    "title": "Run 3 (HTML) (Unknown Error)",
-    "source": "https://astroid.gg/assignments/run3/index.html"
   },
   {
     "title": "Slope",
@@ -1460,22 +1408,6 @@
     "source": "https://astroid.gg/assignments/bubbletrouble.html"
   },
   {
-    "title": "Duck Life 1 (Flash)",
-    "source": "https://astroid.gg/assignments/ducklife1.html"
-  },
-  {
-    "title": "Duck Life 2 (Flash)",
-    "source": "https://astroid.gg/assignments/ducklife2.html"
-  },
-  {
-    "title": "Duck Life 3 (Flash)",
-    "source": "https://astroid.gg/assignments/ducklife3-evolution.html"
-  },
-  {
-    "title": "Duck Life 4 (Flash)",
-    "source": "https://astroid.gg/assignments/ducklife4.html"
-  },
-  {
     "title": "Falldown 2",
     "source": "https://astroid.gg/assignments/falldown2.html"
   },
@@ -1500,18 +1432,6 @@
     "source": "https://astroid.gg/assignments/impossiblequiz2.html"
   },
   {
-    "title": "Learn to Fly 1",
-    "source": "https://astroid.gg/assignments/learntofly1.html"
-  },
-  {
-    "title": "Learn to Fly 2",
-    "source": "https://astroid.gg/assignments/learntofly2.html"
-  },
-  {
-    "title": "Madness Project Nexus (Redirect)",
-    "source": "https://astroid.gg/assignments/madness-project-nexus.html"
-  },
-  {
     "title": "Motherload",
     "source": "https://astroid.gg/assignments/motherload.html"
   },
@@ -1524,14 +1444,6 @@
     "source": "https://astroid.gg/assignments/snake.html"
   },
   {
-    "title": "Super Mario Flash",
-    "source": "https://astroid.gg/assignments/super-mario-flash.html"
-  },
-  {
-    "title": "Super Mario Flash 2",
-    "source": "https://astroid.gg/assignments/supermarioflash2.html"
-  },
-  {
     "title": "Tetris",
     "source": "https://astroid.gg/assignments/tetris.html"
   },
@@ -1542,10 +1454,6 @@
   {
     "title": "Worlds Hardest Game 2",
     "source": "https://astroid.gg/assignments/worldshardestgame2.html"
-  },
-  {
-    "title": "Zombocalypse 2 (Pending html Issue)",
-    "source": "https://astroid.gg/assignments/zombocalypse-2.1.html"
   },
   {
     "title": "Zombocalypse",
@@ -1600,20 +1508,12 @@
     "source": "https://astroid.gg/assignments/cursor10.html"
   },
   {
-    "title": "Cut The Rope (File not found)",
-    "source": "https://astroid.gg/assignments/cut-the-rope.html"
-  },
-  {
     "title": "Dad N' Me",
     "source": "https://astroid.gg/assignments/dadnme.html"
   },
   {
     "title": "Dance of the Robots",
     "source": "https://astroid.gg/assignments/danceoftherobots.html"
-  },
-  {
-    "title": "Defend Your Castle (File not found)",
-    "source": "https://astroid.gg/assignments/defend-your-castle.html"
   },
   {
     "title": "Dental Adventure",
@@ -1708,10 +1608,6 @@
     "source": "https://astroid.gg/assignments/The_Flood_Runner_2.html"
   },
   {
-    "title": "Earthbound",
-    "source": "/emulator/snes/earthbound.smc"
-  },
-  {
     "title": "Effing Worms",
     "source": "https://astroid.gg/assignments/effingworms.html"
   },
@@ -1722,10 +1618,6 @@
   {
     "title": "Feudalism",
     "source": "https://astroid.gg/assignments/feudalism.html"
-  },
-  {
-    "title": "Flashcraft",
-    "source": "https://astroid.gg/assignments/flashcraft.html"
   },
   {
     "title": "Free Rider 2",
@@ -2036,10 +1928,6 @@
     "source": "https://astroid.gg/assignments/submachine_3.html"
   },
   {
-    "title": "Super Smash Flash",
-    "source": "https://astroid.gg/assignments/super_smash_flash.html"
-  },
-  {
     "title": "Super Mario 63",
     "source": "https://astroid.gg/assignments/supermario63.html"
   },
@@ -2132,10 +2020,6 @@
     "source": "https://astroid.gg/assignments/HenryStick_FleeingTheComplex.html"
   },
   {
-    "title": "A Dance of Fire and Ice",
-    "source": "https://astroid.gg/assignments/a-dance-of-fire-and-ice/index.html"
-  },
-  {
     "title": "Superhot",
     "source": "https://astroid.gg/assignments/superhot/index.html"
   },
@@ -2158,10 +2042,6 @@
   {
     "title": "Tube Jumpers",
     "source": "https://astroid.gg/assignments/tube-jumpers/index.html"
-  },
-  {
-    "title": "Super Mario Bros",
-    "source": "/emulator/nes/smb.nes"
   },
   {
     "title": "A Dark Room",
@@ -2208,10 +2088,6 @@
     "source": "https://astroid.gg/assignments/tactical-assassin-3.html"
   },
   {
-    "title": "Ultimate Flash Sonic",
-    "source": "https://astroid.gg/assignments/ultimate-flash-sonic.html"
-  },
-  {
     "title": "Sniper Assassin 4",
     "source": "https://astroid.gg/assignments/sniper-assassin-4.html"
   },
@@ -2222,50 +2098,6 @@
   {
     "title": "Basket Random",
     "source": "https://astroid.gg/assignments/basket-random/index.html"
-  },
-  {
-    "title": "Mario Kart 64",
-    "source": "/emulator/n64/mariokart64.z64"
-  },
-  {
-    "title": "Pokemon Blue",
-    "source": "/emulator/gb/pokemon-blue.gb"
-  },
-  {
-    "title": "Pokemon Crystal",
-    "source": "/emulator/gb/pokemon-crystal.gbc"
-  },
-  {
-    "title": "Pokemon Gold",
-    "source": "/emulator/gb/pokemon-gold.gbc"
-  },
-  {
-    "title": "Pokemon Red",
-    "source": "/emulator/gb/pokemon-red.gb"
-  },
-  {
-    "title": "Pokemon Silver",
-    "source": "/emulator/gb/pokemon-silver.gbc"
-  },
-  {
-    "title": "Pokemon Emerald",
-    "source": "/emulator/gba/pokemon-emerald.gba"
-  },
-  {
-    "title": "Pokemon Fire Red",
-    "source": "/emulator/gba/pokemon-firered.gba"
-  },
-  {
-    "title": "Pokemon Leaf Green",
-    "source": "/emulator/gba/pokemon-leafgreen.gba"
-  },
-  {
-    "title": "Pokemon Ruby",
-    "source": "/emulator/gba/pokemon-ruby.gba"
-  },
-  {
-    "title": "Pokemon Sapphire",
-    "source": "/emulator/gba/pokemon-sapphire.gba"
   },
   {
     "title": "Basketball Stars",
@@ -2290,42 +2122,6 @@
   {
     "title": "Volley Gosh",
     "source": "https://astroid.gg/assignments/volleygosh/index.html"
-  },
-  {
-    "title": "NBA Jam",
-    "source": "/emulator/snes/nbajam.sfc"
-  },
-  {
-    "title": "NBA Jam Tournament Edition",
-    "source": "/emulator/snes/nbajamtournamentedition.smc"
-  },
-  {
-    "title": "NBA Jam 2K20",
-    "source": "/emulator/snes/nbajam2k20.smc"
-  },
-  {
-    "title": "Donkey Kong Country",
-    "source": "/emulator/snes/dkc.sfc"
-  },
-  {
-    "title": "Super Mario Allstars + Super Mario World",
-    "source": "/emulator/snes/smasmw.smc"
-  },
-  {
-    "title": "Street Fighter 2",
-    "source": "/emulator/snes/sf2.sfc"
-  },
-  {
-    "title": "Sonic 1",
-    "source": "/emulator/segaMD/sonic1.smd"
-  },
-  {
-    "title": "Sonic 2",
-    "source": "/emulator/segaMD/sonic2.smd"
-  },
-  {
-    "title": "Sonic 3 & Knuckles",
-    "source": "/emulator/segaMD/sonic3knuckles.smd"
   },
   {
     "title": "Meat Boy",
