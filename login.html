@@ -105,7 +105,9 @@ createUserWithEmailAndPassword(auth, email, password)
         password: password,
       })
     const auth = getAuth();
-      alert('Signed up! Remember to login!');
+    var name = "y";
+      localStorage.setItem('name', name);
+alert('Welcome!');
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -178,8 +180,8 @@ onAuthStateChanged(auth, (user) => {
       const auth = getAuth();
       signOut(auth).then(() => {
         // Sign-out successful.
-        alert('signed out');
-        localStorage.clear();
+        alert('Logged out');
+localStorage.removeItem("name");
         window.location.href = '/./';
       });
     });
