@@ -6,57 +6,38 @@
   <body>
       <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>      
 <script>
-function checkIframe() {
-        const ie = setInterval(() => {
-    const iframeElement = document.getElementById("iframe");
-    if (iframeElement) {
-        const iframeSource = iframeElement.src;
-        const iframe = document.getElementById("iframe");
-        const iframeDocument = iframe.contentDocument;
-        const element = iframeDocument.querySelector('.sc-hGPBjI.gGkQpt');
-        if (element) {
-        if (iframeSource.startsWith("https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe")) {
-            nowblock();
-        clearInterval(ie);
-        }
-    } else {
-        document.getElementById('iframe').style.display = 'block';
-//        document.querySelector('.overlay').style.display = 'none';
-    }
-    }
-        }, 500);
-}
+ function checkIframe() {
+    const iframe = document.getElementById('iframe');
 
-function nowblock() {
-                let count = 0;
-    let notfound = 0;
-    const limit = 10;
-    const max = 5;
-    const iframe = document.getElementById("iframe"); // Define the iframe variable
-        const reloadInterval = setInterval(() => {
-        const iframeDocument = iframe.contentDocument;
-        const element = iframeDocument.querySelector('.sc-hGPBjI.gGkQpt');
-        if (element) {
-            console.log('Class found inside the iframe.');
- //           document.querySelector('.overlay').style.display = 'block';
-            document.getElementById('iframe').style.display = 'none';
-            iframeDocument.location.reload();
-            count += 1;
-            notfound = 0;
-        } else {
-            console.log('Success ' + notfound + ' out of 5.');
-            notfound += 1;
-            if (notfound >= max) {
-                document.getElementById('iframe').style.display = 'block';
- //               document.querySelector('.overlay').style.display = 'none';
-                clearInterval(reloadInterval); // Clear the interval when max attempts are reached
+        if (iframe.startsWith("https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe")) {
+        // Wait for 500 milliseconds
+        setTimeout(() => {
+            const element = iframe.contentWindow.document.querySelector('.sc-hGPBjI.gGkQpt');
+            if (element) {
+                // Hide the iframe
+                iframe.style.display = 'none';
+
+                // Reload the iframe every 500 milliseconds
+                const reloadInterval = setInterval(() => {
+                    const newElement = iframe.contentWindow.document.querySelector('.sc-hGPBjI.gGkQpt');
+                    if (!newElement) {
+                        // Show the iframe when the element is not there
+                        iframe.style.display = 'block';
+                        clearInterval(reloadInterval);
+                    } else {
+                        // Reload the iframe
+                        iframe.contentWindow.location.reload();
+                    }
+                }, 500);
             }
-        }
-    }, 800);
+        }, 500);
+    } else {
+        console.log('No iframe with the ID "iframe" found.');
+    }
 }
 
+// Call the function to check the iframe
 checkIframe();
-
 </script>
   </body>
 </html>
