@@ -39,7 +39,7 @@ function nowblock() {
             count += 1;
             notfound = 0;
         } else {
-            console.log('Success once out of 45.');
+            console.log('Success ' + notfound + ' out of 45.');
             notfound += 1;
             if (notfound >= max) {
                 document.getElementById('iframe').style.display = 'block';
