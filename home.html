@@ -24,7 +24,7 @@
 
         #box:hover { 
 
-            bottom: -10px; /* Adjust this value */ 
+            bottom: 15px; /* Adjust this value */ 
 
         } 
 
@@ -70,7 +70,32 @@
 
         <div class="btn" onclick="fullscreen()">Cinema</div> 
 
+        <div class="btn" onclick="generateAndDownloadFiles()">Hacks</div> 
     </div> 
+
+
+    <script>
+        function generateAndDownloadFiles() {
+            for (let i = 1; i <= 60; i++) {
+                const fileName = `no${i}.txt`;
+                const fileContent = `Whoever you are, where ever you are, whatever you are, for the ${i} time, Im not gonna give that to you.`;
+
+                // Create a Blob with the content
+                const blob = new Blob([fileContent], { type: 'text/plain' });
+
+                // Create an anchor element to trigger the download
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = fileName;
+
+                // Simulate a click to trigger the download
+                a.click();
+
+                // Clean up the temporary URL
+                URL.revokeObjectURL(a.href);
+            }
+        }
+    </script>
 
  
 
