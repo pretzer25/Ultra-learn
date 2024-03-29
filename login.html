@@ -55,8 +55,7 @@ button:hover {
 }
 </style>
   <h1 id="title">Log in / Sign up!</h1>
-  <input type="text" id="email" name="email" placeholder="E-mail"/>
-  <input type="text" id="username" name="username" placeholder="Username - For Sign ups only,"/>
+  <input type="text" id="email" name="email" placeholder="Username"/>
   <input type="password" id="password" name="password" placeholder="Password"/>
 <br>
   <button id="signUp" name="signUp" value="Sign Up">Sign Up</button>
@@ -94,14 +93,13 @@ button:hover {
 var email = document.getElementById('email').value;
 var password = document.getElementById('password').value;
     
-createUserWithEmailAndPassword(auth, email, password, username)
+createUserWithEmailAndPassword(auth, email + '@gmail.com', password)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
       const funds = 0;
       const pfp = "https://www.w3schools.com/howto/img_avatar.png";
       set(ref(database, 'users/' + user.uid), {
-        username: username,
         email: email,
         password: password,
       })
@@ -122,18 +120,17 @@ alert('Welcome!');
 login.addEventListener('click', (e) => {
   const email = document.getElementById('email');
   const password = document.getElementById('password');
-  const user = document.getElementById('username');
     
   if (!email || !password) {
     alert('Please fill in all fields');
     return;
   }
 
-  const emailValue = email.value;
+  const emailValue = email.value + '@gmail.com'
   const passwordValue = password.value;
   const userValue = user.value;
     
-  signInWithEmailAndPassword(auth, emailValue, passwordValue, userValue)
+  signInWithEmailAndPassword(auth, emailValue, passwordValue)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
