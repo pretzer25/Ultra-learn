@@ -14,6 +14,10 @@ function checkIframe() {
     if (iframeElement) {
         const iframeSource = iframeElement.src;
         if (iframeSource.startsWith("https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe")) {
+              let count = 0;
+    let notfound = 0;
+    const limit = 10;
+    const max = 45;
             nowblock();
         }
     } else {
@@ -23,10 +27,6 @@ function checkIframe() {
 }
 
 function nowblock() {
-    let count = 0;
-    let notfound = 0;
-    const limit = 10;
-    const max = 45;
     const iframe = document.getElementById("iframe"); // Define the iframe variable
         const reloadInterval = setInterval(() => {
         const iframeDocument = iframe.contentDocument;
