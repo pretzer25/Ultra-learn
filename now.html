@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Hello, World!</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+      <h1 class="title">Hello World! </h1>
+      <p id="currentTime"></p>
+
+      <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-cfn%2Cnmw%2Cge%2Flouge-qtctkc-fmnvs-fmnvs%2Ccqs"></iframe>
+      <h1 class="overlay">hi</h1>            
+<script>
+  // Function to check if an iframe with the id "iframe" exists and its source URL starts with "https://example."
+function checkIframe() {
+    const iframeElement = document.getElementById("iframe");
+    if (iframeElement) {
+        const iframeSource = iframeElement.src;
+        if (iframeSource.startsWith("https://ultra-learn.vercel.app/service/hvtrs8%2F-cfn%2Cnmw%2C")) {
+            nowblock();
+        }
+    } else {
+        document.getElementById('iframe').style.display = 'block';
+        document.querySelector('.overlay').style.display = 'none';
+    }
+}
+
+function nowblock() {
+    let count = 0;
+    let notfound = 0;
+    const limit = 10;
+    const max = 45;
+    const iframe = document.getElementById("iframe"); // Define the iframe variable
+        const reloadInterval = setInterval(() => {
+        const iframeDocument = iframe.contentDocument;
+        const element = iframeDocument.querySelector('.sc-hGPBjI.gGkQpt');
+        if (element) {
+            console.log('Class found inside the iframe.');
+            document.querySelector('.overlay').style.display = 'block';
+            document.getElementById('iframe').style.display = 'none';
+            iframeDocument.location.reload();
+            count += 1;
+            notfound = 0;
+        } else {
+            console.log('Success once out of 45.');
+            notfound += 1;
+            if (notfound >= max) {
+                document.getElementById('iframe').style.display = 'block';
+                document.querySelector('.overlay').style.display = 'none';
+                clearInterval(reloadInterval); // Clear the interval when max attempts are reached
+            }
+        }
+    }, 500);
+}
+
+checkIframe();
+
+</script>
+  </body>
+</html>
