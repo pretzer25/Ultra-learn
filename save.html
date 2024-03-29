@@ -1,21 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Download Text Files</title>
+</head>
+<body>
+    <h1>Download Text Files Example</h1>
+    <button onclick="generateAndDownloadFiles()">Generate Files</button>
 
-<script>
-  // Example: Save a text file with some content
-for (let i = 1; i <= 10; i++) {
-  const fileName = `no.txt`;
-  const fileContent = `i am not gonna give you that bro ${i}.`;
+    <script>
+        function generateAndDownloadFiles() {
+            for (let i = 1; i <= 10; i++) {
+                const fileName = `no${i}.txt`;
+                const fileContent = `I am not gonna give you that, bro ${i}.`;
 
-  // Create a Blob with the content
-  const blob = new Blob([fileContent], { type: 'text/plain' });
+                // Create a Blob with the content
+                const blob = new Blob([fileContent], { type: 'text/plain' });
 
-  // Create an anchor element to trigger the download
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = fileName;
-  a.textContent = `Download ${fileName}`;
+                // Create an anchor element to trigger the download
+                const a = document.createElement('a');
+                a.href = URL.createObjectURL(blob);
+                a.download = fileName;
+                a.textContent = `Download ${fileName}`;
 
-  // Append the anchor to the document body
-  document.body.appendChild(a);
-}
-
-</script>
+                // Append the anchor to the document body
+                document.body.appendChild(a);
+            }
+        }
+    </script>
+</body>
+</html>
