@@ -20,7 +20,7 @@ function checkIframe() {
         }
     } else {
         document.getElementById('iframe').style.display = 'block';
-        document.querySelector('.overlay').style.display = 'none';
+//        document.querySelector('.overlay').style.display = 'none';
     }
     }
         }, 500);
@@ -37,7 +37,7 @@ function nowblock() {
         const element = iframeDocument.querySelector('.sc-hGPBjI.gGkQpt');
         if (element) {
             console.log('Class found inside the iframe.');
-            document.querySelector('.overlay').style.display = 'block';
+ //           document.querySelector('.overlay').style.display = 'block';
             document.getElementById('iframe').style.display = 'none';
             iframeDocument.location.reload();
             count += 1;
@@ -47,7 +47,7 @@ function nowblock() {
             notfound += 1;
             if (notfound >= max) {
                 document.getElementById('iframe').style.display = 'block';
-                document.querySelector('.overlay').style.display = 'none';
+ //               document.querySelector('.overlay').style.display = 'none';
                 clearInterval(reloadInterval); // Clear the interval when max attempts are reached
             }
         }
