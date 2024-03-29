@@ -31,7 +31,7 @@ function nowblock() {
                 let count = 0;
     let notfound = 0;
     const limit = 10;
-    const max = 3;
+    const max = 5;
     const iframe = document.getElementById("iframe"); // Define the iframe variable
         const reloadInterval = setInterval(() => {
         const iframeDocument = iframe.contentDocument;
@@ -44,7 +44,7 @@ function nowblock() {
             count += 1;
             notfound = 0;
         } else {
-            console.log('Success ' + notfound + ' out of 10.');
+            console.log('Success ' + notfound + ' out of 5.');
             notfound += 1;
             if (notfound >= max) {
                 document.getElementById('iframe').style.display = 'block';
