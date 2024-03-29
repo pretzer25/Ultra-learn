@@ -1,0 +1,189 @@
+
+<body>
+<div class="container">
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Impact&display=swap');
+
+#title {
+  font-family: 'Impact', sans-serif;
+  color: #fff;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+}
+    body {
+  background-image: linear-gradient(to right, blue, purple, red);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 20px;
+  width: 900px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button {
+  background-color: #f44336;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+button:hover {
+  background-color: #e53935;
+}
+</style>
+  <h1 id="title">Log in!</h1>
+  <input type="text" id="email" name="email" placeholder="E-mail"/>
+  <input type="password" id="password" name="password" placeholder="Password"/>
+<br>
+  <button id="signUp" name="signUp" value="Sign Up">Sign Up</button>
+  <button id="login" name="login" value="Login">Login</button>
+  <button id="google" onclick='window.location.href = "./google.html";'> 🌐 Signup with Google</button>
+  <button id="logout" name="logout" value="Logout">Logout</button>
+</div>
+</body>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
+  import { getDatabase, set, ref, update } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged, signOut, sendEmailVerification } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAQYdEIrsksIn6Rye1TZ9ZoyrLHU6jfHg4",
+    authDomain: "max-learn-b0415.firebaseapp.com",
+    databaseURL: "https://max-learn-b0415-default-rtdb.firebaseio.com",
+    projectId: "max-learn-b0415",
+    storageBucket: "max-learn-b0415.appspot.com",
+    messagingSenderId: "530326840871",
+    appId: "1:530326840871:web:5bd013191209993b409002",
+    measurementId: "G-EN6D2RRXHP"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const database = getDatabase(app);
+  const auth = getAuth();
+
+  const signUp = document.getElementById('signUp');
+  const login = document.getElementById('login');
+
+  signUp.addEventListener('click',(e) => {
+
+var email = document.getElementById('email').value;
+var password = document.getElementById('password').value;
+    
+createUserWithEmailAndPassword(auth, email, password)
+  .then((userCredential) => {
+    // Signed up 
+    const user = userCredential.user;
+      const funds = 0;
+      const pfp = "https://www.w3schools.com/howto/img_avatar.png";
+      set(ref(database, 'users/' + user.uid), {
+        email: email,
+        password: password,
+      })
+    const auth = getAuth();
+      alert('Signed up! Remember to login!');
+  })
+  .catch((error) => {
+    const errorCode = error.code;
+    const errorMessage = error.message;
+
+    alert(errorMessage);
+    // ..
+  });
+  })
+
+login.addEventListener('click', (e) => {
+  const email = document.getElementById('email');
+  const password = document.getElementById('password');
+
+  if (!email || !password) {
+    alert('Please fill in all fields');
+    return;
+  }
+
+  const emailValue = email.value;
+  const passwordValue = password.value;
+
+  signInWithEmailAndPassword(auth, emailValue, passwordValue)
+    .then((userCredential) => {
+      // Signed in 
+      const user = userCredential.user;
+      const dt = new Date();
+      
+    var name = "y";
+      localStorage.setItem('name', name);
+alert('Welcome!');
+
+const proceedHome = confirm('Do you want to proceed home?');
+
+if (proceedHome) {
+  window.location.href = '../';
+} else {
+}
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+
+      alert(errorMessage);
+    });
+});
+
+  
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+  const user = auth.currentUser;
+  onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+    
+    window.location.href = "../";
+  } else {
+
+  }
+      
+    });
+  
+
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    const uid = user.uid;
+
+    const logout = document.getElementById('logout');
+    logout.addEventListener('click', (e) => {
+      const auth = getAuth();
+      signOut(auth).then(() => {
+        // Sign-out successful.
+        alert('signed out');
+        localStorage.clear();
+        window.location.href = '/./';
+      });
+    });
+  }
+});
+
+</script>
