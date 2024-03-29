@@ -32,18 +32,6 @@ form.addEventListener("submit", async (event) => {
             white.style.top = "0px";
             document.body.appendChild(white);
 
-           var loading = document.createElement('img');
-            loading.style.cursor="pointer";
-            loading.style.width = "225px";
-            loading.style.height = "225px";
-            loading.style.position="absolute";
-            loading.style.zIndex="101"; 
-            loading.src = "https://dakrolak.files.wordpress.com/2016/04/recycled-propoganda_loading-brain-gif.gif";
-            loading.style.top="50%";
-            loading.style.left="50%";
-            loading.style.transform="translate(-50%, -50%)";
-            document.body.appendChild(loading);
-
             var iframe = document.createElement('iframe');
 
             iframe.style.position = "absolute";
