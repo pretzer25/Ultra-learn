@@ -162,14 +162,17 @@ if (proceedHome) {
   onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
-    
-         const auth = getAuth();
-      signOut(auth).then(() => {
+setTimeout(() => {
+    const auth = getAuth();
+    signOut(auth).then(() => {
         // Sign-out successful.
         alert('Logged out');
-localStorage.removeItem("name");
+        localStorage.removeItem("name");
         window.location.href = '/./h.html';
-      });
+    });
+}, 500);
+
+        
   } else {
 
   }
