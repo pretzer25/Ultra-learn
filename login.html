@@ -54,13 +54,13 @@ button:hover {
   background-color: #e53935;
 }
 </style>
-  <h1 id="title">Log in!</h1>
+  <h1 id="title">Log in / Sign up!</h1>
   <input type="text" id="email" name="email" placeholder="E-mail"/>
+  <input type="text" id="username" name="username" placeholder="Username - For Sign ups only,"/>
   <input type="password" id="password" name="password" placeholder="Password"/>
 <br>
   <button id="signUp" name="signUp" value="Sign Up">Sign Up</button>
   <button id="login" name="login" value="Login">Login</button>
-  <button id="google" onclick='window.location.href = "./google.html";'> 🌐 Signup with Google</button>
   <button id="logout" name="logout" value="Logout">Logout</button>
 </div>
 </body>
@@ -94,13 +94,14 @@ button:hover {
 var email = document.getElementById('email').value;
 var password = document.getElementById('password').value;
     
-createUserWithEmailAndPassword(auth, email, password)
+createUserWithEmailAndPassword(auth, email, password, username)
   .then((userCredential) => {
     // Signed up 
     const user = userCredential.user;
       const funds = 0;
       const pfp = "https://www.w3schools.com/howto/img_avatar.png";
       set(ref(database, 'users/' + user.uid), {
+        username: username,
         email: email,
         password: password,
       })
@@ -121,7 +122,8 @@ alert('Welcome!');
 login.addEventListener('click', (e) => {
   const email = document.getElementById('email');
   const password = document.getElementById('password');
-
+  const user = document.getElementById('username');
+    
   if (!email || !password) {
     alert('Please fill in all fields');
     return;
@@ -129,8 +131,9 @@ login.addEventListener('click', (e) => {
 
   const emailValue = email.value;
   const passwordValue = password.value;
-
-  signInWithEmailAndPassword(auth, emailValue, passwordValue)
+  const userValue = user.value;
+    
+  signInWithEmailAndPassword(auth, emailValue, passwordValue, userValue)
     .then((userCredential) => {
       // Signed in 
       const user = userCredential.user;
