@@ -146,7 +146,7 @@ alert('Welcome!');
 const proceedHome = confirm('Do you want to proceed home?');
 
 if (proceedHome) {
-  window.location.href = '../';
+  window.location.href = './h.html';
 } else {
 }
     })
@@ -166,7 +166,7 @@ if (proceedHome) {
   if (user) {
     const uid = user.uid;
     
-    window.location.href = "../";
+    window.location.href = "./h.html";
   } else {
 
   }
@@ -185,7 +185,7 @@ onAuthStateChanged(auth, (user) => {
         // Sign-out successful.
         alert('Logged out');
 localStorage.removeItem("name");
-        window.location.href = '/./';
+        window.location.href = '/./h.html';
       });
     });
   }
