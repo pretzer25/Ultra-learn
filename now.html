@@ -9,7 +9,7 @@
  function checkIframe() {
     const iframe = document.getElementById('iframe');
 
-        if (iframe.startsWith("https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe")) {
+            if (iframe && iframe.src.startsWith("https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe")) {
         // Wait for 500 milliseconds
         setTimeout(() => {
             const element = iframe.contentWindow.document.querySelector('.sc-hGPBjI.gGkQpt');
