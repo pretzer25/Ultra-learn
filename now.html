@@ -24,6 +24,7 @@
                         // Show the iframe when the element is not there
                         iframe.style.display = 'block';
                         clearInterval(reloadInterval);
+                        clearInterval(skibidi);
                     } else {
                         // Reload the iframe
                         iframe.contentWindow.location.reload();
@@ -36,8 +37,9 @@
     }
 }
 
-// Call the function to check the iframe
+        const skibidi = setInterval(() => {
 checkIframe();
+                 }, 1000);
 </script>
   </body>
 </html>
