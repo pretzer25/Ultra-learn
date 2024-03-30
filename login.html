@@ -154,16 +154,7 @@ login.addEventListener('click', (e) => {
   onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
-setTimeout(() => {
-    const auth = getAuth();
-    signOut(auth).then(() => {
-        alert('Logged out');
-        localStorage.removeItem("name");
-        window.location.href = '/./h.html';
-    });
-}, 500);
-
-        
+    alert('You are currently logged in.');
   } else {
 
   }
