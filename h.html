@@ -109,9 +109,15 @@
 	</style>
 </head>
 <body class="fade-in">
-		<script> 
-		    document.body.style.filter = "blur(0.8px)";
-	</script>
+<script>
+    const randomValue = Math.random();
+    if (randomValue < 0.5) {
+        document.body.style.filter = "blur(0.8px)";
+    } else {
+        document.body.style.opacity = "0.3";
+    }
+</script>
+
 
         <div id="div1">
     <center><h1>ULTRA-LEARN NETWORK.</h1>
