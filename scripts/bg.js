@@ -113,10 +113,10 @@ $(document).ready(function () {
     }
     else{
         var particlecolor="white";
-        var backgroundcolor="black";
+        var backgroundcolor="white";
         var hovercolor="#444";
         var navcolor="#333";
-        var glow="0 0 0px 0px rgb(255, 255, 255)";
+        var glow="0 0 100px 100px rgb(255, 255, 255)";
     }
 
     var style = document.createElement('style');
