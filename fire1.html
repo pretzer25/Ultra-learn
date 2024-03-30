@@ -62,6 +62,73 @@ function decodeBase64(base64) {
     
 </form>
 
+
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .par-container {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .par {
+            position: absolute;
+            border-radius: 50%;
+            background: orange;
+            animation: particle-animation 4s infinite;
+            opacity: 0;
+        }
+
+        @keyframes particle-animation {
+            0% {
+                transform: translate3d(calc(random(90) * 1vw), calc(random(90) * 1vh), 0);
+                opacity: 0;
+            }
+            50% {
+                transform: translate3d(0, 0, 0);
+                opacity: 1;
+            }
+            100% {
+                transform: translate3d(calc(random(90) * 1vw), calc(random(90) * 1vh), 0);
+                opacity: 0;
+            }
+        }
+    </style>
+
+    <div class="par-container">
+        <!-- Generate particles dynamically using JavaScript -->
+    </div>
+
+    <script>
+        // Create particles dynamically using JavaScript
+        const numParticles = 30;
+        const container = document.querySelector('.par-container');
+
+        for (let i = 0; i < numParticles; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('par');
+            container.appendChild(particle);
+
+            // Set random position
+            particle.style.left = `${Math.random() * 90}vw`;
+            particle.style.top = `${Math.random() * 90}vh`;
+
+            // Set random size
+            const size = Math.random() * 5 + 5;
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+
+            // Set animation delay
+            particle.style.animationDelay = `-${i * 0.1}s`;
+        }
+    </script>
+
+
+
 <style>
     @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap");
     .black{
