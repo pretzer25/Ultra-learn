@@ -112,11 +112,12 @@ $(document).ready(function () {
         var textcolor="#878787";
     }
     else{
-        var particlecolor="white";
-        var backgroundcolor="white";
-        var hovercolor="#1F3B4D";
-        var navcolor="#1F3B4D";
-        var glow="0 0 100px 100px rgb(255, 255, 255)";
+        var particlecolor="#ed9221";
+        var backgroundcolor="#ed4e4e";
+        var opacitychange="0.2";
+        var hovercolor="#ed4e4e";
+        var navcolor="#ed9221";
+        var glow="0 0 0px 0px rgb(255, 255, 255)";
     }
 
     var style = document.createElement('style');
