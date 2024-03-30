@@ -1,0 +1,95 @@
+<body>
+    <button onclick="createIframe()">Create iframe</button>
+    <div id="iframeContainer1"></div>
+    <div id="iframeContainer2"></div>
+    <div id="iframeContainer3"></div>
+    <div id="iframeContainer4"></div>
+    <div id="iframeContainer5"></div>
+    <div id="iframeContainer6"></div>
+    <div id="iframeContainer7"></div>
+    <div id="iframeContainer8"></div>
+    <div id="iframeContainer9"></div>
+    <div id="iframeContainer0"></div>
+    <script>
+        function createIframe() {
+            const iframeContainer1 = document.getElementById('iframeContainer1');
+            const iframeContainer2 = document.getElementById('iframeContainer2');
+            const iframeContainer3 = document.getElementById('iframeContainer3');
+            const iframeContainer4 = document.getElementById('iframeContainer4');
+            const iframeContainer5 = document.getElementById('iframeContainer5');
+            const iframeContainer6 = document.getElementById('iframeContainer6');
+            const iframeContainer7 = document.getElementById('iframeContainer7');
+            const iframeContainer8 = document.getElementById('iframeContainer8');
+            const iframeContainer9 = document.getElementById('iframeContainer9');
+            const iframeContainer0 = document.getElementById('iframeContainer0');
+            const iframe = document.createElement('iframe');
+            iframe.src = "https://example.com";
+            iframeContainer1.appendChild(iframe);
+
+            // Reset the iframe every 100 milliseconds
+            setInterval(() => {
+                iframeContainer1.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer1.appendChild(newIframe);
+            }, 10);
+
+      setInterval(() => {
+                iframeContainer2.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer2.appendChild(newIframe);
+            }, 10);
+            // Reset the iframe every 100 milliseconds
+            setInterval(() => {
+                iframeContainer3.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer3.appendChild(newIframe);
+            }, 10);
+            setInterval(() => {
+                iframeContainer4.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer4.appendChild(newIframe);
+            }, 10);
+            setInterval(() => {
+                iframeContainer5.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer5.appendChild(newIframe);
+            }, 10);
+            setInterval(() => {
+                iframeContainer6.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer6.appendChild(newIframe);
+            }, 10);
+            setInterval(() => {
+                iframeContainer7.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer7.appendChild(newIframe);
+            }, 10);
+            setInterval(() => {
+                iframeContainer8.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer8.appendChild(newIframe);
+            }, 10);
+            setInterval(() => {
+                iframeContainer9.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer9.appendChild(newIframe);
+            }, 10);
+            setInterval(() => {
+                iframeContainer0.innerHTML = '';
+                const newIframe = document.createElement('iframe');
+                newIframe.src = "https://example.com";
+                iframeContainer0.appendChild(newIframe);
+            }, 10);
+
+        }
+    </script>
+</body>
