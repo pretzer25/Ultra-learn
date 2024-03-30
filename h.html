@@ -111,12 +111,15 @@
 <body class="fade-in">
 <script>
     const randomValue = Math.random();
-    if (randomValue < 0.5) {
+    if (randomValue < 0.2) {
+        // Nothing happens
+    } else if (randomValue < 0.6) {
         document.body.style.filter = "blur(0.8px)";
     } else {
         document.body.style.opacity = "0.3";
     }
 </script>
+
 
 
         <div id="div1">
