@@ -31,8 +31,8 @@
 
 <form class="searchbox" id="searchbox">
     <input id="searchengine" type="hidden"/>
-<input class="search" id="search" placeholder='Search the web freely' type='text'/>
-<input class="google" id="search2" placeholder='Search google freely' type='text'/>
+<input style="color: #1F3B4D;" class="search" id="search" placeholder='Search the web freely' type='text'/>
+<input style="color: #1F3B4D;" class="google" id="search2" placeholder='Search google freely' type='text'/>
 <script>
 document.getElementById("search2").addEventListener("input", function() {
     document.getElementById("search").value = 'https://www.google.com/search?q=' + this.value;
