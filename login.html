@@ -9,6 +9,10 @@
   color: #fff;
   text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
 }
+#title1 {
+  font-family: 'Impact', sans-serif;
+  color: #fff;
+}
     body {
   background-image: linear-gradient(to right, blue, purple, red);
   display: flex;
@@ -58,13 +62,11 @@ button:hover {
   <input type="text" id="email" name="email" placeholder="Username"/>
   <input type="password" id="password" name="password" placeholder="Password"/>
 <br>
-<h3 id="title">To proceed, kindly acknowledge your agreement to our <a href="terms.html">Terms & Conditions</a> by clicking the buttons below.</h3>
+<h3 id="title1">To proceed, kindly acknowledge your agreement to our <a href="terms.html">Terms & Conditions</a> by clicking the buttons below.</h3>
   <button id="signUp" name="signUp" value="Sign Up">Sign Up</button>
   <button id="login" name="login" value="Login">Login</button>
     <br>
   <button id="logout" name="logout" value="Logout">Logout</button>
-</div>
-</body>
 
 <script type="module">
     // Import the functions you need from the SDKs you need
@@ -161,7 +163,8 @@ document.getElementById("email").remove();
 document.getElementById("password").remove();
 document.getElementById("signUp").remove();
 document.getElementById("login").remove();
-
+document.getElementById("title1").remove();
+      
 const logoutHeader = document.createElement("h1");
 logoutHeader.id = "title";
 logoutHeader.textContent = "Logout:";
@@ -194,3 +197,5 @@ localStorage.removeItem("name");
 });
 
 </script>
+    </div>
+</body>
