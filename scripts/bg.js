@@ -114,8 +114,8 @@ $(document).ready(function () {
     else{
         var particlecolor="white";
         var backgroundcolor="white";
-        var hovercolor="#444";
-        var navcolor="#333";
+        var hovercolor="#1F3B4D";
+        var navcolor="#1F3B4D";
         var glow="0 0 100px 100px rgb(255, 255, 255)";
     }
 
