@@ -19,22 +19,48 @@
           const iframee4 = iframe.contentDocument || iframe.contentWindow.document
           const iframee5 = iframe.contentDocument || iframe.contentWindow.document
           const element = iframee.querySelector('.sc-hGPBjI.gGkQpt')
-          const element = iframee1.querySelector('.sc-hGPBjI.gGkQpt')
-          const element = iframee2.querySelector('.sc-hGPBjI.gGkQpt')
-          const element = iframee3.querySelector('.sc-hGPBjI.gGkQpt')
-          const element = iframee4.querySelector('.sc-hGPBjI.gGkQpt')
-          const element = iframee5.querySelector('.sc-hGPBjI.gGkQpt')
+          const element1 = iframee1.querySelector('.sc-hGPBjI.gGkQpt')
+          const element2 = iframee2.querySelector('.sc-hGPBjI.gGkQpt')
+          const element3 = iframee3.querySelector('.sc-hGPBjI.gGkQpt')
+          const element4 = iframee4.querySelector('.sc-hGPBjI.gGkQpt')
+          const element5 = iframee5.querySelector('.sc-hGPBjI.gGkQpt')
           if (element) {
             console.log('Class found inside the iframe.')
             iframee.location.reload()
+          } else {
+            console.log('Class not found inside the iframe.')
+            }
+          if (element1) {
+            console.log('Class found inside the iframe.')
             iframee1.location.reload()
+          } else {
+            console.log('Class not found inside the iframe.')
+            }
+          if (element2) {
+            console.log('Class found inside the iframe.')
             iframee2.location.reload()
+          } else {
+            console.log('Class not found inside the iframe.')
+            }
+          if (element3) {
+            console.log('Class found inside the iframe.')
             iframee3.location.reload()
+          } else {
+            console.log('Class not found inside the iframe.')
+            }
+          if (element4) {
+            console.log('Class found inside the iframe.')
             iframee4.location.reload()
+          } else {
+            console.log('Class not found inside the iframe.')
+            }
+          if (element5) {
+            console.log('Class found inside the iframe.')
             iframee5.location.reload()
           } else {
             console.log('Class not found inside the iframe.')
             }
+
       }, 10)
 </script>
   </body>
