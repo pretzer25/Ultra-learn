@@ -1,7 +1,8 @@
 [
   {
     "title": "Case Clicker (CS:GO)",
-    "source": "https://csgo.mtsl.dk/"
+    "source": "https://csgo.mtsl.dk/",
+    "fix": "1"
   },
   {
     "title": "Case Clicker 2 (CS:GO)",
@@ -9,203 +10,149 @@
   },
   {
     "title": "100ng",
-    "source": "https://astroid.gg/assignments/100ng/index.html"
+    "source": "https://astroid.gg/assignments/100ng/index.html",
+    "fix": "1"
   },
   {
     "title": "1v1.lol",
-    "source": "https://1v1.lol"
+    "source": "https://1v1.lol",
+    "fix": "1"
   },
   {
     "title": "2048",
-    "source": "https://astroid.gg/assignments/2048/index.html"
+    "source": "https://astroid.gg/assignments/2048/index.html",
+    "fix": "1"
   },
   {
     "title": "9007199254740992",
-    "source": "https://astroid.gg/assignments/9007199254740992/index.html"
+    "source": "https://astroid.gg/assignments/9007199254740992/index.html",
+    "fix": "1"
   },
   {
     "title": "99 Balls",
-    "source": "https://astroid.gg/assignments/99balls/index.html"
+    "source": "https://astroid.gg/assignments/99balls/index.html",
+    "fix": "1"
   },
   {
     "title": "Doge Miner",
-    "source": "https://astroid.gg/assignments/DogeMiner/index.html"
+    "source": "https://astroid.gg/assignments/DogeMiner/index.html",
+    "fix": "1"
   },
   {
     "title": "HexGL",
-    "source": "https://astroid.gg/assignments/HexGL/index.html"
+    "source": "https://astroid.gg/assignments/HexGL/index.html",
+    "fix": "1"
   },
   {
     "title": "Offline Paradise",
-    "source": "https://astroid.gg/assignments/OfflineParadise/index.html"
+    "source": "https://astroid.gg/assignments/OfflineParadise/index.html",
+    "fix": "1"
   },
   {
     "title": "Achievement Unlocked",
-    "source": "https://astroid.gg/assignments/achievementunlocked/index.html"
+    "source": "https://astroid.gg/assignments/achievementunlocked/index.html",
+    "fix": "1"
   },
   {
     "title": "Adrenaline Challenge",
-    "source": "https://astroid.gg/assignments/adrenalinechallenge/index.html"
+    "source": "https://astroid.gg/assignments/adrenalinechallenge/index.html",
+    "fix": "1"
   },
   {
     "title": "A Dark Room",
-    "source": "https://astroid.gg/assignments/adarkroom/index.html"
+    "source": "https://astroid.gg/assignments/adarkroom/index.html",
+    "fix": "1"
   },
   {
     "title": "Adventure Drivers",
-    "source": "https://astroid.gg/assignments/adventure-drivers/index.html"
+    "source": "https://astroid.gg/assignments/adventure-drivers/index.html",
+    "fix": "1"
   },
   {
     "title": "Alien Hominid",
-    "source": "https://astroid.gg/assignments/alienhominid/index.html"
+    "source": "https://astroid.gg/assignments/alienhominid/index.html",
+    "fix": "1"
   },
   {
     "title": "Among Us",
-    "source": "https://astroid.gg/assignments/among-us/index.html"
+    "source": "https://astroid.gg/assignments/among-us/index.html",
+    "fix": "1"
   },
   {
     "title": "Angry Sharks",
-    "source": "https://astroid.gg/assignments/angry-sharks/index.html"
+    "source": "https://astroid.gg/assignments/angry-sharks/index.html",
+    "fix": "1"
   },
   {
     "title": "Astray",
-    "source": "https://astroid.gg/assignments/astray/index.html"
+    "source": "https://astroid.gg/assignments/astray/index.html",
+    "fix": "1"
   },
   {
     "title": "Avalanche",
-    "source": "https://astroid.gg/assignments/avalanche/index.html"
+    "source": "https://astroid.gg/assignments/avalanche/index.html",
+    "fix": "1"
   },
   {
     "title": "Awesome Tanks 2",
-    "source": "https://astroid.gg/assignments/awesometanks2/index.html"
-  },
-  {
-    "title": "backrooms",
-    "source": "https://astroid.gg/assignments/backrooms/index.html"
+    "source": "https://astroid.gg/assignments/awesometanks2/index.html",
+    "fix": "1"
   },
   {
     "title": "Bad Ice Cream 2",
-    "source": "https://astroid.gg/assignments/bad-ice-cream-2/index.html"
+    "source": "https://astroid.gg/assignments/bad-ice-cream-2/index.html",
+    "fix": "1"
   },
   {
     "title": "Bad Ice Cream 3",
-    "source": "https://astroid.gg/assignments/bad-ice-cream-3/index.html"
+    "source": "https://astroid.gg/assignments/bad-ice-cream-3/index.html",
+    "fix": "1"
   },
   {
     "title": "Bad Ice Cream",
-    "source": "https://astroid.gg/assignments/bad-ice-cream/index.html"
-  },
-  {
-    "title": "Baldis Basics",
-    "source": "https://astroid.gg/assignments/baldis-basics/index.html"
-  },
-  {
-    "title": "Ballistic Chickens",
-    "source": "https://astroid.gg/assignments/ballistic-chickens/index.html"
+    "source": "https://astroid.gg/assignments/bad-ice-cream/index.html",
+    "fix": "1"
   },
   {
     "title": "Basket Random",
-    "source": "https://astroid.gg/assignments/basket-random/index.html"
-  },
-  {
-    "title": "Basketball Stars",
-    "source": "https://astroid.gg/assignments/basketball-stars/index.html"
-  },
-  {
-    "title": "BasketBros.IO",
-    "source": "https://astroid.gg/assignments/basketbros-io/index.html"
-  },
-  {
-    "title": "Battle For Gondor",
-    "source": "https://astroid.gg/assignments/battleforgondor/index.html"
+    "source": "https://astroid.gg/assignments/basket-random/index.html",
+    "fix": "1"
   },
   {
     "title": "Big Red Button",
-    "source": "https://astroid.gg/assignments/bigredbutton/index.html"
-  },
-  {
-    "title": "Bit Life",
-    "source": "https://astroid.gg/assignments/bitlife/index.html"
+    "source": "https://astroid.gg/assignments/bigredbutton/index.html",
+    "fix": "1"
   },
   {
     "title": "Black Hole Square",
-    "source": "https://astroid.gg/assignments/blacholesquare/index.html"
-  },
-  {
-    "title": "Black Knight",
-    "source": "https://astroid.gg/assignments/blackknight/index.html"
-  },
-  {
-    "title": "Bloons TD",
-    "source": "https://astroid.gg/assignments/bloonstd/index.html"
-  },
-  {
-    "title": "Bloons TD2",
-    "source": "https://astroid.gg/assignments/bloonstd2/index.html"
-  },
-  {
-    "title": "Bloxors",
-    "source": "https://astroid.gg/assignments/bloxors/index.html"
+    "source": "https://astroid.gg/assignments/blacholesquare/index.html",
+    "fix": "1"
   },
   {
     "title": "Big NEON Tower Tiny Square",
-    "source": "https://www.coolmathgames.com/0-big-neon-tower-tiny-square/play"
+    "source": "https://www.coolmathgames.com/0-big-neon-tower-tiny-square/play",
+    "fix": "1"
   },
   {
     "title": "Bob The Robber 2",
-    "source": "https://astroid.gg/assignments/bobtherobber2/index.html"
-  },
-  {
-    "title": "Box Head 2 Play",
-    "source": "https://astroid.gg/assignments/boxhead2play/index.html"
+    "source": "https://astroid.gg/assignments/bobtherobber2/index.html",
+    "fix": "1"
   },
   {
     "title": "Breaking The Bank",
     "source": "https://astroid.gg/assignments/breakingthebank/index.html"
   },
   {
-    "title": "Boxing",
-    "source": "https://astroid.gg/assignments/boxing-random/index.html"
-  },
-  {
     "title": "Burger And Frights",
     "source": "https://astroid.gg/assignments/burger-and-frights/index.html"
-  },
-  {
-    "title": "Cannon Basketball 4",
-    "source": "https://astroid.gg/assignments/cannon-basketball-4/index.html"
   },
   {
     "title": "Canyon Defense",
     "source": "https://astroid.gg/assignments/canyondefense/index.html"
   },
   {
-    "title": "Cars Simulator",
-    "source": "https://astroid.gg/assignments//index.html"
-  },
-  {
-    "title": "Cell Machine",
-    "source": "https://astroid.gg/assignments/cell-machine/index.html"
-  },
-  {
-    "title": "Champion Island",
-    "source": "https://astroid.gg/assignments/champion-island/index.html"
-  },
-  {
-    "title": "Champion Archer",
-    "source": "https://astroid.gg/assignments/championarcher/index.html"
-  },
-  {
-    "title": "Chill Radio",
-    "source": "https://astroid.gg/assignments/chill-radio/index.html"
-  },
-  {
     "title": "Chrome Dino",
     "source": "https://astroid.gg/assignments/chrome-dino/index.html"
-  },
-  {
-    "title": "Circlo",
-    "source": "https://astroid.gg/assignments/circlo/index.html"
   },
   {
     "title": "Cluster Rush",
@@ -218,26 +165,6 @@
   {
     "title": "Connect 3",
     "source": "https://astroid.gg/assignments/connect3/index.html"
-  },
-  {
-    "title": "Cookie Clicker",
-    "source": "https://astroid.gg/assignments/cookie-clicker/index.html"
-  },
-  {
-    "title": "Core Ball",
-    "source": "https://astroid.gg/assignments/core-ball/index.html"
-  },
-  {
-    "title": "CraftMine",
-    "source": "https://astroid.gg/assignments/craftmine/index.html"
-  },
-  {
-    "title": "Rocket League",
-    "source": "https://astroid.gg/assignments/Rocket-League/index.html"
-  },
-  {
-    "title": "Creative Kill Chamber",
-    "source": "https://astroid.gg/assignments/creativekillchamber/index.html"
   },
   {
     "title": "Crossy Road",
@@ -260,28 +187,8 @@
     "source": "https://astroid.gg/assignments/ctr-tr/index.html"
   },
   {
-    "title": "Cube Field",
-    "source": "https://astroid.gg/assignments/cubefield/index.html"
-  },
-  {
     "title": "Cupcake 2048",
     "source": "https://astroid.gg/assignments/cupcake2048/index.html"
-  },
-  {
-    "title": "Dante",
-    "source": "https://astroid.gg/assignments/dante/index.html"
-  },
-  {
-    "title": "Deal Or No Deal",
-    "source": "https://astroid.gg/assignments/deal-or-no-deal/index.html"
-  },
-  {
-    "title": "Death Run 3D",
-    "source": "https://astroid.gg/assignments/death-run-3d/index.html"
-  },
-  {
-    "title": "Defend The Tank",
-    "source": "https://astroid.gg/assignments/defend-the-tank/index.html"
   },
   {
     "title": "Doctor Acorn 2",
@@ -298,10 +205,6 @@
   {
     "title": "Double Wires",
     "source": "https://astroid.gg/assignments/doublewires/index.html"
-  },
-  {
-    "title": "Dragon VS Bricks",
-    "source": "https://astroid.gg/assignments/dragon-vs-bricks/index.html"
   },
   {
     "title": "Draw The Hill",
@@ -332,60 +235,12 @@
     "source": "https://astroid.gg/assignments/ducklife4/index.html"
   },
   {
-    "title": "Edge Surf",
-    "source": "https://astroid.gg/assignments/edge-surf/index.html"
-  },
-  {
-    "title": "Edge Not Found",
-    "source": "https://astroid.gg/assignments/edgenotfound/index.html"
-  },
-  {
-    "title": "Eel Slap",
-    "source": "https://astroid.gg/assignments/eel-slap/index.html"
-  },
-  {
-    "title": "Elastic Man",
-    "source": "https://astroid.gg/assignments/elasticman/index.html"
-  },
-  {
-    "title": "Endless War 3",
-    "source": "https://astroid.gg/assignments/endlesswar3/index.html"
-  },
-  {
     "title": "Escaping the Prison",
     "source": "https://astroid.gg/assignments/escapingtheprison/index.html"
   },
   {
-    "title": "Evil Glitch",
-    "source": "https://astroid.gg/assignments/evil-glitch/index.html"
-  },
-  {
-    "title": "Evolution",
-    "source": "https://astroid.gg/assignments/Evolution/index.html"
-  },
-  {
-    "title": "Exo",
-    "source": "https://astroid.gg/assignments/exo/index.html"
-  },
-  {
     "title": "Factory Balls",
     "source": "https://astroid.gg/assignments/factoryballs/index.html"
-  },
-  {
-    "title": "Fair Squares",
-    "source": "https://astroid.gg/assignments/fairsquares/index.html"
-  },
-  {
-    "title": "Fake Virus",
-    "source": "https://astroid.gg/assignments/fake-virus/index.html"
-  },
-  {
-    "title": "Fancypants Adventures",
-    "source": "https://astroid.gg/assignments/fancypantsadventures/index.html"
-  },
-  {
-    "title": "Flappy 2048",
-    "source": "https://astroid.gg/assignments/flappy-2048/index.html"
   },
   {
     "title": "Flappy Bird",
@@ -394,10 +249,6 @@
   {
     "title": "Flippy Fish",
     "source": "https://astroid.gg/assignments/flippy-fish/index.html"
-  },
-  {
-    "title": "Five Nights At Wario's",
-    "source": "https://astroid.gg/assignments/fnaw/index.html"
   },
   {
     "title": "Friday Night Funkin",
