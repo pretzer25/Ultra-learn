@@ -156,7 +156,19 @@ login.addEventListener('click', (e) => {
   onAuthStateChanged(auth, (user) => {
   if (user) {
     const uid = user.uid;
-    //alert('You are currently logged in.');
+document.getElementById("title").remove();
+document.getElementById("email").remove();
+document.getElementById("password").remove();
+document.getElementById("signUp").remove();
+document.getElementById("login").remove();
+
+const logoutHeader = document.createElement("h1");
+logoutHeader.id = "title";
+logoutHeader.textContent = "Logout:";
+
+// Append the new <h1> element to the desired location (e.g., the body)
+document.body.appendChild(logoutHeader);
+
   } else {
 
   }
