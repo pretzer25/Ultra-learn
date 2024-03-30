@@ -106,6 +106,7 @@ createUserWithEmailAndPassword(auth, email + '@gmail.com', password)
     const auth = getAuth();
     var name = "y";
       localStorage.setItem('name', name);
+      window.location.href = "/./h.html";
   })
   .catch((error) => {
     const errorCode = error.code;
@@ -127,7 +128,6 @@ login.addEventListener('click', (e) => {
 
   const emailValue = email.value + '@gmail.com'
   const passwordValue = password.value;
-  const userValue = user.value;
     
   signInWithEmailAndPassword(auth, emailValue, passwordValue)
     .then((userCredential) => {
