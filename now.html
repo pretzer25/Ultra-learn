@@ -1,67 +1,35 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello, World!</title>
-  </head>
-  <body>
-      <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>      
-      <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>      
-      <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>      
-      <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>      
-      <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>      
-      <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>      
+<style>
+  iframe {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  z-index: 999999;
+}
+</style>
+<iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>
 <script>
-      const reloadInterval = setInterval(() => {
-          const iframee = iframe.contentDocument || iframe.contentWindow.document
-          const iframee1 = iframe.contentDocument || iframe.contentWindow.document
-          const iframee3 = iframe.contentDocument || iframe.contentWindow.document
-          const iframee2 = iframe.contentDocument || iframe.contentWindow.document
-          const iframee4 = iframe.contentDocument || iframe.contentWindow.document
-          const iframee5 = iframe.contentDocument || iframe.contentWindow.document
-          const element = iframee.querySelector('.sc-hGPBjI.gGkQpt')
-          const element1 = iframee1.querySelector('.sc-hGPBjI.gGkQpt')
-          const element2 = iframee2.querySelector('.sc-hGPBjI.gGkQpt')
-          const element3 = iframee3.querySelector('.sc-hGPBjI.gGkQpt')
-          const element4 = iframee4.querySelector('.sc-hGPBjI.gGkQpt')
-          const element5 = iframee5.querySelector('.sc-hGPBjI.gGkQpt')
-          if (element) {
-            console.log('Class found inside the iframe.')
-            iframee.location.reload()
-          } else {
-            console.log('Class not found inside the iframe.')
-            }
-          if (element1) {
-            console.log('Class found inside the iframe.')
-            iframee1.location.reload()
-          } else {
-            console.log('Class not found inside the iframe.')
-            }
-          if (element2) {
-            console.log('Class found inside the iframe.')
-            iframee2.location.reload()
-          } else {
-            console.log('Class not found inside the iframe.')
-            }
-          if (element3) {
-            console.log('Class found inside the iframe.')
-            iframee3.location.reload()
-          } else {
-            console.log('Class not found inside the iframe.')
-            }
-          if (element4) {
-            console.log('Class found inside the iframe.')
-            iframee4.location.reload()
-          } else {
-            console.log('Class not found inside the iframe.')
-            }
-          if (element5) {
-            console.log('Class found inside the iframe.')
-            iframee5.location.reload()
-          } else {
-            console.log('Class not found inside the iframe.')
-            }
+  setInterval(() => {
+  const iframe = document.querySelector('iframe'); // Assuming you have an iframe element
+  if (iframe) {
+    const iframeDocument = iframe.contentDocument || iframe.contentWindow.document;
+    const element = iframeDocument.querySelector('.sc-hGPBjI.gGkQpt');
+    if (element) {
+      iframeDocument.location.reload();
+    } else {
+      console.log('Class not found inside the iframe.');
+    }
+  } else {
+    console.log('Iframe not found.');
+  }
+}, 500);
 
-      }, 10)
+    console.log('Iframe found.');
 </script>
-  </body>
-</html>
