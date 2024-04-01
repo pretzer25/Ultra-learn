@@ -73,6 +73,12 @@
         <div class="btn" onclick="fullscreen()">Cinema</div> 
 
         <div class="btn" onclick="generateAndDownloadFiles()">Hacks</div> 
+            <script>
+                    function title() {
+        const userInput = prompt("New title:");
+        parent.document.title = userInput;
+}
+            </script>
     </div> 
 
 
@@ -152,10 +158,6 @@ if (div1 && ifra && body) {
   body.insertBefore(ifra, body.firstChild);
   div1.parentNode.removeChild(div1);
 }
-}
-function title() {
-        const userInput = prompt("New title:");
-        parent.document.title = userInput;
 }
 </script>
 <script>
