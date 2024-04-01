@@ -113,7 +113,7 @@ $(document).ready(function () {
     }
     else{
         var particlecolor="#ed9221";
-        var backgroundcolor="#ed4e4e";
+        var backgroundcolor="#000";
         var opacitychange="0.2";
         var hovercolor="#ed4e4e";
         var navcolor="#ed9221";
