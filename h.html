@@ -791,7 +791,7 @@
 
       onAuthStateChanged(auth, (user) => {
         if (user) {
-    var usernamea = user.email.split('@')[0];
+    var usernamea = user.email.slice(0, -10);
 document.addEventListener('DOMContentLoaded', (event) => {
       var welcomeMessage = document.getElementById('welcome');
   welcomeMessage.innerHTML = `Welcome to ULTRA-LEARN Network ${usernamea}.`;
