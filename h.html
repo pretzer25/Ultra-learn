@@ -7,6 +7,7 @@
         padding: 0;
         font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
           "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+	        opacity: 0;
       }
       div1 {
         width: 90%;
@@ -95,29 +96,29 @@
 	    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	  
   </head>
-  <body>
-    <script>
-      var opacity = 0;
-      var intervalID = 0;
-      window.onload = fadeIn;
+  <body id="body">
+<script>
+  var opacity = 0;
+  var intervalID = 0;
+  window.onload = fadeIn;
 
-      function fadeIn() {
-        setInterval(show, 2);
-      }
+  function fadeIn() {
+    setInterval(show, 2);
+  }
 
-      function show() {
-        var body = document.getElementById("body");
-        opacity = Number(
-          window.getComputedStyle(body).getPropertyValue("opacity"),
-        );
-        if (opacity < 1) {
-          opacity = opacity + 0.02;
-          body.style.opacity = opacity;
-        } else {
-          clearInterval(intervalID);
-        }
-      }
-    </script>
+  function show() {
+    var body = document.getElementById("body");
+    opacity = Number(
+      window.getComputedStyle(body).getPropertyValue("opacity")
+    );
+    if (opacity < 1) {
+      opacity = opacity + 0.02;
+      body.style.opacity = opacity;
+    } else {
+      clearInterval(intervalID);
+    }
+  }
+</script>
 
     <div id="div1">
       <center>
@@ -713,12 +714,7 @@
 	    
     </div>
     <center>
-	    <!DOCTYPE html>
-<html>
-<head>
-    <title>Get Public IP Address</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-</head>
 <body>
     <p>Your public IP address is: <span id="ip-address"></span>. Your battery percentage is <span id="bat"></span>.You are near Garland, TX, and your zipcode is approximately 75040. ISP: <span id="isp"></span> <span id="hostname"></span></p>
 
@@ -747,8 +743,6 @@
             $("#bat").text((battery.level * 100).toFixed(2) + '%');
         });
     </script>
-</body>
-</html>
 
       <p>views:</p>
       <script
