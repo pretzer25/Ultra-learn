@@ -4,13 +4,13 @@
 
             position: fixed; 
 
-            bottom: -95px; /* Adjust this value */ 
+            bottom: -175px; /* Adjust this value */ 
 
             right: 10px; /* Adjust this value */ 
 
             width: 100px; 
 
-            height: 150px; 
+            height: 230px; 
 
             background-color: #dad5cf; 
 
@@ -24,7 +24,7 @@
 
         #box:hover { 
 
-            bottom: 15px; /* Adjust this value */ 
+            bottom: -15px; /* Adjust this value */ 
 
         } 
 
@@ -68,6 +68,8 @@
 
         <div class="btn" onclick="document.getElementById('ifra').src = '/./fire1.html';">Web</div> 
 
+        <div class="btn" onclick="title()">Change Title</div> 
+            
         <div class="btn" onclick="fullscreen()">Cinema</div> 
 
         <div class="btn" onclick="generateAndDownloadFiles()">Hacks</div> 
@@ -150,6 +152,10 @@ if (div1 && ifra && body) {
   body.insertBefore(ifra, body.firstChild);
   div1.parentNode.removeChild(div1);
 }
+}
+function title() {
+        const userInput = prompt("New title:");
+        parent.document.title = userInput;
 }
 </script>
 <script>
