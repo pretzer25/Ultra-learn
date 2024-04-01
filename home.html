@@ -77,7 +77,7 @@
 <script>
     function changeTitle() {
         const userInput = prompt("Enter a new title, Type nothing to cancel:");
-        document.title = userInput || "New Tab"; // Set a default title if user input is empty
+        window.parent.document.title = userInput;
     }
 </script>
 
