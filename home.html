@@ -67,18 +67,20 @@
         <div class="btn" onclick="document.getElementById('ifra').src = '/./h.html';">Home</div> 
 
         <div class="btn" onclick="document.getElementById('ifra').src = '/./fire1.html';">Web</div> 
-
-        <div class="btn" onclick="title()">Change Title</div> 
             
         <div class="btn" onclick="fullscreen()">Cinema</div> 
 
         <div class="btn" onclick="generateAndDownloadFiles()">Hacks</div> 
-            <script>
-                    function title() {
-        const userInput = prompt("New title:");
-        parent.document.title = userInput;
-}
-            </script>
+        
+        <div class="btn" onclick="changeTitle()">Change Title</div>
+
+<script>
+    function changeTitle() {
+        const userInput = prompt("Enter a new title, Type nothing to cancel:");
+        document.title = userInput || "New Tab"; // Set a default title if user input is empty
+    }
+</script>
+
     </div> 
 
 
