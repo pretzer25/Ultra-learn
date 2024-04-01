@@ -6,7 +6,6 @@
 <script src="/error.js" defer></script>
 
 <div id="black" class="black"></div>
-<!-- <img src="/img/loading.gif" id="loadimg" class="loadimg"/> -->
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -33,7 +32,7 @@
     <input id="searchengine" type="hidden"/>
 <input style="color: #1F3B4D;" class="search" id="search" placeholder='Search the web freely' type='text'/>
     <center>
-<button id="butdon" style="color: #1F3B4D; border-radius: 10px 10px 10px 10px; padding: 15px 30px;">Search mode</button>
+<button id="butdon" style="color: #1F3B4D; border-radius: 10px 10px 10px 10px; padding: 15px 30px;">Google</button>
 <script>
 document.getElementById("butdon").addEventListener("click", function() {
     document.getElementById("search").value = 'https://www.google.com/search?q=';
@@ -74,7 +73,7 @@ function decodeBase64(base64) {
         .par {
             position: absolute;
             border-radius: 50%;
-            background: orange;
+            background: white;
             animation: particle-animation 4s infinite;
             opacity: 0;
             pointer-events: none; /* Allow click-through */
@@ -97,12 +96,11 @@ function decodeBase64(base64) {
     </style>
 
     <div class="par-container">
-        <!-- Generate particles dynamically using JavaScript -->
     </div>
 
     <script>
         // Create particles dynamically using JavaScript
-        const numParticles = 30;
+        const numParticles = 90;
         const container = document.querySelector('.par-container');
 
         for (let i = 0; i < numParticles; i++) {
