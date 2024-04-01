@@ -98,7 +98,7 @@
 
     </style>
     	<style>
-		body {
+		#div1 {
 			opacity: 0;
 			transition: opacity 1s ease-in-out;
 		}
@@ -109,17 +109,6 @@
 	</style>
 </head>
 <body class="fade-in">
-<script>
-    const randomValue = Math.random();
-    if (randomValue < 0.2) {
-        // Nothing happens
-    } else if (randomValue < 0.6) {
-        document.body.style.filter = "blur(0.6px)";
-    } else {
-        document.body.style.opacity = "0.6";
-    }
-</script>
-
 
 
         <div id="div1">
@@ -135,7 +124,7 @@
 	        <style>
         .video-thumbnail {
             display: inline-block;
-            border-radius: 10px;
+            border-radius: 0px;
             overflow: hidden;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
