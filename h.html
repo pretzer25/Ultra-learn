@@ -510,7 +510,6 @@ fetch('scripts/astroid.json')
         `}`).join('')}
     `;
 
-    // Insert the button HTML string into the DOM
     const outputElement = document.getElementById('output');
     outputElement.insertAdjacentHTML('beforeend', buttonHtml);
   });
@@ -557,10 +556,8 @@ fetch('scripts/astroid.json')
       }
     </style>
     <br><br><br><br><br><br><br><br>
-    <div class="ad">
+    <center>
       <h1>DAILY FACT:</h1>
-    </div>
-    <div class="ad">
       <p id="dateDisplay"></p>
       <script>
         const data = {
@@ -593,12 +590,7 @@ fetch('scripts/astroid.json')
 
         document.getElementById("dateDisplay").appendChild(messageElement);
       </script>
-    </div>
-      <h1>LATEST CHANGE:</h1>
-      <p>Trying to fix now gg.</p>
-    <br>
 
-    <center>
 <button id="playButton">Play</button>
 
 <audio id="myAudio" src="../Flow.mp3" loop></audio>
