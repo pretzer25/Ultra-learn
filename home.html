@@ -72,13 +72,20 @@
 
         <div class="btn" onclick="generateAndDownloadFiles()">Hacks</div> 
         
-        <div class="btn" onclick="changeTitle()">Change Title</div>
+        <div class="btn" onclick="changeTitle()">Change Cloak</div>
 
 <script>
     function changeTitle() {
-        const userInput = prompt("Enter a new title, Type nothing to cancel:");
+        const userInput = prompt("Enter a new title:");
         window.parent.document.title = userInput;
-    }
+
+        const parentFaviconLink = window.parent.document.querySelector('link[rel="icon"]');
+
+// Set the new favicon URL (replace with your actual path)
+const newFaviconUrl = prompt("Enter new Icon Link:");
+
+// Update the href attribute
+parentFaviconLink.href = newFaviconUrl;
 </script>
 
     </div> 
