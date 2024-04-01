@@ -711,20 +711,18 @@ restartGif()
         }
       </style>
 	    
-      <!--
 <button id="playButton">Play</button>
 
-<audio id="myAudio" src="../annoy.mp3" loop></audio>
+<audio id="myAudio" src="../Flow" loop></audio>
 
 <script> 
   const playButton = document.getElementById("playButton"); 
   const audioElement = document.getElementById("myAudio"); 
   playButton.addEventListener("click", () => {
   if (audioElement.paused || audioElement.ended) { 
-  audioElement.play(); playButton.textContent = "Pause"; } else {
+  audioElement.play(); playButton.textContent = "Skibidi Yeah!"; } else {
   audioElement.pause(); playButton.textContent = "Play"; } }); 
 </script>
--->
 	    
     </div>
     <center>
@@ -733,7 +731,6 @@ restartGif()
     <p>Your public IP address is: <span id="ip-address"></span>. Your battery percentage is <span id="bat"></span>.You are near Garland, TX, and your zipcode is approximately 75040. ISP: <span id="isp"></span> <span id="hostname"></span></p>
 
     <script>
-        // Get the client's IP address
         $.getJSON("https://api.ipify.org?format=json", function (data) {
             const ipAddress = data.ip;
             $("#ip-address").text(ipAddress);
