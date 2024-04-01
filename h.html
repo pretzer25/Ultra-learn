@@ -713,6 +713,43 @@
 	    
     </div>
     <center>
+	    <!DOCTYPE html>
+<html>
+<head>
+    <title>Get Public IP Address</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+    <p>Your public IP address is: <span id="ip-address"></span>. Your battery percentage is <span id="bat"></span>.You are near Garland, TX, and your zipcode is approximately 75040. ISP: <span id="isp"></span> <span id="hostname"></span></p>
+
+    <script>
+        // Get the client's IP address
+        $.getJSON("https://api.ipify.org?format=json", function (data) {
+            const ipAddress = data.ip;
+            $("#ip-address").text(ipAddress);
+
+            // Get additional information
+            $.getJSON(`https://ipapi.co/${ipAddress}/json/`, function (ipData) {
+                $("#isp").text(ipData.org);
+                $("#hostname").text(ipData.hostname);
+                $("#organization").text(ipData.org); // Display organization
+            });
+        });
+
+        // Get battery information
+        navigator.getBattery().then(function (battery) {
+            battery.addEventListener('levelchange', function () {
+                // Update battery percentage
+                $("#bat").text((battery.level * 100).toFixed(2) + '%');
+            });
+
+            // Initial battery level
+            $("#bat").text((battery.level * 100).toFixed(2) + '%');
+        });
+    </script>
+</body>
+</html>
+
       <p>views:</p>
       <script
         type="text/javascript"
