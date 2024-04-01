@@ -100,7 +100,6 @@
 <script>
   var opacity = 0;
   var intervalID = 0;
-  window.onload = fadeIn;
 
   function fadeIn() {
     setInterval(show, 2);
@@ -118,6 +117,8 @@
       clearInterval(intervalID);
     }
   }
+
+	setTimeout(fadeIn, 200)
 </script>
 
     <div id="div1">
