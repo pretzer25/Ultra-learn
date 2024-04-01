@@ -149,6 +149,10 @@
             width: 33%;
             height: auto;
           }
+
+	 #myGif {
+	    animation: gifAnimation 0.5s infinite;
+	 }
         </style>
       </center>
       <center>
@@ -166,9 +170,27 @@
           />
           <img
             src="https://static.wikia.nocookie.net/0cb14c7d-fe27-403b-bbd3-82623b2ba782"
+	    id="myGif"
             alt="Gif"
             onclick="go('https://www.youtube.com/watch?v=dQw4w9WgXcQ')"
           />
+		   <script>
+        const gifUrl = "https://static.wikia.nocookie.net/0cb14c7d-fe27-403b-bbd3-82623b2ba782";
+        const imgElementgif = document.getElementById("myGif");
+
+        const preloadedImage = new Image();
+        preloadedImage.src = gifUrl;
+
+        function restartGif() {
+            imgElement.src = "";
+            imgElement.src = gifUrl;
+        }
+
+        const restartButton = document.createElement("button");
+        restartButton.textContent = "Restart GIF";
+        restartButton.addEventListener("click", restartGif);
+        document.body.appendChild(restartButton);
+    </script>
         </div>
       </center>
       <br>
