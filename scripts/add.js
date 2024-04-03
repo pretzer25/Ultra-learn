@@ -1,4 +1,4 @@
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
     import { getDatabase, ref, set, update, get } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
 
@@ -17,15 +17,23 @@
     const database = getDatabase(app);
     const auth = getAuth(app);
 
-    const updateFunds = async (uid, amount) => {
+function yessidt() {
+      const updateFunds = async (uid, amount) => {
       const userRef = ref(database, `users/${uid}`);
       const snapshot = await get(userRef);
       const user = snapshot.val();
-      if (user) {
-        const newFunds = user.funds + amount;
+              const newFunds = user.funds + amount;
           update(userRef, { funds: newFunds });
           window.location.href = "/../";
+      }
+};
+          
+      onAuthStateChanged(auth, (user) => {
+        
+      if (user) {
+yessidt()
       } else {
         alert('Oops! A problem with your user ID happened!');
       }
-    };
+
+});
