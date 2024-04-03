@@ -28,9 +28,13 @@ yeaaas()
 });
 });
 
-  setTimeout(() => {
-alert('good boy');
-        }, 100);
-    
+// Open a new window and store the reference to it
+var newWindow = window.open('https://upload.wikimedia.org/wikipedia/en/9/9a/Among_Us_cover_art.jpg', '_blank');
+
+// Set a timeout to close the new window after 500 milliseconds
+setTimeout(function() {
+  newWindow.close();
+}, 500);
+
 
 </script>
