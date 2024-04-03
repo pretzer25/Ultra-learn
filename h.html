@@ -635,21 +635,25 @@ fetch('scripts/astroid.json')
       const auth = getAuth(app);
 
 document.addEventListener('DOMContentLoaded', (event) => {
-  onAuthStateChanged(auth, (user) => {
+  onAuthStateChanged(auth, async (user) => { // Mark this function as async
     if (user) {
       var usernamea = user.email.slice(0, -10);
       var welcomeMessage = document.getElementById('welcome');
 
-    const db = getDatabase(app);
-    const userRef = ref(db, 'users/' + user.uid); // Adjust this path according to your database structure
-    
-    const snapshot = await get(child(userRef, 'funds'));
-    if (snapshot) {
-      var fundy = snapshot.val();
-    } else {
-      console.log('No data available');
-    }
-      welcomeMessage.innerHTML = `Welcome ${usernamea}! You have ${fundy} Ultra-Funds!`;
+      const db = getDatabase(app);
+      const userRef = ref(db, 'users/' + user.uid); // Adjust this path according to your database structure
+      
+      try {
+        const snapshot = await get(child(userRef, 'funds'));
+        if (snapshot.exists()) {
+          var fundy = snapshot.val();
+          welcomeMessage.innerHTML = `Welcome ${usernamea}! You have ${fundy} Ultra-Funds!`;
+        } else {
+          console.log('No data available');
+        }
+      } catch (error) {
+        console.error('Error fetching funds:', error);
+      }
     } else {
       localStorage.removeItem("name");
       alert("Please Authenticate");
@@ -657,6 +661,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     }
   });
 });
+
     </script>
   </body>
 </html>
