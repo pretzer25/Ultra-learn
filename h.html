@@ -510,14 +510,23 @@ fetch('scripts/astroid.json')
     outputElement.insertAdjacentHTML('beforeend', buttonHtml);
   });
 </script><script>
+	 function point() {
+		 var addz = document.createElement('script');
+addz.src = '/../scripts/add.js';
+addz.type = 'module';
+document.body.appendChild(script2);
+
+	}
         let ggCalled = false;
 
         function gg(url) {
+		point()
           ggCalled = true;
           window.location.href = url;
         }
 
         function go(url) {
+		point()
           function encodeBase64(str) {
             return window.btoa(unescape(encodeURIComponent(str)));
           }
