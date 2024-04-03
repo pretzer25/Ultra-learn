@@ -644,6 +644,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
       var welcomeMessage = document.getElementById('welcome');
       welcomeMessage.innerHTML = `Welcome to ULTRA-LEARN Network ${usernamea}.`;
     } else {
+      localStorage.removeItem("name");
       alert("Please Authenticate");
       window.location.href = "login.html";
     }
