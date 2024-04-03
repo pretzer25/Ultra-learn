@@ -1,34 +1,39 @@
 
 <script>
-  let timeSpentOnPage = localStorage.getItem('timeSpent') ? parseInt(localStorage.getItem('timeSpent'), 10) : 0;
+let timeSpentOnPage = parseInt(localStorage.getItem('timeSpent'), 10) || 0;
 let interval;
 
 document.addEventListener('visibilitychange', function() {
-      interval = setInterval(() => {
   if (document.visibilityState === 'visible') {
+    // Start or resume the timer
+    interval = setInterval(() => {
       timeSpentOnPage++;
       localStorage.setItem('timeSpent', timeSpentOnPage.toString());
-        const minutes = Math.floor(timeSpentOnPage / 30);
+    }, 10); // Changed to 1 second for better performance
+  } else {
+    // Pause the timer
+    clearInterval(interval);
+  }
+});
+
+window.addEventListener('beforeunload', function() {
+  // Save the final values before leaving the page
+  clearInterval(interval);
+  const minutes = Math.floor(timeSpentOnPage / 60);
   const finalValue = Math.floor(minutes / 3);
   localStorage.setItem('finalValue', finalValue.toString());
   localStorage.setItem('minutes', minutes.toString());
   localStorage.setItem('timeSpentOnPage', timeSpentOnPage.toString());
-  }
-      }, 10);
-  } else {
-});
-
-window.addEventListener('beforeunload', function() {
-  clearInterval(interval);
 });
 
 window.addEventListener('load', function() {
+  // Display the saved values when the page is loaded
   const savedFinalValue = localStorage.getItem('finalValue');
-  const savedFinalValue2 = localStorage.getItem('minutes');
-  const savedFinalValue3 = localStorage.getItem('timeSpentOnPage');
+  const savedMinutes = localStorage.getItem('minutes');
+  const savedTimeSpent = localStorage.getItem('timeSpentOnPage');
   if (savedFinalValue) {
     const pElement = document.createElement('p');
-    pElement.textContent = `Last session time: ${savedFinalValue}:${savedFinalValue2}:${savedFinalValue3} units`;
+    pElement.textContent = `Last session time: ${savedFinalValue}:${savedMinutes}:${savedTimeSpent} units`;
     document.body.appendChild(pElement);
   }
 });
