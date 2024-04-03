@@ -102,10 +102,10 @@ createUserWithEmailAndPassword(auth, email + '@gmail.com', password)
     // Signed up 
     const user = userCredential.user;
       const funds = 0;
-      const pfp = "https://www.w3schools.com/howto/img_avatar.png";
       set(ref(database, 'users/' + user.uid), {
         email: email,
         password: password,
+        funds: funds,
       })
     const auth = getAuth();
     var name = "y";
@@ -180,7 +180,6 @@ onAuthStateChanged(auth, (user) => {
     logout.addEventListener('click', (e) => {
       const auth = getAuth();
       signOut(auth).then(() => {
-        // Sign-out successful.
         alert('Logged out');
 localStorage.removeItem("name");
         window.location.href = '/./h.html';
