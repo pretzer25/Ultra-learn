@@ -4,11 +4,11 @@ window.addEventListener('beforeunload', function() {
 });
 
 window.addEventListener('load', function() {
-  const savedFinalValue = localStorage.getItem('timeSpent');
   if (savedFinalValue) {
     const pElement = document.createElement('p');
+      const timeSpent = localStorage.getItem('timeSpent');
       const minutes = Math.floor(timeSpent / 60);
-      const finalValue = Math.floor(minutes / 3);
+      const savedFinalValue = Math.floor(minutes / 3);
     pElement.textContent = `Last session time: ${savedFinalValue} units`;
     document.body.appendChild(pElement);
   }
@@ -22,7 +22,6 @@ document.addEventListener('visibilitychange', function() {
       localStorage.setItem('timeSpent', timeSpentOnPage.toString());
     }, 1000);
   } else {
-    // Pause the timer
     clearInterval(interval);
   }
 });
