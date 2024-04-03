@@ -8,6 +8,11 @@ document.addEventListener('visibilitychange', function() {
     interval = setInterval(() => {
       timeSpentOnPage++;
       localStorage.setItem('timeSpent', timeSpentOnPage.toString());
+        const minutes = Math.floor(timeSpentOnPage / 30);
+  const finalValue = Math.floor(minutes / 3);
+  localStorage.setItem('finalValue', finalValue.toString());
+  localStorage.setItem('minutes', minutes.toString());
+  localStorage.setItem('timeSpentOnPage', timeSpentOnPage.toString());
     }, 10);
   } else {
     clearInterval(interval);
@@ -16,11 +21,6 @@ document.addEventListener('visibilitychange', function() {
 
 window.addEventListener('beforeunload', function() {
   clearInterval(interval);
-  const minutes = Math.floor(timeSpentOnPage / 60);
-  const finalValue = Math.floor(minutes / 3);
-  localStorage.setItem('finalValue', finalValue.toString());
-  localStorage.setItem('minutes', minutes.toString());
-  localStorage.setItem('timeSpentOnPage', timeSpentOnPage.toString());
 });
 
 window.addEventListener('load', function() {
