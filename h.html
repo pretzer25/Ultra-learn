@@ -615,6 +615,7 @@ fetch('scripts/astroid.json')
     <br>
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+  import { getDatabase, set, ref, update, get, child } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
       import {
         getAuth,
         onAuthStateChanged,
@@ -639,7 +640,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
     if (user) {
       var usernamea = user.email.slice(0, -10);
       var welcomeMessage = document.getElementById('welcome');
-      welcomeMessage.innerHTML = `Welcome to ULTRA-LEARN Network ${usernamea}.`;
+
+    const db = getDatabase(app);
+    const userRef = ref(db, 'users/' + user.uid); // Adjust this path according to your database structure
+    
+    const snapshot = await get(child(userRef, 'funds'));
+    if (snapshot.exists()) {
+      var fundy = snapshot.val();
+    } else {
+      console.log('No data available');
+    }
+      welcomeMessage.innerHTML = `Welcome ${usernamea}! You have ${fundy} Ultra-Funds!`;
     } else {
       localStorage.removeItem("name");
       alert("Please Authenticate");
