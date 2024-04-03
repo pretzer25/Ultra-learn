@@ -99,7 +99,6 @@ var password = document.getElementById('password').value;
     
 createUserWithEmailAndPassword(auth, email + '@gmail.com', password)
   .then((userCredential) => {
-    // Signed up 
     const user = userCredential.user;
       const funds = 0;
       set(ref(database, 'users/' + user.uid), {
@@ -116,8 +115,16 @@ createUserWithEmailAndPassword(auth, email + '@gmail.com', password)
     const errorCode = error.code;
     const errorMessage = error.message;
 
-    alert(errorMessage);
-    // ..
+if (errorMessage === 'Firebase: Error (auth/internal-error).') {
+    alert('Error! Something went wrong. Make Sure You Entered a Password and a Username');
+} else if (errorMessage === 'Firebase: Error (auth/invalid-login-credentials).') {
+    alert('Oops! Password or Username is Wrong!');
+} else if (errorMessage === 'YAYY') {
+    alert('Please enter your information.');
+} else {
+    alert('Oops! Something went wrong, if this issue contuniues after a while, please request an error fix in App requests, your error message was: ' + errorMessage);
+}
+
   });
   })
 
