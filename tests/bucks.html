@@ -9,7 +9,7 @@ document.addEventListener('visibilitychange', function() {
     interval = setInterval(() => {
       timeSpentOnPage++;
       localStorage.setItem('timeSpent', timeSpentOnPage.toString());
-    }, 10); // Changed to 1 second for better performance
+    }, 1000); // Changed to 1 second for better performance
   } else {
     // Pause the timer
     clearInterval(interval);
