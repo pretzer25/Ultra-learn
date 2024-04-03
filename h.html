@@ -515,18 +515,18 @@ fetch('scripts/astroid.json')
 addz.src = '/../scripts/add.js';
 addz.type = 'module';
 document.body.appendChild(addz);
+		 window.location.href = urll;
 
 	}
         let ggCalled = false;
 
         function gg(url) {
+				var urll = url;
 		point()
           ggCalled = true;
-          window.location.href = url;
         }
 
         function go(url) {
-		point()
           function encodeBase64(str) {
             return window.btoa(unescape(encodeURIComponent(str)));
           }
@@ -547,7 +547,8 @@ document.body.appendChild(addz);
           }
 
           ggCalled = true;
-          window.location.href = "/./fire1.html?query=" + encodedString;
+		var urll = "/./fire1.html?query=" + encodedString;
+				point()
         }
       </script>
     </div>
