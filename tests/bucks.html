@@ -4,8 +4,8 @@
 let interval;
 
 document.addEventListener('visibilitychange', function() {
+      interval = setInterval(() => {
   if (document.visibilityState === 'visible') {
-    interval = setInterval(() => {
       timeSpentOnPage++;
       localStorage.setItem('timeSpent', timeSpentOnPage.toString());
         const minutes = Math.floor(timeSpentOnPage / 30);
@@ -13,10 +13,9 @@ document.addEventListener('visibilitychange', function() {
   localStorage.setItem('finalValue', finalValue.toString());
   localStorage.setItem('minutes', minutes.toString());
   localStorage.setItem('timeSpentOnPage', timeSpentOnPage.toString());
-    }, 10);
-  } else {
-    clearInterval(interval);
   }
+      }, 10);
+  } else {
 });
 
 window.addEventListener('beforeunload', function() {
