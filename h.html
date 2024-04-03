@@ -633,6 +633,7 @@ fetch('scripts/astroid.json')
 
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
+      const db = getDatabase(app);
 
 document.addEventListener('DOMContentLoaded', (event) => {
   onAuthStateChanged(auth, async (user) => { // Mark this function as async
@@ -640,7 +641,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
       var usernamea = user.email.slice(0, -10);
       var welcomeMessage = document.getElementById('welcome');
 
-      const db = getDatabase(app);
       const userRef = ref(db, 'users/' + user.uid); // Adjust this path according to your database structure
       
       try {
