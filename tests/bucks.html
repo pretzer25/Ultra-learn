@@ -4,14 +4,12 @@ window.addEventListener('beforeunload', function() {
 });
 
 window.addEventListener('load', function() {
-  if (savedFinalValue) {
     const pElement = document.createElement('p');
       const timeSpent = localStorage.getItem('timeSpent');
       const minutes = Math.floor(timeSpent / 60);
       const savedFinalValue = Math.floor(minutes / 3);
     pElement.textContent = `Last session time: ${savedFinalValue} units`;
     document.body.appendChild(pElement);
-  }
   let timeSpentOnPage = parseInt(localStorage.getItem('timeSpent'), 10) || 0;
 let interval;
 
