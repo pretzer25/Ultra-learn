@@ -1,0 +1,33 @@
+
+<script>
+  let timeSpentOnPage = localStorage.getItem('timeSpent') ? parseInt(localStorage.getItem('timeSpent'), 10) : 0;
+let interval;
+
+document.addEventListener('visibilitychange', function() {
+  if (document.visibilityState === 'visible') {
+    interval = setInterval(() => {
+      timeSpentOnPage++;
+      localStorage.setItem('timeSpent', timeSpentOnPage.toString());
+    }, 1000);
+  } else {
+    clearInterval(interval);
+  }
+});
+
+window.addEventListener('beforeunload', function() {
+  clearInterval(interval);
+  const minutes = Math.floor(timeSpentOnPage / 60);
+  const finalValue = Math.floor(minutes / 3);
+  localStorage.setItem('finalValue', finalValue.toString());
+});
+
+window.addEventListener('load', function() {
+  const savedFinalValue = localStorage.getItem('finalValue');
+  if (savedFinalValue) {
+    const pElement = document.createElement('p');
+    pElement.textContent = `Last session time: ${savedFinalValue} units`;
+    document.body.appendChild(pElement);
+  }
+});
+
+</script>
