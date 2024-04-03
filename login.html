@@ -119,8 +119,8 @@ if (errorMessage === 'Firebase: Error (auth/internal-error).') {
     alert('Error! Something went wrong. Make Sure You Entered a Password and a Username');
 } else if (errorMessage === 'Firebase: Error (auth/invalid-login-credentials).') {
     alert('Oops! Password or Username is Wrong!');
-} else if (errorMessage === 'YAYY') {
-    alert('Please enter your information.');
+} else if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
+    alert('Oops! Your username is invalid! Make sure you are not using: ./:/@/`/;/]/[/\/=/-/+/-/!/#/$/%/^/&/*/(/) or any other symbols.');
 } else {
     alert('Oops! Something went wrong, if this issue contuniues after a while, please request an error fix in App requests, your error message was: ' + errorMessage);
 }
