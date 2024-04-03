@@ -16,7 +16,6 @@
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth(app);
-const amount = 10; // Make sure this is a number, not a string
 
 const updateFunds = async (uid, amount) => {
   const userRef = ref(database, `users/${uid}`);
