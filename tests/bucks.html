@@ -9,6 +9,10 @@ document.addEventListener('visibilitychange', function() {
     interval = setInterval(() => {
       timeSpentOnPage++;
       localStorage.setItem('timeSpent', timeSpentOnPage.toString());
+          const pElement = document.createElement('p');
+      const asd = document.visibilityState;
+    pElement.textContent = `${asd}`;
+    document.body.appendChild(pElement);
     }, 1); // Changed to 1 second for better performance
   } else {
     // Pause the timer
