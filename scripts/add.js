@@ -1,4 +1,4 @@
-      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
     import { getDatabase, ref, set, update, get } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-auth.js";
 
@@ -16,24 +16,24 @@
     const app = initializeApp(firebaseConfig);
     const database = getDatabase(app);
     const auth = getAuth(app);
+const amount = 10; // Make sure this is a number, not a string
 
-function yessidt() {
-      const updateFunds = async (uid, amount) => {
-      const userRef = ref(database, `users/${uid}`);
-      const snapshot = await get(userRef);
-      const user = snapshot.val();
-              const newFunds = user.funds + amount;
-          update(userRef, { funds: newFunds });
-          window.location.href = "/../";
-      }
+const updateFunds = async (uid, amount) => {
+  const userRef = ref(database, `users/${uid}`);
+  const snapshot = await get(userRef);
+  const userData = snapshot.val();
+  if (userData && typeof userData.funds === 'number') {
+    const newFunds = userData.funds + amount;
+    await update(userRef, { funds: newFunds });
+  } else {
+    alert('Oops! A problem with your user ID happened!');
+  }
 };
-          
-      onAuthStateChanged(auth, (user) => {
-        
-      if (user) {
-yessidt()
-      } else {
-        alert('Oops! A problem with your user ID happened!');
-      }
 
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    updateFunds(user.uid, amount);
+  } else {
+    alert('You must be signed in to update funds!');
+  }
 });
