@@ -1,16 +1,14 @@
-
 <script>
 window.addEventListener('beforeunload', function() {
   clearInterval(interval);
-  const minutes = Math.floor(timeSpentOnPage / 60);
-  const finalValue = Math.floor(minutes / 3);
-  localStorage.setItem('finalValue', finalValue.toString());
 });
 
 window.addEventListener('load', function() {
-  const savedFinalValue = localStorage.getItem('finalValue');
+  const savedFinalValue = localStorage.getItem('timeSpent');
   if (savedFinalValue) {
     const pElement = document.createElement('p');
+      const minutes = Math.floor(timeSpent / 60);
+      const finalValue = Math.floor(minutes / 3);
     pElement.textContent = `Last session time: ${savedFinalValue} units`;
     document.body.appendChild(pElement);
   }
