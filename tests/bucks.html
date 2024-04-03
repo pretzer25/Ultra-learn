@@ -8,7 +8,7 @@ document.addEventListener('visibilitychange', function() {
     interval = setInterval(() => {
       timeSpentOnPage++;
       localStorage.setItem('timeSpent', timeSpentOnPage.toString());
-    }, 1000);
+    }, 10);
   } else {
     clearInterval(interval);
   }
@@ -19,13 +19,17 @@ window.addEventListener('beforeunload', function() {
   const minutes = Math.floor(timeSpentOnPage / 60);
   const finalValue = Math.floor(minutes / 3);
   localStorage.setItem('finalValue', finalValue.toString());
+  localStorage.setItem('minutes', minutes.toString());
+  localStorage.setItem('timeSpentOnPage', timeSpentOnPage.toString());
 });
 
 window.addEventListener('load', function() {
   const savedFinalValue = localStorage.getItem('finalValue');
+  const savedFinalValue2 = localStorage.getItem('minutes');
+  const savedFinalValue3 = localStorage.getItem('timeSpentOnPage');
   if (savedFinalValue) {
     const pElement = document.createElement('p');
-    pElement.textContent = `Last session time: ${savedFinalValue} units`;
+    pElement.textContent = `Last session time: ${savedFinalValue}:${savedFinalValue2}:${savedFinalValue3} units`;
     document.body.appendChild(pElement);
   }
 });
