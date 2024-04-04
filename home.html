@@ -91,7 +91,6 @@ iframeStyle.width = '49%';
 
 var newIframe = document.createElement('iframe');
 newIframe.className = 'ifraa';
-newIframe.id = 'ifra';
 newIframe.style.width = '49%';
 newIframe.src = '/../h.html';
 
@@ -125,7 +124,8 @@ document.querySelector('.ifraa').insertAdjacentElement('afterend', newIframe);
     }
 
 #resize {
-          resize: horizontal;
+  resize: horizontal;
+  overflow: auto;
 }
     </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
