@@ -70,7 +70,7 @@
             
         <div class="btn" onclick="fullscreen()">Cinema</div> 
 
-        <div class="btn" onclick="generateAndDownloadFiles()">Hacks</div> 
+        <div class="btn" onclick="generateAndDownloadFiles()">Double window</div> 
         
         <div class="btn" onclick="changeTitle()">Change Cloak</div>
 
@@ -86,24 +86,16 @@
 
     <script>
         function generateAndDownloadFiles() {
-            for (let i = 1; i <= 60; i++) {
-                const fileName = `Schoology file (${i}).txt`;
-                const fileContent = `Whoever you are, where ever you are, whatever you are, for the ${i} time, Im not gonna give that to you.`;
+var iframeStyle = document.querySelector('ifraa').style;
+iframeStyle.width = '49%';
 
-                // Create a Blob with the content
-                const blob = new Blob([fileContent], { type: 'text/plain' });
+var newIframe = document.createElement('iframe');
+newIframe.className = 'ifraa';
+newIframe.style.width = '49%';
 
-                // Create an anchor element to trigger the download
-                const a = document.createElement('a');
-                a.href = URL.createObjectURL(blob);
-                a.download = fileName;
+// Insert the new iframe next to the existing one
+document.querySelector('.iframe').insertAdjacentElement('afterend', newIframe);
 
-                // Simulate a click to trigger the download
-                a.click();
-
-                // Clean up the temporary URL
-                URL.revokeObjectURL(a.href);
-            }
         }
     </script>
 
@@ -116,7 +108,7 @@
         margin: 0;
         padding: 0;
     }
-    #ifra {
+    .ifraa {
         width: 100%;
         height: 100%;
         border: none;
@@ -148,7 +140,7 @@ setInterval(function() {
   });
 </script>
 <div id="div1">
-<iframe id="ifra" src="/./h.html"></iframe>
+<iframe id="ifra" class="ifraa" src="/./h.html"></iframe>
 </div>
 <script>
 function fullscreen() {
