@@ -122,6 +122,10 @@ document.querySelector('.ifraa').insertAdjacentElement('afterend', newIframe);
         border-radius: 0.5em;
         box-shadow: 2px 3px 7px 2px rgba(0,0,0,0.02);
     }
+
+#resize {
+          resize: horizontal;
+}
     </style>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -140,7 +144,9 @@ setInterval(function() {
   });
 </script>
 <div id="div1">
+        <div id="resize">
 <iframe id="ifra" class="ifraa" src="/./h.html"></iframe>
+        </div>
 </div>
 <script>
 function fullscreen() {
