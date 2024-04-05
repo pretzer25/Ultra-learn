@@ -85,7 +85,9 @@
 
 
     <script>
+            let usedddd = 0;
         function generateAndDownloadFiles() {
+  if (usedddd === 0) {
 var iframeStyle = document.querySelector('.ifraa').style;
 iframeStyle.width = '49%';
 
@@ -95,7 +97,10 @@ newIframe.style.width = '49%';
 newIframe.src = '/../h.html';
 
 document.querySelector('.ifraa').insertAdjacentElement('afterend', newIframe);
-
+    usedddd++;
+                } else {
+          alert('Whoops! no going back!');
+                }
         }
     </script>
 
