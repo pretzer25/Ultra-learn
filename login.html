@@ -169,6 +169,8 @@ if (errorMessage === 'Firebase: Error (auth/internal-error).') {
     alert('Oops! Your password seems to be.... WEAK! Make sure your password is atleast 6 characters.');
 } else if (errorMessage === 'Firebase: Error (auth/invalid-email).') {
     alert('Oops! Your username is invalid! Make sure you are not using: ./:/@/`/;/]/[/\/=/-/+/-/!/#/$/%/^/&/*/(/) or any other symbols.');
+} else if (errorMessage === 'Firebase: Error (auth/user-disabled).') {
+    alert('You are banned until the end of internet, reason: you know');
 } else {
     alert('Oops! Something went wrong, if this issue contuniues after a while, please request an error fix in App requests, your error message was: ' + errorMessage);
 }
