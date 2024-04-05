@@ -93,12 +93,14 @@ iframeStyle.width = '49%';
 
 var newIframe = document.createElement('iframe');
 newIframe.className = 'ifraa';
+newIframe.id = 'ifraaa';
 newIframe.style.width = '49%';
 newIframe.src = '/../h.html';
 
 document.querySelector('.ifraa').insertAdjacentElement('afterend', newIframe);
     usedddd++;
                 } else {
+        var newIframe = document.getElementById('ifraaa');
 newIframe.src = '/../h.html';
                 }
         }
