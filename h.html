@@ -653,6 +653,11 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
       const db = getDatabase(app);
 
 document.addEventListener('DOMContentLoaded', (event) => {
+	if (localStorage.getItem('ban') === 'y') {
+	window.location.href = "/./ban.html";
+}
+
+	
   onAuthStateChanged(auth, async (user) => { // Mark this function as async
     if (user) {
       var usernamea = user.email.slice(0, -10);
@@ -665,6 +670,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (snapshot.exists()) {
           var fundy = snapshot.val();
           welcomeMessage.innerHTML = `Welcome ${usernamea}! You have ${fundy} Ultra-Funds!`;
+if (usernamea === 'hi') {
+  localStorage.setItem('ban', 'y');
+	window.location.href = "/./ban.html";
+}
         } else {
           console.log('No data available');
         }
