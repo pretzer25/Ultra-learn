@@ -654,8 +654,16 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 document.addEventListener('DOMContentLoaded', (event) => {
 	if (localStorage.getItem('ban') === 'y') {
+
+const specificDate = new Date('April 9, 2024 12:30:00');
+
+const now = new Date();
+
+const isAfterSpecificDate = now > specificDate;
+
+if (isAfterSpecificDate === 'false') {
 	window.location.href = "/./ban.html";
-}
+}}
 
 	
   onAuthStateChanged(auth, async (user) => { // Mark this function as async
@@ -672,7 +680,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
           welcomeMessage.innerHTML = `Welcome ${usernamea}! You have ${fundy} Ultra-Funds!`;
 if (usernamea === 'zecratlc') {
   localStorage.setItem('ban', 'y');
+	const specificDate = new Date('April 9, 2024 12:30:00');
+
+const now = new Date();
+
+const isAfterSpecificDate = now > specificDate;
+
+if (isAfterSpecificDate === 'false') {
 	window.location.href = "/./ban.html";
+}}
 }
         } else {
           console.log('No data available');
