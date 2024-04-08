@@ -654,7 +654,7 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
 	    function checkBanAndRedirect() {
   if (localStorage.getItem('ban') === 'y') {
-    const specificDate = new Date('April 9, 2024 12:30:00');
+    const specificDate = new Date('April 9, 2024 07:45:00');
     const now = new Date();
     if (now <= specificDate) {
       window.location.href = "/./ban.html";
