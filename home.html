@@ -173,3 +173,36 @@ if (div1 && ifra && body) {
     event.returnValue = 'This part is useless but I still added it...';
 });
 </script>
+
+<script>
+        window.onload = function() {
+    // Create a new iframe with a unique ID
+    var uniqueIframe = document.createElement('iframe');
+    uniqueIframe.id = 'uniqueIframeID';
+    uniqueIframe.style.position = 'fixed';
+    uniqueIframe.style.top = '0';
+    uniqueIframe.src = '/./moon.html';
+    uniqueIframe.style.left = '0';
+    uniqueIframe.style.width = '100%';
+    uniqueIframe.style.height = '100%';
+    uniqueIframe.style.zIndex = '9999999';
+    uniqueIframe.style.opacity = '0.5';
+    document.body.appendChild(uniqueIframe);
+
+    // After 5 seconds, fade out and remove the iframe
+    setTimeout(function() {
+        var fadeEffect = setInterval(function () {
+            if (!uniqueIframe.style.opacity) {
+                uniqueIframe.style.opacity = 1;
+            }
+            if (uniqueIframe.style.opacity > 0) {
+                uniqueIframe.style.opacity -= 0.01;
+            } else {
+                clearInterval(fadeEffect);
+                document.body.removeChild(uniqueIframe);
+            }
+        }, 50);
+    }, 5000);
+};
+
+</script>
