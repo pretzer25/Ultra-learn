@@ -10,8 +10,7 @@
           const element = iframeDocument.querySelector('.sc-hGPBjI.gGkQpt')
           if (element) {
             console.log('Class found inside the iframe.')
-            document.querySelector('.overlay').style.display = 'block'
-            document.getElementById('ifra').style.display = 'none'
+            document.getElementById('iframe').style.display = 'none'
             iframeDocument.location.reload()
             count += 1
             notfound = 0
@@ -20,8 +19,7 @@
             notfound += 1
             if (notfound >= max) {
               clearInterval(reloadInterval)
-              document.getElementById('ifra').style.display = 'block'
-              document.querySelector('.overlay').style.display = 'none'
+              document.getElementById('iframe').style.display = 'block'
             }
           }
         } else {
