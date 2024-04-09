@@ -7,54 +7,10 @@
             height: 100%;
             border: none;
         }
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-body {
-  font-family: 'Inter', sans-serif;
-  text-decoration: none;
-  margin: 0;
-  overflow-x: hidden;
-  overflow-y: hidden;
-  background-color: black;
-}
-.overlay {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: none;
-}
-h1 {
-  text-align: center;
-  color: white;
-  font-size: 50px;
-  white-space: nowrap;
-}
-
-p {
-  text-align: center;
-  color: white;
-  font-size: 25px;
-}
-
-a {
-  color: #6495ed;
-}
 </style>
 <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>
-
-<div class="overlay" id="overlay">
-      <h1>Now.gg fix is being applied, please wait.</h1>
-      <p>
-        It should only take 1-2 minutes, if it takes longer
-        <a href="chrome://settings/clearBrowserData">clear your cache at chrome://settings/clearBrowserData (If you only delete catch your progress on sites will be saved)</a> or ask our
-        <a href="https://www.bk.com/support">team!</a>
-      </p>
-    </div>
-
 <script>
-            happyhappy();
+            happyhappy()
 
         function happyhappy() {
         let count = 0
@@ -68,7 +24,6 @@ a {
           if (element) {
             console.log('Class found inside the iframe.')
             document.getElementById('iframe').style.display = 'none'
-            document.getElementById('overlay').style.display = 'block'
             iframeDocument.location.reload()
             count += 1
             notfound = 0
@@ -78,7 +33,6 @@ a {
             if (notfound >= max) {
               clearInterval(reloadInterval)
               document.getElementById('iframe').style.display = 'block'
-            document.getElementById('overlay').style.display = 'none'
             }
           }
         } else {
