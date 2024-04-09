@@ -678,7 +678,10 @@ async function userStateChanged(user) {
       if (snapshot.exists()) {
         var fundy = snapshot.val();
         welcomeMessage.innerHTML = `Welcome ${usernamea}! You have ${fundy} Ultra-Funds!`;
-        if (usernamea === 'zecratlc') {
+if (usernamea === 'habibi_zinger_and_beef_burger_with_frech_fries_and_soda' ||
+    usernamea === 'habibi_zinger_and_beef_burger_with_frech_fries_and_soda_with_a_free_subway_with_cookies_halal_food_places_and_halal_mcdonalds' ||
+    usernamea === 'biriyaniboy!' ||
+    usernamea === 'habibi_biryani') {
           localStorage.setItem('ban', 'y');
           checkBanAndRedirect();
         }
