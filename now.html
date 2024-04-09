@@ -7,8 +7,49 @@
             height: 100%;
             border: none;
         }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body {
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+  margin: 0;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+.overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: none;
+}
+h1 {
+  text-align: center;
+  color: white;
+  font-size: 50px;
+  white-space: nowrap;
+}
+
+p {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+}
+
+a {
+  color: #6495ed;
+}
 </style>
 <iframe id="iframe" src="https://ultra-learn.vercel.app/service/hvtrs8%2F-nmw%2Cge%2Fkfpaoe-slirpgt%3Darp%5Dpig%3Fcmm%2Crmbnoz.alkelt%24pcrvngr%3Filtgrqtglnap"></iframe>
+    <div class="overlay">
+      <h1>Now.gg fix is being applied, please wait.</h1>
+      <p>
+        It should only take 1-2 minutes, if it takes longer
+        <a href="https://support.google.com/accounts/answer/32050">clear your cache</a> or join our
+        <a href="https://discord.gg/interstellar">discord!</a>
+      </p>
+    </div>
 <script>
                 const iframeElement = document.getElementById("iframe");
     if (iframeElement) {
@@ -29,6 +70,7 @@
           if (element) {
             console.log('Class found inside the iframe.')
             document.getElementById('iframe').style.display = 'none'
+            document.getElementById('.overlay').style.display = 'block'
             iframeDocument.location.reload()
             count += 1
             notfound = 0
@@ -38,6 +80,7 @@
             if (notfound >= max) {
               clearInterval(reloadInterval)
               document.getElementById('iframe').style.display = 'block'
+            document.getElementById('.overlay').style.display = 'none'
             }
           }
         } else {
