@@ -74,7 +74,8 @@ window.location.reload(true);
             dev.style.top = "1%";
             dev.onclick = function() {
 alert('To ensure optimal performance, each time you click on this app, clear your cache before you start and reload this page, you can clear your cache by navigating to chrome://settings/clearBrowserData and selecting Cached images and files');
-        let count = 0
+const iframe = document.getElementById('iframe')
+              let count = 0
       let notfound = 0
       const limit = 10
       const max = 45
