@@ -654,20 +654,8 @@ import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/
 
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
-      const db = getDatabase(app);
-
-	    function checkBanAndRedirect() {
-  if (localStorage.getItem('ban') === 'y') {
-    const specificDate = new Date('April 9, 2024 07:45:00');
-    const now = new Date();
-    if (now <= specificDate) {
-   //   window.location.href = "/./ban.html";
-    }
-  }
-}
 	    
 document.addEventListener('DOMContentLoaded', (event) => {
-  checkBanAndRedirect();
   onAuthStateChanged(auth, userStateChanged);
 });
 	
@@ -675,21 +663,12 @@ async function userStateChanged(user) {
   if (user) {
     var usernamea = user.email.slice(0, -10);
     var welcomeMessage = document.getElementById('welcome');
-    const userRef = ref(db, 'users/' + user.uid);
-    
-    try {
-      const snapshot = await get(child(userRef, 'funds'));
-      if (snapshot.exists()) {
-        var fundy = snapshot.val();
-        welcomeMessage.innerHTML = `Welcome ${usernamea}!`;
-    }
+    welcomeMessage.innerHTML = `Welcome ${usernamea}!`;
   } else {
     localStorage.removeItem("ban");
     alert("Please Authenticate");
     window.location.href = "login.html";
   }
-}
-
     </script>
   </body>
 </html>
