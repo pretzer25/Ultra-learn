@@ -681,23 +681,13 @@ async function userStateChanged(user) {
       const snapshot = await get(child(userRef, 'funds'));
       if (snapshot.exists()) {
         var fundy = snapshot.val();
-        welcomeMessage.innerHTML = `Welcome ${usernamea}! You have ${fundy} Ultra-Funds!`;
-if (usernamea === 'habibi_zinger_and_beef_burger_with_frech_fries_and_soda' ||
-    usernamea === 'habibi_zinger_and_beef_burger_with_frech_fries_and_soda_with_a_free_subway_with_cookies_halal_food_places_and_halal_mcdonalds' ||
-    usernamea === 'biriyaniboy!' ||
-    usernamea === 'habibi_biryani') {
-        //  localStorage.setItem('ban', 'y');
-        //  checkBanAndRedirect();
-        }
-      } else {
-        console.log('No data available');
-      }
+        welcomeMessage.innerHTML = `Welcome ${usernamea}!`;
     } catch (error) {
       console.error('Error fetching funds:', error);
     }
   } else {
     localStorage.removeItem("ban");
-    alert("Please Authenticate, You might be seeing this message because all accounts had to be recently deleted because of a recent HUGE update! We do not think we will ever have to delete all accounts again but there is a chance that we might have to.");
+    alert("Please Authenticate");
     window.location.href = "login.html";
   }
 }
