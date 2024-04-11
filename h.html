@@ -504,8 +504,7 @@ fetch('scripts/astroid.json')
     const buttonHtml = `
       ${data.map(item => `
         ${item.img ? `
-          <button id="exampleButton" class="exampleButton" onclick="gg('${item.source}')">
-            <img id="exampleImage" src="${item.img}">
+          <button id="exampleButton" class="exampleButton" onclick="go('${item.source}')">
             <p id="exampleText">${item.title}</p>
           </button>
         ` : `
