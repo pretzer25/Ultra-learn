@@ -682,8 +682,6 @@ async function userStateChanged(user) {
       if (snapshot.exists()) {
         var fundy = snapshot.val();
         welcomeMessage.innerHTML = `Welcome ${usernamea}!`;
-    } catch (error) {
-      console.error('Error fetching funds:', error);
     }
   } else {
     localStorage.removeItem("ban");
