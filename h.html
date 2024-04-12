@@ -620,9 +620,33 @@ document.body.appendChild(addz);
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
-      <p>views:</p>
-<script src="https://static.elfsight.com/platform/platform.js" data-use-service-core defer></script>
-<div class="elfsight-app-7a743eec-ef2d-4cc9-bc12-2b9772bae57f" data-elfsight-app-lazy></div>    </center>
+    <p id="viewCount">Loading view count...</p>
+
+    <script>
+        const mrBeastChannelId = 'UCX6OQ3DkcsbYNE6H8uQQuVA'; // MrBeast channel ID
+        const tSeriesChannelId = 'UCq-Fj5jknLsUf-MWSy4_brA'; // T-Series channel ID
+        const apiKey = 'AIzaSyDUihGSyx9LmqiBQTUORxkDB-ZN3bLI5EE'; // Replace with your API key
+
+        async function fetchViewCount() {
+            try {
+                const mrBeastResponse = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${mrBeastChannelId}&key=${apiKey}`);
+                const mrBeastData = await mrBeastResponse.json();
+                const mrBeastViewCount = mrBeastData.items[0].statistics.viewCount;
+
+                const tSeriesResponse = await fetch(`https://www.googleapis.com/youtube/v3/channels?part=statistics&id=${tSeriesChannelId}&key=${apiKey}`);
+                const tSeriesData = await tSeriesResponse.json();
+                const tSeriesViewCount = tSeriesData.items[0].statistics.viewCount;
+
+                document.getElementById('viewCount').textContent = `MrBeast View count: ${mrBeastViewCount}, T-Series View count: ${tSeriesViewCount}`;
+            } catch (error) {
+                console.error('Error fetching view count:', error);
+                document.getElementById('viewCount').textContent = 'Error fetching view count. Please check the console for details.';
+            }
+        }
+
+        fetchViewCount();
+        setInterval(fetchViewCount, 1000);
+    </script>
     <br>
 	  
     <center>
