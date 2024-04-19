@@ -17,9 +17,9 @@ import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.1.0/
   const app = initializeApp(firebaseConfig);
 
   
-function writeUserData(imgid) {
+function writeUserData(imgid, plac) {
   const db = getDatabase();
-  set(ref(db, 'heads/'), {
+  set(ref(db, plac + '/'), {
     img: imgid,
   });
 }
@@ -33,7 +33,37 @@ function handleImageUpload(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
         const base64Image = e.target.result;
- writeUserData(base64Image)
+ writeUserData(base64Image, 'i')
+    };
+    reader.readAsDataURL(file);
+}
+
+
+          document.getElementById("backg").addEventListener("change", handleImageUpload);
+
+function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const base64Image = e.target.result;
+ writeUserData(base64Image, 'b')
+    };
+    reader.readAsDataURL(file);
+}
+
+
+          document.getElementById("face").addEventListener("change", handleImageUpload);
+
+function handleImageUpload(event) {
+    const file = event.target.files[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = function (e) {
+        const base64Image = e.target.result;
+ writeUserData(base64Image, 'f')
     };
     reader.readAsDataURL(file);
 }
