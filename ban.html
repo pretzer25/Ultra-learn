@@ -1,3 +1,5 @@
+<h1>WORLDS BIGGEST NFT COLLECTION MAKER, REVEALED IN 3 WEEKS. instructions: upload either a cloth, background, or a face and ai will use this to great thousands of NFTs, every image you add 2x the amount of NFTs there will be, there will be an online gallery hosting all NFTs.</h1>
+<br><h1>Clothes: ----- Background: ----- Face(eyes mouth and stuff):</h1><br>
 <input type="file" id="imageInput" accept="image/*">
 <input type="file" id="backg" accept="image/*">
 <input type="file" id="face" accept="image/*">
@@ -35,7 +37,7 @@ function handleImageUpload(event) {
     const reader = new FileReader();
     reader.onload = function (e) {
         const base64Image = e.target.result;
- writeUserData(base64Image, 'i')
+ writeUserData(base64Image, 's')
     };
     reader.readAsDataURL(file);
 }
