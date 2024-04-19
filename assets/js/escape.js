@@ -1,6 +1,6 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener("DOMContentLoaded", function() {
-  const randomNumber = Math.floor(Math.random() * 24) + 1;
+  const randomNumber = Math.floor(Math.random() * 5) + 1;
 
   if (randomNumber === 1) {
 document.addEventListener("visibilitychange", function() {
