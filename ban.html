@@ -32,7 +32,7 @@ function handleImageUpload(event) {
 
     const reader = new FileReader();
     reader.onload = function (e) {
-        const base64Image = e.target.result.split(",")[1]; // Extract base64 part
+        const base64Image = e.target.result;
  writeUserData(base64Image)
     };
     reader.readAsDataURL(file);
