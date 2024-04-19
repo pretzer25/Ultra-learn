@@ -26,8 +26,8 @@ import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.1.0/
   
 function writeUserData(imgid, plac) {
   const db = getDatabase();
-  set(ref(db, plac + Math.floor(Math.random() * (999999 - 55 + 1)) + 55 + '/'), {
-    img: imgid,
+  set(ref(db, plac + '/'), {
+    img: imgid + Math.floor(Math.random() * (999999 - 55 + 1)) + 55,
   });
 }
 
