@@ -1,77 +1,98 @@
-<h1>NO DUPLICATES OR WOMP WOMP - instructions: upload either clothes, backgrounds, or faces and AI will use this to creat thousands of NFTs, every image you add, twice the amount of NFTs there will be, there will be an online gallery hosting all NFTs in 3 weeks.</h1>
-<br>
-<h1>Topic: Animals, Plants, Nature</h1>
-<br>
-<h1>Clothes: ----- Background: ----- Face(eyes mouth and stuff):</h1><br>
-<input type="file" id="imageInput" accept="image/*">
-<input type="file" id="backg" accept="image/*">
-<input type="file" id="face" accept="image/*">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Data Center</title>
+</head>
+<body>
+    <h1>Local Data Center</h1>
+    <h5>Instructions for getting data: click all buttons one by one and follow the instructions, after putting all data in a note (seperate types of data to make it easier) make sure to save it in a safe place like google drive</h5>
+<button onclick="a()">Get localStorage</button><button onclick="b()">Get sessionStorage</button><button onclick="c()">Get Cookies</button>
+ <br>
+ <!-- Input fields for localStorage, sessionStorage, and cookies -->
+ <h5>Instructions for data recovery: one by one paste your data in the fields and when you are all done click set data</h5>
+    <form id="dataForm">
+        <label for="localStorageInput">localStorage:</label>
+        <input type="text" id="localStorageInput" placeholder="Enter key=value pairs">
+        <br>
+        <label for="sessionStorageInput">sessionStorage:</label>
+        <input type="text" id="sessionStorageInput" placeholder="Enter key=value pairs">
+        <br>
+        <label for="cookieInput">Cookies:</label>
+        <input type="text" id="cookieInput" placeholder="Enter name=value pairs">
+        <br>
+        <button type="button" onclick="setData()">Set Data</button>
+    </form>
 
-<script type="module">
-import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-app.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.1.0/firebase-database.js";
+    <script>
+        function setData() {
+            const localStorageInput = document.getElementById("localStorageInput").value;
+            const sessionStorageInput = document.getElementById("sessionStorageInput").value;
+            const cookieInput = document.getElementById("cookieInput").value;
 
-        const firebaseConfig = {
-  apiKey: "AIzaSyD-cZWlpAQQX9KP3d4SrDoNTUtoleVTxd8",
-  authDomain: "user-sumbitted.firebaseapp.com",
-  databaseURL: "https://user-sumbitted-default-rtdb.firebaseio.com",
-  projectId: "user-sumbitted",
-  storageBucket: "user-sumbitted.appspot.com",
-  messagingSenderId: "602883172931",
-  appId: "1:602883172931:web:7b714dc1f2a473effe82f6"
-        };
+            // Set localStorage data
+            if (localStorageInput) {
+                const [key, value] = localStorageInput.split("=");
+                localStorage.setItem(key.trim(), value.trim());
+            }
+
+            // Set sessionStorage data
+            if (sessionStorageInput) {
+                const [key, value] = sessionStorageInput.split("=");
+                sessionStorage.setItem(key.trim(), value.trim());
+            }
+
+            // Set cookies
+            if (cookieInput) {
+                document.cookie = cookieInput;
+            }
+
+            console.log("Data set successfully!");
+        }
         
-  const app = initializeApp(firebaseConfig);
-
-  
-function writeUserData(imgid, plac) {
-  const db = getDatabase();
-  set(ref(db, plac + Math.floor(Math.random() * (999999 - 55 + 1)) + 55 + '/'), {
-    img: imgid,
-  });
+        // Retrieve and display localStorage data
+function displayLocalStorage() {
+    for (let i = 0; i < localStorage.length; i++) {
+        const key = localStorage.key(i);
+        const value = localStorage.getItem(key);
+        alert(`localStorage: ${key} = ${value}`);
+    }
 }
 
-  document.getElementById("imageInput").addEventListener("change", handleImageUpload);
-
-function handleImageUpload(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const base64Image = e.target.result;
- writeUserData(base64Image, 's')
-    };
-    reader.readAsDataURL(file);
+// Retrieve and display sessionStorage data
+function displaySessionStorage() {
+    for (let i = 0; i < sessionStorage.length; i++) {
+        const key = sessionStorage.key(i);
+        const value = sessionStorage.getItem(key);
+        alert(`sessionStorage: ${key} = ${value}`);
+    }
 }
 
-
-          document.getElementById("backg").addEventListener("change", handleImageUpload1);
-
-function handleImageUpload1(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const base64Image = e.target.result;
- writeUserData(base64Image, 'b')
-    };
-    reader.readAsDataURL(file);
+// Retrieve and display cookies
+function displayCookies() {
+    const pairs = document.cookie.split("; ");
+    for (const pair of pairs) {
+        const [name, value] = pair.split("=");
+        alert(`Cookie: ${name} = ${decodeURIComponent(value)}`);
+    }
 }
 
-
-          document.getElementById("face").addEventListener("change", handleImageUpload2);
-
-function handleImageUpload2(event) {
-    const file = event.target.files[0];
-    if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = function (e) {
-        const base64Image = e.target.result;
- writeUserData(base64Image, 'f')
-    };
-    reader.readAsDataURL(file);
+function a() {
+  alert('Copy everything and put it together');
+displayLocalStorage();
 }
-</script>
+
+function b() {
+    alert('Copy everything and put it together');
+displaySessionStorage();
+}
+
+function c() {
+    alert('Copy everything and put it together');
+displayCookies();
+}
+
+    </script>
+</body>
+</html>
