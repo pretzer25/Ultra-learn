@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Editor</title>
+    <style>
+        /* Basic styling for the editor */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        #userInput {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ccc;
+        }
+        #transformedOutput {
+            width: 100%;
+            height: 100px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simple EMINOR Code Editor</h1>
+    <textarea id="userInput" placeholder="Write your EMINOR code here"></textarea>
+    <div id="transformedOutput"></div>
+    <div id="errorDisplay" class="error"></div>
+
+    <script>
+        const transformationList = {
+            '<SIGMATEXT=>': '<h1>',
+            '<ENDTEXT>': '</h1>',
+            '{11': ' ',
+            '<BETALINE>': '<hr>',
+            '<DROPS>': '<br>'
+            // Add more transformations as needed
+        };
+
+        const userInput = document.getElementById('userInput');
+        const transformedOutput = document.getElementById('transformedOutput');
+        const errorDisplay = document.getElementById('errorDisplay');
+
+        userInput.addEventListener('input', () => {
+            const inputText = userInput.value; // No need to convert to uppercase
+            const transformedText = applyTransformations(inputText);
+
+            if (transformedText) {
+                transformedOutput.innerHTML = transformedText;
+                errorDisplay.textContent = ''; // Clear any previous error message
+            } else {
+                transformedOutput.innerHTML = ''; // Clear output if no transformation found
+                errorDisplay.textContent = 'Invalid input. Please check your syntax.'; // Display error message
+            }
+        });
+
+        function applyTransformations(input) {
+            const words = input.split(/\s+/); // Split input into words (preserving spaces)
+            let transformedText = '';
+
+            for (const word of words) {
+                const transformedWord = transformationList[word.toUpperCase()];
+                transformedText += transformedWord || word; // Use transformed word if available, otherwise keep unchanged
+            }
+
+            return transformedText;
+        }
+    </script>
+</body>
+</html>
