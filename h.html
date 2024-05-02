@@ -1,4 +1,118 @@
 <!doctype html>
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f9f9f9;
+      text-align: center;
+    }
+
+   .popup {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 18px;
+      font-weight: bold;
+      color: #333;
+      background-color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 20px 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+   .popup.popuptext {
+  visibility: hidden;
+  width: 560px;
+  height: 340px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 20px;
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.popuptext.show {
+  visibility: visible;
+  animation: fadeIn 1s;
+}
+
+   .popup.popuptext::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: #333 transparent transparent transparent;
+    }
+    
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+   .butdton {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+   .butdton:hover {
+      background-color: #3e8e41;
+    }
+    
+   .popuptext.hide {
+      visibility: hidden;
+    }
+  </style>
+</head>
+<body>
+
+<div class="myPopup">
+  <span class="popuptext popup" id="myPopup" onclick="nomorefortnit()">
+      <h1 style="font-size: 36px; margin-top: 50px;">Introducing "Big Learn" - Learn and Earn!</h1>
+    <h2 style="font-size: 24px; margin-top: 0;">We got Somethin' For Ya!</h2>
+    <p>Learn And Learn?????</p>
+    <p>Yes! -with our brand new service, "Big Learn", You get paid to learn!</p>
+    <button class="butdton"><a href="https://big-learn.vercel.app">Want To Check It Out?</a></button>
+  </span>
+</div>
+
+
+  <script>
+function togglePopup() {
+  var popup = document.querySelector('#myPopup');
+  popup.classList.toggle('show');
+}
+
+function nomorefortnit() {
+  var popup = document.querySelector('#myPopup');
+  popup.classList.toggle('hide');
+}
+
+togglePopup()
+  </script>
+
+</body>
+</html>
+
+
 <html>
   <head>
     <style>
