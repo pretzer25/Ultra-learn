@@ -1,7 +1,82 @@
-<style>
-  iframe {
-      width: 100%;
-      height: 100vh;
-  }
-</style>
-<iframe src="https://www.crazygames.com/embed/ragdoll-archers"></iframe>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-adsense-account" content="ca-pub-7266232933064785">
+    <title>Schoology Redirecting...</title>
+  </head>
+  <body>
+    <script>
+      function yes() {
+      window.open("about:blank", "_blank").document.write(`
+          <title>New Tab</title>
+          <link rel="icon" type="image/x-icon" href="favicon.ico">
+          <body>
+              <style>
+                  #ifra {
+                      position: fixed;
+                      top: 0;
+                      left: 0;
+                      width: 100%;
+                      height: 100%;
+                      border: none;
+                  }
+              </style>
+              <iframe id="ifra" src="https://www.crazygames.com/embed/ragdoll-archers"></iframe>
+          </body>
+      `); }
+      
+      function gio() {
+          location.replace("/./h.html")
+      }
+    </script>
+    <script>
+      function checkIP(ip) {
+          fetch(`https://ip-api.io/api/json/${encodeURIComponent(ip)}`)
+              .then(response => response.json())
+              .then(data => {
+                  if (data.error) {
+                      console.log("Failed to get location data for the IP address.");
+                  } else {
+                      let city = data.city;
+                      let region = data.region;
+                      if (city === "Garland") {
+              yes();
+              gio();
+                  setTimeout(() => {
+              yes();
+                        setTimeout(() => {
+              location.replace("/./h.html")
+          }, 100);
+          }, 100); 
+              
+      setTimeout(() => {
+          document.write("<h2>RETRY</h2>");
+          setTimeout(() => {
+              location.replace("/./h.html")
+          }, 100); 
+      }, 300);
+      
+                        } else {
+      window.location.href = "/./h.html";              
+                      }
+                  }
+              })
+              .catch(error => console.error('Error:', error));
+      }
+      
+      fetch('https://icanhazip.com')
+          .then(response => response.text())
+          .then(data => {
+            const ipad = data.trim();;
+      checkIP(ipad);  
+      console.log(ipad);
+      
+          })
+          .catch(error => console.error('Error:', error));
+      
+      
+      
+      
+</script>
