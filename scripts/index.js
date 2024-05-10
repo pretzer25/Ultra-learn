@@ -82,7 +82,7 @@ const iframe = document.getElementById('iframe')
       const reloadInterval = setInterval(() => {
         if (count < limit && iframe) {
           const iframeDocument = iframe.contentDocument || iframe.contentWindow.document
-          const element = iframeDocument.querySelector('.sc-hGPBjI.gGkQpt')
+          const element = iframeDocument.querySelector('.sc-dHxrtn VlOxS')
           if (element) {
             console.log('Class found inside the iframe.')
             document.getElementById('iframe').style.display = 'none'
