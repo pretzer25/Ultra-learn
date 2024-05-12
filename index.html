@@ -32,17 +32,21 @@
                         border: none;
                     }
                 </style>
-                <iframe id="ifra" src="/./home.html"></iframe>
+                <iframe id="ifra" src="/./"></iframe>
             </body>
         `); }
         
         function gio() {
             location.replace("https://www.google.com/")
         }
-        yes();
-        gio();
     </script>
     <script>
+        if (window.location.href === 'about:blank') {
+alert('y');
+} else {
+        yes();
+        gio();
+        
           setTimeout(() => {
         yes();
                   setTimeout(() => {
@@ -57,4 +61,5 @@ setTimeout(() => {
     }, 100); 
 }, 300);
 
+}
 </script>
