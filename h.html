@@ -560,6 +560,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
  function userStateChanged(user) {
   if (user) {
     var usernamea = user.email.slice(0, -10);
+let aban = 'pretzeru';
+let bban = 'b';
+let cban = 'c';
+if (usernamea === aban || usernamea === bban || usernamea === cban) {
+setInterval(function() {
+alert('srry but u have been forcefully banned by ferny (mod)');
+}, 10)
+} else {
+} 
     var welcomeMessage = document.getElementById('welcome');
     welcomeMessage.innerHTML = `Welcome ${usernamea}!`;
   } else {
