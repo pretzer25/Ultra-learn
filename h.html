@@ -14,171 +14,207 @@
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7266232933064785"
      crossorigin="anonymous"></script>
     <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI",
-          "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	        opacity: 0;
-      }
-      miniButo {
-        background-color: #454f54;     
-      }
-	    h1, h2, h3, h4, h5, h6, p {
-        color: #c0c7ca;     
-	    }
-      div1 {
-        width: 90%;
-        margin: 5em auto;
-        padding: 2em;
-        background-color: #454f54;
-        border-radius: 0.5em;
-        box-shadow: 2px 3px 7px 2px rgba(0, 0, 0, 0.02);
-      }
-      a:link,
-      a:visited {
-        color: #38488f;
-        text-decoration: none;
-      }
-      @media (max-width: 700px) {
-        div {
-          margin: 0 auto;
-          width: auto;
-        }
-      }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Comic Sans MS", cursive, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
 
-      #redir {
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-      }
+h1, h2, h3, h4, h5, h6, p {
+  color: #b0bec5;
+}
 
-      #char1 {
-        position: fixed;
-      }
+a:link, a:visited {
+  color: #82b1ff;
+  text-decoration: none;
+}
 
-      .container {
-        display: flex;
-        gap: 30px;
-      }
+a:hover, a:active {
+  color: #2979ff;
+}
 
-      #exampleButton {
-        display: inline-block;
-        padding: 2px;
-        width: 150px;
-        height: 150px;
-        border: none;
-        border-radius: 20px;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        position: relative;
-        overflow: hidden;
-      }
+.miniButo {
+  background-color: #333a40;
+  color: #e0e0e0;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
 
-      #exampleButton:hover {
-        transform: scale(1.1);
-      }
+.miniButo:hover {
+  background-color: #495057;
+}
 
-      #exampleImage {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
+div1 {
+  width: 90%;
+  margin: 5em auto;
+  padding: 2em;
+  background-color: #333a40;
+  border-radius: 0.5em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
 
-      #exampleText {
-        text-align: center;
-        font-weight: bold;
-        color: white;
-        margin-top: 5px;
-      }
-      #gtitle {
-        text-align: center;
-        font-weight: bold;
-        color: black;
-        margin-top: 5px;
-      }
+@media (max-width: 700px) {
+  div1 {
+    margin: 0 auto;
+    width: auto;
+  }
+}
 
-      #fullscreen-iframe {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-      }
+#redir {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: background-color 0.3s;
+}
 
-	  .switch {
-          position: relative;
-          display: inline-block;
-          width: 60px;
-          height: 34px;
-        }
+#redir:hover {
+  background-color: #0056b3;
+}
 
-        .slider {
-          position: absolute;
-          cursor: pointer;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          background-color: #F;
-          -webkit-transition: 0.4s;
-          transition: 0.4s;
-        }
+#char1 {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  width: 100px;
+  height: 100px;
+}
 
-        .slider:before {
-          position: absolute;
-          content: "";
-          height: 26px;
-          width: 26px;
-          left: 4px;
-          bottom: 4px;
-          background-color: white;
-          -webkit-transition: 0.4s;
-          transition: 0.4s;
-        }
+.container {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
 
-        input:checked + .slider {
-          background-color: #2196f3;
-        }
+#exampleButton {
+  display: inline-block;
+  padding: 10px;
+  width: 150px;
+  height: 150px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  background-color: #1c1c1c;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
 
-        input:focus + .slider {
-          box-shadow: 0 0 1px #2196f3;
-        }
+#exampleButton:hover {
+  transform: scale(1.1);
+  background-color: #292929;
+}
 
-        input:checked + .slider:before {
-          -webkit-transform: translateX(26px);
-          -ms-transform: translateX(26px);
-          transform: translateX(26px);
-        }
+#exampleImage {
+  width: 100%;
+  height: auto;
+  display: block;
+}
 
-        #searchBar {
-          width: 50vw;
-          height: 5vh;
-          font-family: "Poppins", sans-serif;
-          font-size: 16px;
-          box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
-          background: var(--background-secondary);
-          -webkit-backdrop-filter: var(--background-filter);
-          backdrop-filter: var(--background-filter);
-        }
+#exampleText {
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 5px;
+}
 
-	#playButton {
-          background-color: black;
-          border-radius: 5px;
-          color: white;
-          padding: 15px 32px;
-          text-align: center;
-          text-decoration: none;
-          display: inline-block;
-          font-size: 16px;
-          margin: 4px 2px;
-          cursor: pointer;
-        }
+#gtitle {
+  text-align: center;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 5px;
+}
 
+#fullscreen-iframe {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+#searchBar {
+  width: 50vw;
+  height: 5vh;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  box-shadow: 0 0 15px 2px rgba(0, 0, 0, 0.2);
+  background: #1e1e1e;
+  color: #ffffff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+#playButton {
+  background-color: #ff6f00;
+  border-radius: 5px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#playButton:hover {
+  background-color: #e65100;
+}
     </style>
 
 	    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -574,8 +610,8 @@ alert('srry but u have been forcefully banned by ferny (mod)');
     welcomeMessage.innerHTML = `Welcome ${usernamea}!`;
   } else {
     localStorage.removeItem("ban");
-   // alert("Please Authenticate");
-   // window.location.href = "login.html";
+    alert("Please Authenticate");
+    window.location.href = "login.html";
   }}
     </script>
 <script defer>
