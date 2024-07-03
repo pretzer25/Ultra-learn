@@ -1,0 +1,917 @@
+<html><head>
+	<meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /*! HTML5 Boilerplate v5.3.0 | MIT License | https://html5boilerplate.com/ */
+
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+    color: #222;
+    font-size: 1em;
+    line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * These selection rule sets have to be separate.
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+    vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+    resize: vertical;
+}
+
+/* ==========================================================================
+   Browser Upgrade Prompt
+   ========================================================================== */
+
+.browserupgrade {
+    margin: 0.2em 0;
+    background: #ccc;
+    color: #000;
+    padding: 0.2em 0;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/*
+KARTIK -  for Sigma Grindset */
+:root{
+	--gold: #ad974f;
+	}
+body{
+	padding: 0;
+	margin: 0;
+	background-color: black;
+	font-family: serif !important;
+	color: grey;
+	}
+.glass{
+	background: rgba( 255, 255, 255, 0.25 );
+	box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+	backdrop-filter: blur( 7.0px );
+	-webkit-backdrop-filter: blur( 7.0px );
+	border-radius: 10px;
+	border: 1px solid rgba( 255, 255, 255, 0.18 );
+	}
+.spacer{
+	height: 3vh;
+	}
+#sigma{
+	background-color: black;
+	height: 100vh;
+	}
+#sigma1{
+	font-family: serif;
+	position: relative !important;
+	z-index: 2 !important;
+	color: white;
+	font-size: 4vw;
+	font-weight: 900;
+	width: 70vw;
+	padding: 18vw 5vw;
+	}
+#sigma1 h2{
+	margin: 0;
+	padding: 0;
+	font-size: 2.5vw;
+	}
+#sigma1 h1{
+	margin: 0;
+	padding: 0;
+	font-size: 8vw;
+	color: #ad974f;
+	}
+#sigma1 h3{
+	margin: 0;
+	padding: 0 10vw;
+	font-size: 1.8vw;
+	text-align: right;
+	}
+strong{
+	font-weight: 900;
+	color: white;
+	}
+#sigma2{
+	position: absolute;
+	width: 50vw;
+	height: 100vh;
+	left: 50vw;
+	bottom: 0;
+	}
+
+#sigma-img{
+	height: 100vh;
+	}
+	
+#music{
+	width: 40vw;
+	margin: 4vw auto;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid 4px var(--gold);
+	border-radius: 1rem;
+	}	
+#music h1{
+	color: white;
+	font-size: 1.5rem;
+	font-weight: 500;
+	margin: 1rem auto 0;
+	}	
+#music1{
+	margin: 1rem auto;
+	}
+#certified{
+	display: flex;
+	flex-direction: row;
+	margin-top: 10vh !important;
+	}	
+#certified1{
+	width:50vw;
+	padding: 2vh auto;
+	}
+#certified-img{
+	max-width: 30vw;
+	margin: 0 20vw 0 10vw !important;
+	}
+#certified2{
+	width:40vw;
+	padding: 5vh auto !important;
+	}
+#certified2 h2{
+	color: white !important;
+	font-size: 2vw !important;}
+#certified li{
+	color: var(--gold);
+	font-size: 2.5vw;
+	}
+
+#main{
+	display: flex;
+	flex-direction: row;
+	}
+#main1{
+	width: 50vw !important;
+	padding: 10vh 5vw 0;
+	}
+#main1 h2{
+	color: white !important;
+	font-size: 3vw !important;
+	}
+#main strong{
+	color: var(--gold);
+	}
+#main h3{
+	font-size: 1.8vw;
+	}
+.sigma-details{
+	display: flex;
+	justify-content: center;
+	border: solid 3px var(--gold);
+	max-width: 50vw !important;
+	font-size: 1.5vw !important;
+	padding: 0 !important;
+	}
+.form-group{
+	margin: 0;
+	padding: 0;}
+.details-all{
+	padding: 0 2vw 0 10vw;
+	}
+.btn{
+	background-color: var(--gold);
+	border: solid 0px white;
+	margin: 0 0 3vh 0;
+	font-size: 1.2vw;
+	}
+.btn-success:hover, .btn-success:focus {
+	background-color: #F0DB8D;
+	color: black;
+	}
+/*CSS OF CARD AND IT'S DIV....... PROPORTIONS MUST BE PROTECTED*/
+#card{
+	display: none;}
+#card1{
+	max-height: 40vw;
+	overflow: hidden;
+	}
+#card-bg{
+	background-image: url("https://t4.ftcdn.net/jpg/03/53/93/95/360_F_353939570_vsfXYAxR8GuTGF1mqVxtlDOYubkkMHe7.jpg");
+	background-repeat: no-repeat;
+	background-size: 50vw auto;
+	position: relative;
+	z-index: 1;
+	width: 50vw;
+	margin: 0 auto;
+	}
+#card-bg-1{
+	max-width: 50vw;
+	visibility: hidden;
+	}
+#card-info{
+	position: relative;
+	z-index: 2;
+	top: -20vw;
+	left: 30vw;
+	}
+.info{
+	font-size: 2vw;
+	color: var(--gold);
+	font-weight: 900;
+	margin: 0 0 1.1vw 0;
+	}
+	
+/* Position The Imagesigma pn card*/
+#c-img{
+	position: relative;
+	z-index: 2;
+	width: 11vw;
+	height: 15vw;
+	top: -36vw;
+	left: 2vw;
+	overflow: hidden;
+	}
+#c-imgout{
+	min-width: 11vw;
+	min-height: 15vw;
+
+}
+
+/*Ending text*/
+#end-text{
+	border-top: solid 1vh var(--gold);
+	width: 60vw;
+	margin: 0 auto;
+	padding: 2vw 3vw;
+	}
+#end-text h2{
+	color: white;
+	font-size: 1.7vw !important;
+	}
+#end-text h1{
+	color: white;
+	font-size: 2vw !important;
+	}
+#end-text a {
+	color: var(--gold);
+	}
+#end-text strong {
+	color: var(--gold);
+	}
+	
+/*footer*/
+footer{
+	background-color: var(--gold);
+	margin: 4vw 0 0 0;
+	}
+#madeby{
+	color: white;
+	font-size: 2vw !important;
+	margin: 0vw auto;
+	width: 50vw;
+	padding: 1vw 2vw;
+	text-align: center;
+	}
+#madeby h1{
+	font-size: 2vw;}
+#madeby strong{
+	font-size: 2vw;
+	color: black;
+	font-weight: 900;}
+
+/*MEDIA QUERRY--------------------------MEDIA QUERRY*/
+@media only screen and (max-width: 600px){
+.spacer{
+	height: 3vh;
+	}
+#sigma{
+	background-color: black;
+	height: 90vh;
+	width: 100vw;
+	overflow: hidden;
+	}
+#sigma1{
+	font-family: serif;
+	position: relative !important;
+	z-index: 2 !important;
+	color: white;
+	font-size: 4vh !important;
+	font-weight: 900;
+	width: 80vw;
+	padding: 20vh 5vw;
+	margin: 10vh auto;
+	}
+#sigma1 h2{
+	margin: 0;
+	padding: 0;
+	font-size: 3vh;
+	}
+#sigma1 h1{
+	margin: 0;
+	padding: 0;
+	font-size: 9vh;
+	color: #ad974f;
+	text-align: center
+	}
+#sigma1 h3{
+	margin: 20vh 0;
+	padding: 0 0vw;
+	font-size: 3vh !important; 
+	text-align: center;
+	}
+#spacer1{
+	display: none;
+	}
+strong{
+	font-weight: 900;
+	color: white;
+	}
+#sigma2{
+	position: relative;
+	height: 100vh;
+	width: 100vh;
+	left: 20vw;
+	top: -130vh;
+	}
+
+#sigma-img{
+	height: 100vh;
+	width: 100vh !important;
+	opacity: 0.6;
+	}
+	
+#music{
+	width: 90vw;
+	margin: 4vh auto 1vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border: solid 4px var(--gold);
+	border-radius: 1rem;
+	}	
+#music h1{
+	color: white;
+	font-size: 2vh;
+	font-weight: 500;
+	margin: 1rem auto 0;
+	}	
+#music1{
+	margin: 2rem auto;
+	}
+
+#certified{
+	display: flex;
+	flex-direction: column-reverse;
+	margin-top: 4vw !important;
+	}	
+#certified1{
+	width:90vw;
+	padding: 0 auto;
+	margin: 4vh auto 0;
+	}
+#certified-img{
+	max-width: 60vw;
+	margin: 0 auto 3vh !important;
+	}
+#certified2{
+	width:80vw;
+	padding: 2vh auto !important;
+	margin: 0 auto;
+	text-align: center;
+	}
+#certified2 h2{
+	color: white !important;
+	font-size: 2.5vh !important;}
+#certified li{
+	color: var(--gold);
+	font-size: 2.5vh;
+	}
+
+#main{
+	display: flex;
+	flex-direction: column;
+	margin: 0 !important; 
+	padding: 0 !important;
+	}
+#main1{
+	width: 85vw !important;
+	margin: 0 auto 5vh !important;
+	padding: 0;
+	text-align: center;
+	}
+#main1 h2{
+	color: white !important;
+	font-size: 3vh !important;
+	}
+#main strong{
+	color: var(--gold);
+	}
+#main h3{
+	font-size: 1.8vh;
+	}
+.sigma-details{
+	display: flex;
+	justify-content: center;
+	border: solid 3px var(--gold);
+	max-width: 85vw !important;
+	font-size: 1.5vh !important;
+	padding: 0 !important;
+	margin: 0 auto;
+	}
+.form-group{
+	margin: 0;
+	padding: 0;}
+.details-all{
+	padding: 0;
+	}
+.btn{
+	background-color: var(--gold);
+	border: solid 0px white;
+	margin: 0 0 3vh 0;
+	font-size: 1.2vh;
+	}
+.btn-success:hover, .btn-success:focus {
+	background-color: #F0DB8D;
+	color: black;
+	}
+
+#spacer2 , #spacer3 {
+	display: none;
+	}
+/*CSS OF CARD AND IT'S DIV....... PROPORTIONS MUST BE PROTECTED*/
+#card{
+	display: none;}
+#card1{
+	max-height: 75vw;
+	overflow: hidden;
+	}
+#card-bg{
+	background-image: url("https://t4.ftcdn.net/jpg/03/53/93/95/360_F_353939570_vsfXYAxR8GuTGF1mqVxtlDOYubkkMHe7.jpg");
+	background-repeat: no-repeat;
+	background-size: 90vw auto;
+	position: relative;
+	z-index: 1;
+	width: 90vw;
+	margin: 0 auto;
+	}
+#card-bg-1{
+	max-width: 90vw;
+	visibility: hidden;
+	}
+#card-info{
+	position: relative;
+	z-index: 2;
+	top: -18vh;
+	left: 26vh;
+	}
+.info{
+	font-size: 2vh;
+	color: var(--gold);
+	font-weight: 900;
+	margin: 0 0 1.1vh 0;
+	}
+	
+/* Position The Imagesigma pn card*/
+#c-img{
+	position: relative;
+	z-index: 2;
+	width: 11vh;
+	height: 15vh;
+	top: -36vh;
+	left: 2vh;
+	overflow: hidden;
+	}
+#c-imgout{
+	min-width: 11vh;
+	min-height: 15vh;
+
+}
+
+/*Ending text*/
+#end-text{
+	border-top: solid 1vw var(--gold);
+	width: 80vw;
+	margin: 0 auto;
+	padding: 2vw 3vh;
+	}
+#end-text h2{
+	color: white;
+	font-size: 2vh !important;
+	}
+#end-text h1{
+	color: white;
+	font-size: 2.3vh !important;
+	}
+#end-text a {
+	color: var(--gold);
+	}
+#end-text strong {
+	color: var(--gold);
+	}
+	
+/*footer*/
+footer{
+	background-color: var(--gold);
+	margin: 6vh 0 0 0;
+	}
+#madeby{
+	color: white;
+	font-size: 2vh !important;
+	margin: 0 auto;
+	width: 80vw;
+	padding: 2vh 2vh;
+	text-align: center;
+	}
+#madeby h1{
+	font-size: 2vh;}
+#madeby strong{
+	font-size: 2vh;
+	color: black;
+	font-weight: 900;}
+
+
+
+
+
+} 
+/*Chut dedo koi please*/
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dom-to-image/2.6.0/dom-to-image.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <script>
+      
+
+//here the value from form
+
+function valuecard(){
+var name = document.getElementById('f-name').value;
+var date = document.getElementById('f-date').value;
+var rule = document.getElementById('f-rule').value;
+var sign = document.getElementById('f-sign').value;
+var img = document.getElementById('f-img');
+	console.log(name, date , rule , sign , img);
+
+var nameC = document.getElementById('c-name');
+var dateC = document.getElementById('c-date');
+var ruleC = document.getElementById('c-rule');
+var signC = document.getElementById('c-sign');
+var imgC = document.getElementById('c-imgout');
+var cardC = document.getElementById('card');
+//var imgC = document.getElementById('f-img');	
+//console.log(nameC, dateC , ruleC , signC , img);
+	nameC.innerHTML = name;
+	dateC.innerHTML = date;
+	ruleC.innerHTML = rule;
+	signC.innerHTML = sign;
+	imgC.style.visibility = "visible";
+	cardC.style.display = "block";
+		}
+
+
+function showPreview(event){
+	if(event.target.files.length > 0){
+		var src = URL.createObjectURL(event.target.files[0]);
+		var preview = document.getElementById("c-imgout");
+		
+		preview.src = src;
+		preview.style.visibility = "hidden";
+		};
+	
+	}
+
+function download(){
+domtoimage.toBlob(document.getElementById('card1'))
+    .then(function (blob) {
+        window.saveAs(blob, 'my-node.png');
+    });
+    
+var node = document.getElementById('card1');
+domtoimage.toPng(node)
+    .then(function (dataUrl) {
+        var img = new Image();
+        img.src = dataUrl;
+        document.body.appendChild(img);
+    })
+    .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+    });
+    
+}
+
+    </script>
+    	
+    	<style>
+    .ruet
+    {
+        background-color:#008040;
+        border-bottom: 6px solid #004f27;
+        height:50px;
+        width:100px;
+        color:#ffffff;
+        font-weight: bold;
+        font-size:18px;      
+        text-align:center;
+        border-radius:5px;
+        padding:10px 20px 10px 20px;
+
+
+}
+.ruet:hover
+{
+   
+   background-color: #008040;
+   border-bottom-width: 4px; 
+   
+  
+}
+
+a:link
+{
+  color:#ffffff;
+  text-decoration:none;
+  
+} 
+
+.ruet:active
+{
+    border-bottom-width:1px;
+    background-color: #00a653;
+
+
+} 
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(40,40,40);
+    box-shadow: 5px 5px 5px grey;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 18px;
+    color: white;
+    display: block;
+    transition: 0.3s;
+}
+
+.sidenav a:hover, .offcanvas a:focus{
+    color: white;
+    background-color: #3F51B5;  
+}
+
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 20px;
+    font-size: 30px;
+    margin-left: 50px;
+}
+
+
+
+.nav
+{
+   border-radius: 0px;
+   background-color: #3F51B5;
+   border:none;
+}
+
+  .foot
+  {
+          background-color: rgb(40,40,40);
+          padding: 20px;
+          color: white;
+          text-align: center;
+          clear: left;
+          max-width: 100%;
+          margin-top:500px;
+          
+
+
+          
+  }
+
+  .bh
+  {
+      font-size:30px;
+      cursor:pointer;
+      color: white; 
+      margin-left: 20px;
+      padding:5px;
+
+  }
+  .ch
+  {
+     font-size: 25px; 
+     margin-left:15px;
+  }
+  .bh:hover
+  {
+      background-color: black;
+  }
+
+  @media only screen and (max-width:400px)
+  {
+    .ch
+    {
+       font-size:20px;
+       margin-left:2px;
+    }
+  }
+
+
+
+    </style>
+</head>
+<body>
+	<section id="sigma">
+		<div id="sigma1">
+			<h2>BECOME THE ULTIMATE</h2>
+			<h1>SIGMA <strong>G</strong>UYS</h1>
+			<div id="spacer1" class="spacer"></div>
+			<h3>FEEL THE <strong>#ULTRA-LEARN</strong></h3>
+		</div>
+		
+		<div id="sigma2"><img id="sigma-img" src="https://steamuserimages-a.akamaihd.net/ugc/2204009206479707069/029168A7C44902A45CC7A01D4A3A683476D16519/?imw=637&imh=358&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=true" <="" div="">
+	</div></section>
+
+	<section id="music">
+			<h1>The Sigma Anthem</h1>		
+		<div id="music1">
+			<audio controls="" autoplay="autoplay" id="audio">
+			<source src="sigma.mp3" type="audio/mpeg">
+			Your browser does not support the audio element.
+			</audio>
+		</div>
+	</section>
+	
+	<div class="spacer"></div>
+
+    <section id="main" style="margin-top:100px;">
+		
+	 <div id="main1">
+		 <br><br>
+		 <h2>YOU ARE ONE OF <strong>0.02%</strong></h2>
+		 <br><br><br>
+		 <h2>GET YOUR SIGMA CARD</h2>
+		 <h3>ISUUED BY <br><strong>WORLD ULTRA-LEARN UNION</strong></h3>
+	 </div>
+
+     <div class="container details-all" id="form-main">
+       
+       <div class="column sigma-details">
+         <div class="col-sm-8">
+             
+         <div class="form-group">  
+         <label for="bn"></label>   
+        <form onsubmit="return false;">
+
+			<div class="form-group">
+            <label for="en">Your Name</label>
+			<input id="f-name" type="text" class="form-control" name="ename" placeholder="Your Name" required="">
+			</div><br>
+
+			<div class="form-group">
+            <label for="">Inception Of Sigma Life</label>
+			<input id="f-date" type="date" class="form-control" name="dname" placeholder="Your Date Of Birth" required="">
+			</div><br>
+			
+			<div class="form-group">
+            <label for="">Favourite Sigma Rule </label>  <!-- ID Number english-->
+			<input id="f-rule" type="text" class="form-control" name="nid" placeholder="eg.  #435" required="">
+			</div><br>
+			
+			<div class="form-group">
+            <label for="">Ability</label>
+			<input id="f-sign" type="text" class="form-control" name="si" placeholder="Eg Charisma (max-length 20) " required="" maxlength="20">
+			</div><br>
+			
+			
+			<div class="form-group">
+      <label for="">Upload Your Picture</label>
+			<b></b> <input id="f-img" type="file" accept="image/*" name="file" onchange="showPreview(event);">
+			</div><br><br>
+			
+			
+		<button class="btn btn-success" name="" value="GENERATE" onclick="valuecard()">GENERATE</button>
+			</form>
+      </div>
+
+           
+           </div>
+           </div>
+           </div>
+       </section>
+
+	<div id="spacer2" class="spacer"></div>
+    <div id="spacer3" class="spacer"></div>
+	<div id="spacer4" class="spacer"></div>
+	<div class="spacer"></div>
+	<div class="spacer"></div>
+
+	<section id="card">
+		<div id="card1">
+			<div id="card-bg">
+				<img id="card-bg-1" src="https://sigma.vercel.app/sigmacard.png">
+				
+				<div id="card-info">
+					<div id="c-name" class="info"></div>
+					<div id="c-date" class="info"></div>
+					<div id="c-rule" class="info"></div>
+					<div id="c-sign" class="info"></div>
+				</div>
+				
+				<div id="c-img"> <img id="c-imgout"> </div>
+			</div>	
+								
+		</div>		
+	</section>
+	
+	<section>
+		<div id="end-text"> 
+			<h2> There are no pack leaders among sigma-males. A completely decentralised community, where every Sigma is his own master. Your information won't be stored on any server.
+			This ID Card is rendered completely on your device. </h2>
+	</section>
+
+
+
+
+
+</body></html>
