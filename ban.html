@@ -1,98 +1,355 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Data Center</title>
+  <script src="https://html2canvas.hertzen.com/dist/html2canvas.js"></script>
+
+<style>
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+}
+
+#maze_container {
+    width: auto; /* Adjusted to allow variable width */
+    height: auto; /* Fixed height */
+    margin: 5em auto 0;
+    position: relative;
+    border: 2px solid #000;
+    overflow-x: auto; /* Allows horizontal scrolling if needed */
+}
+
+table {
+    width: 100%; /* Ensures table fills its container */
+    height: 100%;
+    border-spacing: 0;
+}
+
+table td {
+    border: 1px solid #000;
+    width: calc(100% / var(--maze-width)); /* Calculates cell width based on mazeWidth */
+    height: calc(500px / var(--maze-height)); /* Calculates cell height based on fixed container height */
+    text-align: center;
+}
+
+</style>
 </head>
 <body>
-    <h1>Local Data Center</h1>
-    <h5>Instructions for getting data: click all buttons one by one and follow the instructions, after putting all data in a note (seperate types of data to make it easier) make sure to save it in a safe place like google drive</h5>
-<button onclick="a()">Get localStorage</button><button onclick="b()">Get sessionStorage</button><button onclick="c()">Get Cookies</button>
- <br>
- <!-- Input fields for localStorage, sessionStorage, and cookies -->
- <h5>Instructions for data recovery: one by one paste your data in the fields (you were given the data as a list one by one, don't paste the whole list of that type in one box)and when you are all done with the first part of the lists, click set data, proceed until your list finishes.</h5>
-    <form id="dataForm">
-        <label for="localStorageInput">localStorage:</label>
-        <input type="text" id="localStorageInput" placeholder="Enter key=value pairs">
-        <br>
-        <label for="sessionStorageInput">sessionStorage:</label>
-        <input type="text" id="sessionStorageInput" placeholder="Enter key=value pairs">
-        <br>
-        <label for="cookieInput">Cookies:</label>
-        <input type="text" id="cookieInput" placeholder="Enter name=value pairs">
-        <br>
-        <button type="button" onclick="setData()">Set Data</button>
-    </form>
+    <h1>innitializing hack, please dont leave this tab after starting. only click "INITIALIZE HACK" after a maze shows</h1>
+<div id="maze_container">
+    <!-- Maze table will be generated here -->
+</div>
+<button onclick="downloadMaze()">INNITIALIZE HACK</button>
 
-    <script>
-        function setData() {
-            const localStorageInput = document.getElementById("localStorageInput").value;
-            const sessionStorageInput = document.getElementById("sessionStorageInput").value;
-            const cookieInput = document.getElementById("cookieInput").value;
+<script>
+var mazeWidth = 500;  // Adjust as needed
+var mazeHeight = 500; // Adjust as needed
 
-            // Set localStorage data
-            if (localStorageInput) {
-                const [key, value] = localStorageInput.split("=");
-                localStorage.setItem(key.trim(), value.trim());
+var currentIndex = 1; // Initialize the index for the loop
+
+window.addEventListener("load", function() {
+    createBlankMaze();
+});
+
+function createBlankMaze() {
+    var table = document.createElement("table");
+    table.style.setProperty('--maze-width', mazeWidth); // Set custom property for cell width
+    table.style.setProperty('--maze-height', mazeHeight); // Set custom property for cell height
+    var tbody = document.createElement("tbody");
+
+    // Generate rows incrementally
+    generateRows(tbody);
+
+    table.appendChild(tbody);
+    document.getElementById("maze_container").appendChild(table);
+}
+
+function generateRows(tbody) {
+    var fragment = document.createDocumentFragment();
+    var batchSize = 5; // Number of rows to generate at a time
+
+    for (var i = 0; i < batchSize && currentIndex <= mazeHeight; i++) {
+        var row = document.createElement("tr");
+
+        // Generate cells for the current row
+        generateCells(row);
+
+        fragment.appendChild(row);
+        currentIndex++;
+    }
+
+    tbody.appendChild(fragment);
+
+    if (currentIndex <= mazeHeight) {
+        setTimeout(generateRows.bind(null, tbody), 0); // Call recursively with a delay
+    } else {
+        // Maze generation completed, now paint the maze
+        paint();
+    }
+}
+
+function generateCells(row) {
+    var fragment = document.createDocumentFragment();
+
+    for (var j = 1; j <= mazeWidth; j++) {
+        var col = document.createElement("td");
+
+        if (currentIndex === 1 && j === 1) {
+            col.style.backgroundColor = "rgb(0,0,0)";
+            col.setAttribute("type", "start");
+        } else if (currentIndex === mazeHeight && j === mazeWidth) {
+            col.style.backgroundColor = "rgb(0,0,0)";
+            col.setAttribute("type", "finish");
+        } else {
+            col.style.backgroundColor = "rgb(255,255,255)";
+        }
+
+        col.setAttribute("id", "cell_" + currentIndex + "_" + j);
+        row.appendChild(col);
+    }
+
+    fragment.appendChild(row);
+}
+
+function paint() {
+    var startAtRow = 1;
+    var startAtCol = 1;
+    addRoute(startAtRow, startAtCol, false, "rgb(199, 199, 190)");
+
+    for (n = 1; n < (mazeWidth * mazeHeight) - 1; n++) {
+
+        var currentCell = document.getElementById("cell_" + startAtRow + "_" + startAtCol);
+        
+        if (currentCell.getAttribute("occupied") == "true") {
+
+            addRoute(startAtRow, startAtCol, true, "rgb(199, 199, 199)");
+
+        }
+
+        if (startAtCol == mazeWidth) {
+            
+            startAtRow++;
+            startAtCol = 1;
+
+        } else {
+
+            startAtCol++;
+
+        }
+
+    }
+
+}
+
+function addRoute(startAtRow, startAtCol, createDetour, backgroundColorRoute) {
+
+    var validExits = ["right", "bottom", "left", "top"];
+	
+    var remainingExits = {"right": mazeWidth, "bottom": mazeHeight, "left": 0, "top": 0};
+	
+    var nextExits = [];
+    
+	var lastCells= [];
+
+    var rowIndex = startAtRow;
+    
+	var colIndex = startAtCol;
+    
+    var currentCell = document.getElementById("cell_" + rowIndex + "_" + colIndex);
+
+    var exit;
+
+    var lastExit;
+
+    var exitIndex;
+
+    var loop = 0;
+
+    var loopFuse = 0;
+
+    var maxLoops = 3 * mazeWidth * mazeHeight;
+
+    var nextPossibleCell;
+
+    while (loop < ((mazeWidth * mazeHeight) - 1)) {
+
+        loopFuse++;
+
+        if (loopFuse >= maxLoops) {break;}
+
+        nextExits = [];
+
+        for (i = 0; i < validExits.length; i++) {
+
+            switch(validExits[i]) {
+
+                case "right":
+                    nextPossibleCell = document.getElementById("cell_" + rowIndex + "_" + (colIndex + 1));
+                    break;
+
+                case "left":
+                    nextPossibleCell = document.getElementById("cell_" + rowIndex + "_" + (colIndex - 1));
+                    break;
+
+                case "bottom":
+                    nextPossibleCell = document.getElementById("cell_" + (rowIndex + 1) + "_" + colIndex);
+                    break;
+
+                case "top":
+                    nextPossibleCell = document.getElementById("cell_" + (rowIndex - 1) + "_" + colIndex);
+                    break;
+
+            }
+            
+            if (nextPossibleCell != null) {
+
+                if (nextPossibleCell.getAttribute("occupied") != "true") {
+                    
+                    for (t = 0; t < remainingExits[validExits[i]]; t++) {
+
+                        nextExits.push(validExits[i]);
+
+                    }
+
+                }
+
+            } 
+
+        }
+
+        if (nextExits.length == 0) {
+
+            if (createDetour == true) {
+
+                return false;
+
+
+            } else {
+                
+                lastCells.splice(lastCells.length - 1, 1);
+
+                rowIndex = lastCells[lastCells.length - 1][0];
+                colIndex = lastCells[lastCells.length - 1][1];
+                currentCell = document.getElementById("cell_" + rowIndex + "_" + colIndex);
+
+                continue;
+            
             }
 
-            // Set sessionStorage data
-            if (sessionStorageInput) {
-                const [key, value] = sessionStorageInput.split("=");
-                sessionStorage.setItem(key.trim(), value.trim());
-            }
+        } 
 
-            // Set cookies
-            if (cookieInput) {
-                document.cookie = cookieInput;
-            }
+        exitIndex = Math.floor(Math.random() * Math.floor(nextExits.length));
 
-            console.log("Data set successfully!");
+        exit = nextExits[exitIndex];
+
+        if (createDetour == false) {
+
+            currentCell.style["border-"+exit] = "none";
+
+        } else {
+
+            if (!(exit == "right" && colIndex == mazeWidth - 1 && rowIndex == mazeHeight) &&
+                !(exit == "bottom" && colIndex == mazeWidth && rowIndex == mazeHeight - 1) ) {
+
+                currentCell.style["border-"+exit] = "none";
+
+            }
         }
         
-        // Retrieve and display localStorage data
-function displayLocalStorage() {
-    for (let i = 0; i < localStorage.length; i++) {
-        const key = localStorage.key(i);
-        const value = localStorage.getItem(key);
-        alert(`localStorage: ${key} = ${value}`);
+        switch(exit) {
+
+            case "right":
+
+                colIndex = colIndex + 1;
+                remainingExits.left++;
+                remainingExits.right--;
+                break;
+
+            case "bottom":
+
+                rowIndex = rowIndex + 1;
+                remainingExits.top++;
+                remainingExits.bottom--;
+                break;
+
+            case "left":
+
+                colIndex = colIndex - 1;
+                remainingExits.left--;
+                remainingExits.right++;
+                break;
+
+            case "top":
+
+                rowIndex = rowIndex - 1;
+                remainingExits.top--;
+                remainingExits.bottom++;
+                break;
+                
+        }
+
+        lastCells.push([rowIndex, colIndex]);
+
+        currentCell = document.getElementById("cell_" + rowIndex + "_" + colIndex);
+
+        switch(exit) {
+
+            case "right":
+
+                currentCell.style["border-left"] = "none";
+                break;
+
+            case "bottom":
+
+                currentCell.style["border-top"] = "none";
+                break;
+
+            case "left":
+
+                currentCell.style["border-right"] = "none";
+                break;
+
+            case "top":
+
+                currentCell.style["border-bottom"] = "none";
+                break;
+
+        }
+
+        if (rowIndex == mazeHeight && colIndex == mazeWidth) {
+
+            break;
+
+        }
+
+        currentCell.style.backgroundColor = backgroundColorRoute;
+        currentCell.setAttribute("occupied", "true");
+
+        lastExit = exit;
+
+        loop++;
+
     }
+
 }
 
-// Retrieve and display sessionStorage data
-function displaySessionStorage() {
-    for (let i = 0; i < sessionStorage.length; i++) {
-        const key = sessionStorage.key(i);
-        const value = sessionStorage.getItem(key);
-        alert(`sessionStorage: ${key} = ${value}`);
-    }
-}
+function downloadMaze() {
+    html2canvas(document.getElementById('maze_container')).then(function(canvas) {
+        // Convert canvas to image data
+        var imgData = canvas.toDataURL('image/png');
 
-// Retrieve and display cookies
-function displayCookies() {
-    const pairs = document.cookie.split("; ");
-    for (const pair of pairs) {
-        const [name, value] = pair.split("=");
-        alert(`Cookie: ${name} = ${decodeURIComponent(value)}`);
-    }
+        // Create a temporary link element to trigger the download
+        var link = document.createElement('a');
+        link.href = imgData;
+        link.download = 'maze.png';
+        link.click();
+    }).catch(function(error) {
+        console.error('Error generating maze image:', error);
+    });
 }
+</script>
 
-function a() {
-  alert('Copy everything and put it together');
-displayLocalStorage();
-}
-
-function b() {
-    alert('Copy everything and put it together');
-displaySessionStorage();
-}
-
-function c() {
-    alert('Copy everything and put it together');
-displayCookies();
-}
-
-    </script>
 </body>
 </html>
