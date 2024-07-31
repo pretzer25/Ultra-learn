@@ -31,12 +31,14 @@ body {
 h1, h2, h3, h4, h5, h6, p {
   color: #b0bec5;
   animation: fadeIn 1s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 @keyframes fadeIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
@@ -75,14 +77,16 @@ div1 {
   border-radius: 0.5em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   animation: slideIn 1s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 @keyframes slideIn {
-  to {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
 
@@ -131,8 +135,6 @@ div1 {
   gap: 30px;
   flex-wrap: wrap;
   animation: fadeIn 1s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 #exampleButton {
@@ -179,8 +181,6 @@ div1 {
   color: #ffffff;
   margin-top: 5px;
   animation: slideIn 1s ease-in-out;
-  opacity: 0;
-  transform: translateY(20px);
 }
 
 #fullscreen-iframe {
@@ -281,64 +281,7 @@ input:checked + .slider:before {
   }
 }
 
-@keyframes bounceTwice {
-  0%, 100% {
-    transform: translateY(0) rotate(0deg);
-  }
-  25%, 75% {
-    transform: translateY(-20px) rotate(10deg);
-  }
-  50% {
-    transform: translateY(0) rotate(-10deg);
-  }
-}
     </style>
-	  <script>
-	// Function to detect when elements are in viewport
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
-}
-
-// Function to add the visible class to elements in the viewport
-function handleScroll() {
-  const elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, div1, .container, #gtitle');
-  elements.forEach((element) => {
-    if (isInViewport(element)) {
-      element.style.opacity = 1;
-      element.style.transform = 'translateY(0)';
-    }
-  });
-}
-
-// Add scroll event listener
-window.addEventListener('scroll', handleScroll);
-
-// AFK animation
-let afkTimeout;
-
-function resetAfkTimeout() {
-  clearTimeout(afkTimeout);
-  afkTimeout = setTimeout(() => {
-    const elements = document.querySelectorAll('h1, h2, h3, h4, h5, h6, p, div1, .container, #gtitle, #char1');
-    elements.forEach((element) => {
-      element.style.animation = 'bounceTwice 2s ease-in-out';
-      element.style.transform = `rotate(${Math.random() * 20 - 10}deg)`;
-    });
-    setTimeout(() => {
-      elements.forEach((element) => {
-        element.style.animation = '';
-        element.style.transform = '';
-      });
-    }, 2000);
-  }, 60000
-
-	  </script>
 
 	    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 	  
