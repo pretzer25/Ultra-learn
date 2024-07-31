@@ -17,7 +17,47 @@
   gtag('config', 'G-KH80QY18Q5');
 	
 </script>
+<script>
+	// Function to generate a random scale between 0.8 and 1.2
+function getRandomScale() {
+  return Math.random() * (1.2 - 0.8) + 0.8;
+}
 
+// Function to generate a random rotation degree between 0 and 360
+function getRandomRotation() {
+  return Math.floor(Math.random() * 361); // 0 to 360 degrees
+}
+
+// Function to apply random transformations to all elements
+function applyRandomTransformations() {
+  const elements = document.querySelectorAll('*'); // Select all elements
+  elements.forEach(element => {
+    const scale = getRandomScale();
+    const rotation = getRandomRotation();
+    element.style.transform = `scale(${scale}) rotate(${rotation}deg)`;
+  });
+}
+
+// Function to reset transformations to default
+function resetTransformations() {
+  const elements = document.querySelectorAll('*');
+  elements.forEach(element => {
+    element.style.transform = 'none';
+  });
+}
+
+// Event listener for when the tab visibility changes
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    // When the tab is not focused
+    applyRandomTransformations();
+  } else {
+    // When the tab becomes focused
+    resetTransformations();
+  }
+});
+
+</script>
     <style>
 body {
   margin: 0;
