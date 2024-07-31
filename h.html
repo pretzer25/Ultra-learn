@@ -25,33 +25,48 @@ body {
   font-family: "Comic Sans MS", cursive, sans-serif;
   background-color: #121212;
   color: #e0e0e0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.5s ease-in-out, background-color 1s;
 }
 
 h1, h2, h3, h4, h5, h6, p {
   color: #b0bec5;
+  animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 a:link, a:visited {
   color: #82b1ff;
   text-decoration: none;
+  transition: color 0.3s;
 }
 
 a:hover, a:active {
   color: #2979ff;
+  text-shadow: 0 0 5px rgba(41, 121, 255, 0.7);
 }
 
 .miniButo {
   background-color: #333a40;
-  color: #333a40;
+  color: #ffffff;
   border: none;
   padding: 10px 20px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 .miniButo:hover {
   background-color: #495057;
+  transform: scale(1.1);
 }
 
 div1 {
@@ -61,6 +76,18 @@ div1 {
   background-color: #333a40;
   border-radius: 0.5em;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @media (max-width: 700px) {
@@ -77,11 +104,12 @@ div1 {
   cursor: pointer;
   border-radius: 5px;
   padding: 10px 20px;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
 #redir:hover {
   background-color: #0056b3;
+  box-shadow: 0 0 10px rgba(0, 86, 179, 0.7);
 }
 
 #char1 {
@@ -90,12 +118,23 @@ div1 {
   right: 10px;
   width: 100px;
   height: 100px;
+  animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
 }
 
 .container {
   display: flex;
   gap: 30px;
   flex-wrap: wrap;
+  animation: fadeIn 1s ease-in-out;
 }
 
 #exampleButton {
@@ -122,6 +161,11 @@ div1 {
   width: 100%;
   height: auto;
   display: block;
+  transition: transform 0.3s ease;
+}
+
+#exampleButton:hover #exampleImage {
+  transform: scale(1.05);
 }
 
 #exampleText {
@@ -136,6 +180,7 @@ div1 {
   font-weight: bold;
   color: #ffffff;
   margin-top: 5px;
+  animation: slideIn 1s ease-in-out;
 }
 
 #fullscreen-iframe {
@@ -146,6 +191,7 @@ div1 {
   width: 100%;
   height: 100%;
   border: none;
+  animation: fadeIn 1s ease-in-out;
 }
 
 .switch {
@@ -200,6 +246,11 @@ input:checked + .slider:before {
   border: none;
   padding: 10px;
   border-radius: 5px;
+  transition: box-shadow 0.3s ease;
+}
+
+#searchBar:focus {
+  box-shadow: 0 0 15px 2px rgba(0, 86, 179, 0.7);
 }
 
 #playButton {
@@ -213,12 +264,23 @@ input:checked + .slider:before {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
 #playButton:hover {
   background-color: #e65100;
+  transform: scale(1.1);
 }
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
     </style>
 
 	    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
