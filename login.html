@@ -109,7 +109,7 @@ createUserWithEmailAndPassword(auth, email + '@gmail.com', password)
       .then(() => {
         var name = "y";
         localStorage.setItem('name', name);
-          setUsernameCookie(user);
+        setUsernameCookie(user.email || "Unknown User");
         window.location.href = "/./h.html";
       })
       .catch((error) => {
@@ -156,7 +156,7 @@ login.addEventListener('click', (e) => {
       
     var name = "y";
       localStorage.setItem('name', name);
-        setUsernameCookie(user);
+      setUsernameCookie(user.email || "Unknown User");
   window.location.href = './h.html';
     })
     .catch((error) => {
@@ -216,7 +216,7 @@ localStorage.removeItem("name");
   }
 });
 
-    function setUsernameCookie(username) {
+function setUsernameCookie(username) {
     // Get the first 5 letters and add "..." if the username is too long
     let shortUsername = username.length > 5 ? username.substring(0, 5) + "..." : username;
 
@@ -227,6 +227,7 @@ localStorage.removeItem("name");
     // Set the cookie
     document.cookie = `skibidiusername=${shortUsername}; expires=${expirationDate.toUTCString()}; path=/`;
 }
+
 
 </script>
     </div>
